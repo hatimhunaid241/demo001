@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <rect width="32" height="32" rx="6" fill="#1A1A1A"/>
+  <g transform="translate(7, 2)" fill="#B8860B">
+    <!-- King chess piece -->
+    <!-- Cross on top -->
+    <rect x="7.5" y="1" width="3" height="5" rx="0.5"/>
+    <rect x="6" y="2.5" width="6" height="2" rx="0.5"/>
+    <!-- Head/crown -->
+    <path d="M5 7.5 C5 6.5 6.5 6 9 6 C11.5 6 13 6.5 13 7.5 L13 9 C13 9.5 12.5 10 12 10 L6 10 C5.5 10 5 9.5 5 9 Z"/>
+    <!-- Neck -->
+    <rect x="6.5" y="10" width="5" height="2" rx="0.5"/>
+    <!-- Body -->
+    <path d="M4 13 C4 12 5.5 12 9 12 C12.5 12 14 12 14 13 L14.5 21 C14.5 22 13 22.5 9 22.5 C5 22.5 3.5 22 3.5 21 Z"/>
+    <!-- Base -->
+    <rect x="2.5" y="22.5" width="13" height="2.5" rx="1"/>
+    <rect x="1.5" y="24.5" width="15" height="2.5" rx="1"/>
+  </g>
+</svg>

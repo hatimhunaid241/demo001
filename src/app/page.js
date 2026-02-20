@@ -1,65 +1,308 @@
+"use client";
+
 import Image from "next/image";
+import Link from "next/link";
+import { motion } from "framer-motion";
+import {
+  FadeInUp,
+  FadeIn,
+  DividerReveal,
+  StaggerContainer,
+  StaggerItem,
+} from "@/components/Animations";
+import { HeroSection } from "@/components/HeroImage";
+import { chessSets } from "@/data/chessSets";
 
 export default function Home() {
+  const featuredSets = chessSets.slice(0, 3);
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.js file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <>
+      {/* ═══════════════ HERO SECTION ═══════════════ */}
+      <HeroSection
+        src="https://images.unsplash.com/photo-1528819622765-d6bcf132f793?w=1920&q=85"
+        alt="Chess artistry"
+        overlayClass="bg-gradient-to-b from-white/70 via-white/90 to-white/50"
+        height="h-screen"
+      >
+        <div className="text-center px-6 max-w-4xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.2, delay: 0.2, ease: [0.25, 0.46, 0.45, 0.94] }}
+            className="mb-6"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            <span className="font-[family-name:var(--font-cormorant)] text-[11px] md:text-[13px] tracking-[0.5em] text-gold uppercase">
+              Chess Artists Portfolio
+            </span>
+          </motion.div>
+
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
+            className="font-[family-name:var(--font-playfair)] text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-normal tracking-[0.15em] text-charcoal mb-6"
           >
-            Documentation
-          </a>
+            CHESS MASTER
+          </motion.h1>
+
+          <motion.div
+            initial={{ width: 0 }}
+            animate={{ width: 80 }}
+            transition={{ duration: 1, delay: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
+            className="h-[1px] bg-gradient-to-r from-transparent via-gold to-transparent mx-auto mb-6"
+          />
+
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1.2, delay: 1.0 }}
+            className="font-[family-name:var(--font-cormorant)] text-lg md:text-xl lg:text-2xl font-light tracking-[0.1em] text-text-secondary max-w-2xl mx-auto mb-12"
+          >
+            The Art of Strategic Elegance
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1.3 }}
+          >
+            <Link href="/portfolio" className="btn-luxury">
+              VIEW COLLECTION
+            </Link>
+          </motion.div>
         </div>
-      </main>
-    </div>
+
+        {/* Scroll Indicator */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.8, duration: 1 }}
+          className="absolute bottom-10 left-1/2 -translate-x-1/2"
+        >
+          <motion.div
+            animate={{ y: [0, 8, 0] }}
+            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+            className="flex flex-col items-center gap-2"
+          >
+            <span className="font-[family-name:var(--font-cormorant)] text-[10px] tracking-[0.3em] text-text-muted">
+              SCROLL
+            </span>
+            <div className="w-[1px] h-8 bg-gradient-to-b from-gold/60 to-transparent" />
+          </motion.div>
+        </motion.div>
+      </HeroSection>
+
+      {/* ═══════════════ INTRODUCTION SECTION ═══════════════ */}
+      <section className="py-28 md:py-40 bg-white">
+        <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-20">
+          <div className="max-w-3xl mx-auto text-center">
+            <FadeInUp>
+              <span className="font-[family-name:var(--font-cormorant)] text-[11px] tracking-[0.5em] text-gold uppercase block mb-8">
+                THE ATELIER
+              </span>
+            </FadeInUp>
+
+            <FadeInUp delay={0.15}>
+              <h2 className="font-[family-name:var(--font-playfair)] text-3xl md:text-4xl lg:text-5xl font-normal tracking-[0.1em] text-charcoal mb-8">
+                Where Strategy Becomes Art
+              </h2>
+            </FadeInUp>
+
+            <DividerReveal className="mx-auto mb-10" />
+
+            <FadeInUp delay={0.3}>
+              <p className="font-[family-name:var(--font-cormorant)] text-lg md:text-xl leading-relaxed text-text-secondary font-light">
+                Each chess set in our collection is a testament to the
+                convergence of artistic vision and masterful craftsmanship.
+                Designed not merely as instruments of play, but as sculptures
+                that embody the timeless elegance of the game — where every
+                piece tells a story, and every move is a work of art.
+              </p>
+            </FadeInUp>
+
+            <FadeInUp delay={0.45}>
+              <p className="font-[family-name:var(--font-cormorant)] text-lg md:text-xl leading-relaxed text-text-secondary font-light mt-8">
+                Five collections. Five visions. Each one an invitation to
+                experience chess through the eyes of an artist.
+              </p>
+            </FadeInUp>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════ FEATURED COLLECTION SECTION ═══════════════ */}
+      <section className="py-28 md:py-40 bg-warm-gray">
+        <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-20">
+          <div className="text-center mb-20">
+            <FadeInUp>
+              <span className="font-[family-name:var(--font-cormorant)] text-[11px] tracking-[0.5em] text-gold uppercase block mb-6">
+                SELECTED WORKS
+              </span>
+            </FadeInUp>
+            <FadeInUp delay={0.1}>
+              <h2 className="font-[family-name:var(--font-playfair)] text-3xl md:text-4xl lg:text-5xl font-normal tracking-[0.1em] text-charcoal mb-6">
+                Our Collection
+              </h2>
+            </FadeInUp>
+            <DividerReveal className="mx-auto" />
+          </div>
+
+          {/* Featured Chess Sets Grid */}
+          <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6 lg:gap-10">
+            {featuredSets.map((set) => (
+              <StaggerItem key={set.id}>
+                <div className="group cursor-pointer">
+                  <div className="image-hover-zoom relative aspect-[3/4] mb-8 bg-medium-gray">
+                    <Image
+                      src={set.image}
+                      alt={set.name}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                    />
+                    {/* Overlay on hover */}
+                    <div className="absolute inset-0 bg-charcoal/0 group-hover:bg-charcoal/20 transition-all duration-700" />
+                  </div>
+                  <div className="text-center">
+                    <span className="font-[family-name:var(--font-cormorant)] text-[10px] tracking-[0.4em] text-gold uppercase block mb-3">
+                      {set.category}
+                    </span>
+                    <h3 className="font-[family-name:var(--font-playfair)] text-xl md:text-2xl tracking-[0.15em] text-charcoal mb-3 group-hover:text-gold transition-colors duration-500">
+                      {set.name}
+                    </h3>
+                    <p className="font-[family-name:var(--font-cormorant)] text-sm text-text-secondary font-light max-w-xs mx-auto">
+                      {set.shortDescription}
+                    </p>
+                  </div>
+                </div>
+              </StaggerItem>
+            ))}
+          </StaggerContainer>
+
+          {/* View All Button */}
+          <FadeInUp delay={0.3} className="text-center mt-20">
+            <Link href="/portfolio" className="btn-luxury">
+              VIEW ALL COLLECTIONS
+            </Link>
+          </FadeInUp>
+        </div>
+      </section>
+
+      {/* ═══════════════ PHILOSOPHY SECTION ═══════════════ */}
+      <section className="py-28 md:py-40 bg-white">
+        <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-20">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+            {/* Image */}
+            <FadeIn>
+              <div className="image-hover-zoom relative aspect-[4/5] bg-medium-gray">
+                <Image
+                  src="https://images.unsplash.com/photo-1604948501466-4e9c339b9c24?w=1000&q=85"
+                  alt="Chess craftsmanship"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
+              </div>
+            </FadeIn>
+
+            {/* Text */}
+            <div>
+              <FadeInUp>
+                <span className="font-[family-name:var(--font-cormorant)] text-[11px] tracking-[0.5em] text-gold uppercase block mb-6">
+                  PHILOSOPHY
+                </span>
+              </FadeInUp>
+
+              <FadeInUp delay={0.1}>
+                <h2 className="font-[family-name:var(--font-playfair)] text-3xl md:text-4xl font-normal tracking-[0.08em] text-charcoal mb-8">
+                  Crafted With Intention, Designed With Soul
+                </h2>
+              </FadeInUp>
+
+              <DividerReveal className="mb-10" />
+
+              <FadeInUp delay={0.25}>
+                <p className="font-[family-name:var(--font-cormorant)] text-lg leading-relaxed text-text-secondary font-light mb-6">
+                  We believe that chess is more than a game — it is a dialogue
+                  between minds, a dance of strategy and intuition. Our sets are
+                  designed to honor this timeless exchange by elevating the
+                  physical experience of play to an art form.
+                </p>
+              </FadeInUp>
+
+              <FadeInUp delay={0.35}>
+                <p className="font-[family-name:var(--font-cormorant)] text-lg leading-relaxed text-text-secondary font-light mb-10">
+                  Every material is chosen with purpose. Every line is drawn with
+                  meaning. The result is not merely a chess set, but a statement
+                  — an object that speaks of taste, heritage, and the quiet
+                  confidence of those who appreciate the finer things.
+                </p>
+              </FadeInUp>
+
+              <FadeInUp delay={0.45}>
+                <Link href="/contact" className="btn-luxury">
+                  BEGIN A CONVERSATION
+                </Link>
+              </FadeInUp>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════ CITIES / PRESENCE SECTION ═══════════════ */}
+      <section className="py-20 md:py-28 bg-warm-gray border-t border-medium-gray">
+        <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-20">
+          <FadeInUp className="text-center mb-14">
+            <span className="font-[family-name:var(--font-cormorant)] text-[11px] tracking-[0.5em] text-gold uppercase block mb-6">
+              EXHIBITED WORLDWIDE
+            </span>
+          </FadeInUp>
+
+          <FadeIn className="flex flex-wrap justify-center gap-x-12 md:gap-x-20 gap-y-4">
+            {["LONDON", "NEW YORK", "PARIS", "DUBAI", "TOKYO"].map((city) => (
+              <span
+                key={city}
+                className="font-[family-name:var(--font-playfair)] text-sm md:text-base tracking-[0.3em] text-text-muted"
+              >
+                {city}
+              </span>
+            ))}
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* ═══════════════ ENQUIRIES SECTION ═══════════════ */}
+      <section className="py-28 md:py-40 bg-white">
+        <div className="max-w-3xl mx-auto px-6 text-center">
+          <FadeInUp>
+            <span className="font-[family-name:var(--font-cormorant)] text-[11px] tracking-[0.5em] text-gold uppercase block mb-8">
+              ENQUIRIES
+            </span>
+          </FadeInUp>
+
+          <FadeInUp delay={0.15}>
+            <h2 className="font-[family-name:var(--font-playfair)] text-3xl md:text-4xl lg:text-5xl font-normal tracking-[0.1em] text-charcoal mb-8">
+              Let Us Begin
+            </h2>
+          </FadeInUp>
+
+          <DividerReveal className="mx-auto mb-10" />
+
+          <FadeInUp delay={0.3}>
+            <p className="font-[family-name:var(--font-cormorant)] text-lg md:text-xl leading-relaxed text-text-secondary font-light mb-12">
+              For bespoke collaborations, commissions, and private viewings,
+              we welcome the beginning of a meaningful conversation.
+            </p>
+          </FadeInUp>
+
+          <FadeInUp delay={0.45}>
+            <Link href="/contact" className="btn-luxury">
+              CONVERSATION
+            </Link>
+          </FadeInUp>
+        </div>
+      </section>
+    </>
   );
 }
