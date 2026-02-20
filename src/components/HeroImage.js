@@ -95,7 +95,7 @@ export function HeroSection({
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className="relative z-10 w-full"
+            className="relative z-10 w-full h-full flex items-center justify-center"
           >
             {children}
           </motion.div>

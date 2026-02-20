@@ -22,7 +22,7 @@ export default function Home() {
       <HeroSection
         src="https://images.unsplash.com/photo-1528819622765-d6bcf132f793?w=1920&q=85"
         alt="Chess artistry"
-        overlayClass="bg-gradient-to-b from-white/70 via-white/90 to-white/50"
+        overlayClass="bg-gradient-to-b from-white/70 via-white/90 to-white/90"
         height="h-screen"
       >
         <div className="text-center px-6 max-w-4xl mx-auto">
@@ -85,7 +85,7 @@ export default function Home() {
             transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
             className="flex flex-col items-center gap-2"
           >
-            <span className="font-[family-name:var(--font-cormorant)] text-[10px] tracking-[0.3em] text-text-muted">
+            <span className="font-(family-name:--font-cormorant) text-[10px] tracking-[0.3em] text-text-muted">
               SCROLL
             </span>
             <div className="w-[1px] h-8 bg-gradient-to-b from-gold/60 to-transparent" />
