@@ -2,21 +2,25 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="bg-charcoal text-white">
+    <footer className="bg-white text-charcoal">
+      {/* Top Separator */}
+      <div className="flex justify-center">
+        <div className="w-3/4 md:w-1/2 h-[1px] bg-gradient-to-r from-transparent via-gold to-transparent" />
+      </div>
       {/* Main Footer */}
       <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-20 py-20 md:py-28">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-12">
           {/* Brand Column */}
           <div className="flex flex-col items-center md:items-start">
             <div className="flex flex-col items-center md:items-start mb-8">
-              <span className="font-[family-name:var(--font-playfair)] text-xl font-semibold tracking-[0.3em] text-white">
+              <span className="font-[family-name:var(--font-playfair)] text-xl font-semibold tracking-[0.3em] text-charcoal">
                 CHESS
               </span>
-              <span className="font-[family-name:var(--font-playfair)] text-[10px] tracking-[0.5em] text-gold-light -mt-1">
+              <span className="font-[family-name:var(--font-playfair)] text-[10px] tracking-[0.5em] text-gold -mt-1">
                 MASTER
               </span>
             </div>
-            <p className="font-[family-name:var(--font-cormorant)] text-[15px] leading-relaxed text-white/50 text-center md:text-left max-w-xs">
+            <p className="font-[family-name:var(--font-cormorant)] text-[15px] leading-relaxed text-text-muted text-center md:text-left max-w-xs">
               Five bespoke chess sets, each a masterwork of design,
               craftsmanship, and artistic vision.
             </p>
@@ -36,7 +40,7 @@ export default function Footer() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="font-[family-name:var(--font-cormorant)] text-[13px] tracking-[0.2em] text-white/50 hover:text-gold transition-colors duration-300"
+                  className="font-[family-name:var(--font-cormorant)] text-[13px] tracking-[0.2em] text-text-muted hover:text-gold transition-colors duration-300"
                 >
                   {link.label}
                 </Link>
@@ -52,13 +56,13 @@ export default function Footer() {
             <div className="flex flex-col items-center md:items-end gap-4">
               <a
                 href="mailto:atelier@chessmaster.com"
-                className="font-[family-name:var(--font-cormorant)] text-[13px] tracking-[0.15em] text-white/50 hover:text-gold transition-colors duration-300"
+                className="font-[family-name:var(--font-cormorant)] text-[13px] tracking-[0.15em] text-text-muted hover:text-gold transition-colors duration-300"
               >
                 atelier@chessmaster.com
               </a>
               <a
                 href="tel:+11234567890"
-                className="font-[family-name:var(--font-cormorant)] text-[13px] tracking-[0.15em] text-white/50 hover:text-gold transition-colors duration-300"
+                className="font-[family-name:var(--font-cormorant)] text-[13px] tracking-[0.15em] text-text-muted hover:text-gold transition-colors duration-300"
               >
                 +1 (123) 456-7890
               </a>
@@ -66,7 +70,7 @@ export default function Footer() {
                 {/* Instagram */}
                 <a
                   href="#"
-                  className="text-white/40 hover:text-gold transition-colors duration-300"
+                  className="text-text-muted hover:text-gold transition-colors duration-300"
                   aria-label="Instagram"
                 >
                   <svg
@@ -95,7 +99,7 @@ export default function Footer() {
                 {/* LinkedIn */}
                 <a
                   href="#"
-                  className="text-white/40 hover:text-gold transition-colors duration-300"
+                  className="text-text-muted hover:text-gold transition-colors duration-300"
                   aria-label="LinkedIn"
                 >
                   <svg
@@ -121,22 +125,22 @@ export default function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-white/10">
+      <div className="border-t border-medium-gray">
         <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-20 py-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="font-[family-name:var(--font-cormorant)] text-[11px] tracking-[0.2em] text-white/30">
+            <p className="font-[family-name:var(--font-cormorant)] text-[11px] tracking-[0.2em] text-text-muted/60">
               © {new Date().getFullYear()} CHESS MASTER. ALL RIGHTS RESERVED.
             </p>
             <div className="flex items-center gap-8">
               <Link
                 href="#"
-                className="font-[family-name:var(--font-cormorant)] text-[11px] tracking-[0.15em] text-white/30 hover:text-white/60 transition-colors duration-300"
+                className="font-[family-name:var(--font-cormorant)] text-[11px] tracking-[0.15em] text-text-muted/60 hover:text-text-secondary transition-colors duration-300"
               >
                 PRIVACY POLICY
               </Link>
               <Link
                 href="#"
-                className="font-[family-name:var(--font-cormorant)] text-[11px] tracking-[0.15em] text-white/30 hover:text-white/60 transition-colors duration-300"
+                className="font-[family-name:var(--font-cormorant)] text-[11px] tracking-[0.15em] text-text-muted/60 hover:text-text-secondary transition-colors duration-300"
               >
                 TERMS OF USE
               </Link>

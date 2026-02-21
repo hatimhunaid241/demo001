@@ -3,9 +3,9 @@
 @theme inline {
   --font-serif: var(--font-playfair);
   --font-body: var(--font-cormorant);
-  --color-gold: #B8860B;
-  --color-gold-light: #D4A843;
-  --color-gold-dark: #8B6914;
+  --color-gold: #8B1A1A;
+  --color-gold-light: #C0392B;
+  --color-gold-dark: #6B1010;
   --color-charcoal: #1A1A1A;
   --color-warm-white: #FAFAF8;
   --color-warm-gray: #F5F5F0;
@@ -32,7 +32,7 @@ body {
 
 /* Elegant selection color */
 ::selection {
-  background: #B8860B;
+  background: #8B1A1A;
   color: #FFFFFF;
 }
 
@@ -46,12 +46,12 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #B8860B;
+  background: #8B1A1A;
   border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #8B6914;
+  background: #6B1010;
 }
 
 /* Heading styles */
@@ -70,7 +70,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Gold gradient text */
 .text-gold-gradient {
-  background: linear-gradient(135deg, #D4A843, #B8860B, #8B6914);
+  background: linear-gradient(135deg, #C0392B, #8B1A1A, #6B1010);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -80,13 +80,13 @@ h1, h2, h3, h4, h5, h6 {
 .divider-gold {
   width: 60px;
   height: 1px;
-  background: linear-gradient(90deg, transparent, #B8860B, transparent);
+  background: linear-gradient(90deg, transparent, #8B1A1A, transparent);
 }
 
 .divider-gold-wide {
   width: 120px;
   height: 1px;
-  background: linear-gradient(90deg, transparent, #B8860B, transparent);
+  background: linear-gradient(90deg, transparent, #8B1A1A, transparent);
 }
 
 /* Image hover zoom effect */
@@ -151,8 +151,8 @@ h1, h2, h3, h4, h5, h6 {
 .btn-luxury {
   display: inline-block;
   padding: 16px 48px;
-  border: 1px solid #B8860B;
-  color: #B8860B;
+  border: 1px solid #8B1A1A;
+  color: #8B1A1A;
   font-family: var(--font-serif), Georgia, serif;
   font-size: 12px;
   letter-spacing: 0.3em;
@@ -172,7 +172,7 @@ h1, h2, h3, h4, h5, h6 {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: #B8860B;
+  background: #8B1A1A;
   transition: left 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   z-index: -1;
 }
@@ -188,8 +188,8 @@ h1, h2, h3, h4, h5, h6 {
 .btn-luxury-filled {
   display: inline-block;
   padding: 16px 48px;
-  border: 1px solid #B8860B;
-  background: #B8860B;
+  border: 1px solid #8B1A1A;
+  background: #8B1A1A;
   color: #FFFFFF;
   font-family: var(--font-serif), Georgia, serif;
   font-size: 12px;
@@ -201,8 +201,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-luxury-filled:hover {
-  background: #8B6914;
-  border-color: #8B6914;
+  background: #6B1010;
+  border-color: #6B1010;
 }
 
 /* Elegant underline animation for nav links */
@@ -218,7 +218,7 @@ h1, h2, h3, h4, h5, h6 {
   left: 0;
   width: 0;
   height: 1px;
-  background: #B8860B;
+  background: #8B1A1A;
   transition: width 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
