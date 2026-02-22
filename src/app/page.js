@@ -20,9 +20,10 @@ export default function Home() {
     <>
       {/* ═══════════════ HERO SECTION ═══════════════ */}
       <HeroSection
-        src="https://images.unsplash.com/photo-1528819622765-d6bcf132f793?w=1920&q=85"
+        // src="https://images.unsplash.com/photo-1528819622765-d6bcf132f793?w=1920&q=85"
+        src="/hero copy.jpg"
         alt="Chess artistry"
-        overlayClass="bg-gradient-to-b from-white/70 via-white/90 to-white/90"
+        overlayClass="bg-gradient-to-b from-white/70 via-white/60 to-white/80"
         height="h-screen"
       >
         <div className="text-center px-6 max-w-4xl mx-auto">
@@ -32,8 +33,8 @@ export default function Home() {
             transition={{ duration: 1.2, delay: 0.2, ease: [0.25, 0.46, 0.45, 0.94] }}
             className="mb-6"
           >
-            <span className="font-[family-name:var(--font-cormorant)] text-[11px] md:text-[13px] tracking-[0.5em] text-gold uppercase">
-              Chess Artists Portfolio
+            <span className="font-(family-name:--font-cormorant) text-[14px] md:text-[16px] tracking-[0.5em] text-gold uppercase">
+              Chess Designers Portfolio
             </span>
           </motion.div>
 
@@ -41,23 +42,23 @@ export default function Home() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
-            className="font-[family-name:var(--font-playfair)] text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-normal tracking-[0.15em] text-charcoal mb-6"
+            className="font-(family-name:--font-great-vibes)! text-6xl md:text-7xl lg:text-7xl xl:text-8xl font-normal tracking-[0.05em] text-charcoal mb-6"
           >
-            CHESS MASTER
+            Royal Chess Design
           </motion.h1>
 
           <motion.div
             initial={{ width: 0 }}
             animate={{ width: 80 }}
             transition={{ duration: 1, delay: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
-            className="h-[1px] bg-gradient-to-r from-transparent via-gold to-transparent mx-auto mb-6"
+            className="h-px bg-linear-to-r from-transparent via-gold to-transparent mx-auto mb-6"
           />
 
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1.2, delay: 1.0 }}
-            className="font-[family-name:var(--font-cormorant)] text-lg md:text-xl lg:text-2xl font-light tracking-[0.1em] text-text-secondary max-w-2xl mx-auto mb-12"
+            className="font-(family-name:--font-cormorant) text-lg md:text-xl lg:text-2xl font-normal tracking-wide text-text-primary max-w-2xl mx-auto mb-12"
           >
             The Art of Strategic Elegance
           </motion.p>
@@ -88,23 +89,23 @@ export default function Home() {
             <span className="font-(family-name:--font-cormorant) text-[10px] tracking-[0.3em] text-text-muted">
               SCROLL
             </span>
-            <div className="w-[1px] h-8 bg-gradient-to-b from-gold/60 to-transparent" />
+            <div className="w-px h-8 bg-linear-to-b from-gold/60 to-transparent" />
           </motion.div>
         </motion.div>
       </HeroSection>
 
       {/* ═══════════════ INTRODUCTION SECTION ═══════════════ */}
       <section className="py-28 md:py-40 bg-white">
-        <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-20">
+        <div className="max-w-350 mx-auto px-6 md:px-12 lg:px-20">
           <div className="max-w-3xl mx-auto text-center">
             <FadeInUp>
-              <span className="font-[family-name:var(--font-cormorant)] text-[11px] tracking-[0.5em] text-gold uppercase block mb-8">
+              <span className="font-(family-name:--font-cormorant) text-[11px] tracking-[0.5em] text-gold uppercase block mb-8">
                 THE ATELIER
               </span>
             </FadeInUp>
 
             <FadeInUp delay={0.15}>
-              <h2 className="font-[family-name:var(--font-playfair)] text-3xl md:text-4xl lg:text-5xl font-normal tracking-[0.1em] text-charcoal mb-8">
+              <h2 className="font-(family-name:--font-playfair) text-3xl md:text-4xl lg:text-5xl font-normal tracking-widest text-charcoal mb-8">
                 Where Strategy Becomes Art
               </h2>
             </FadeInUp>
@@ -112,7 +113,7 @@ export default function Home() {
             <DividerReveal className="mx-auto mb-10" />
 
             <FadeInUp delay={0.3}>
-              <p className="font-[family-name:var(--font-cormorant)] text-lg md:text-xl leading-relaxed text-text-secondary font-light">
+              <p className="font-(family-name:--font-cormorant) text-lg md:text-xl leading-relaxed text-text-secondary font-light">
                 Each chess set in our collection is a testament to the
                 convergence of artistic vision and masterful craftsmanship.
                 Designed not merely as instruments of play, but as sculptures
@@ -122,7 +123,7 @@ export default function Home() {
             </FadeInUp>
 
             <FadeInUp delay={0.45}>
-              <p className="font-[family-name:var(--font-cormorant)] text-lg md:text-xl leading-relaxed text-text-secondary font-light mt-8">
+              <p className="font-(family-name:--font-cormorant) text-lg md:text-xl leading-relaxed text-text-secondary font-light mt-8">
                 Five collections. Five visions. Each one an invitation to
                 experience chess through the eyes of an artist.
               </p>
@@ -133,15 +134,15 @@ export default function Home() {
 
       {/* ═══════════════ FEATURED COLLECTION SECTION ═══════════════ */}
       <section className="py-28 md:py-40 bg-warm-gray">
-        <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-20">
+        <div className="max-w-350 mx-auto px-6 md:px-12 lg:px-20">
           <div className="text-center mb-20">
             <FadeInUp>
-              <span className="font-[family-name:var(--font-cormorant)] text-[11px] tracking-[0.5em] text-gold uppercase block mb-6">
+              <span className="font-(family-name:--font-cormorant) text-[11px] tracking-[0.5em] text-gold uppercase block mb-6">
                 SELECTED WORKS
               </span>
             </FadeInUp>
             <FadeInUp delay={0.1}>
-              <h2 className="font-[family-name:var(--font-playfair)] text-3xl md:text-4xl lg:text-5xl font-normal tracking-[0.1em] text-charcoal mb-6">
+              <h2 className="font-(family-name:--font-playfair) text-3xl md:text-4xl lg:text-5xl font-normal tracking-widest text-charcoal mb-6">
                 Our Collection
               </h2>
             </FadeInUp>
@@ -153,7 +154,7 @@ export default function Home() {
             {featuredSets.map((set) => (
               <StaggerItem key={set.id}>
                 <div className="group cursor-pointer">
-                  <div className="image-hover-zoom relative aspect-[3/4] mb-8 bg-medium-gray">
+                  <div className="image-hover-zoom relative aspect-3/4 mb-8 bg-medium-gray">
                     <Image
                       src={set.image}
                       alt={set.name}
@@ -165,13 +166,13 @@ export default function Home() {
                     <div className="absolute inset-0 bg-charcoal/0 group-hover:bg-charcoal/20 transition-all duration-700" />
                   </div>
                   <div className="text-center">
-                    <span className="font-[family-name:var(--font-cormorant)] text-[10px] tracking-[0.4em] text-gold uppercase block mb-3">
+                    <span className="font-(family-name:--font-cormorant) text-[10px] tracking-[0.4em] text-gold uppercase block mb-3">
                       {set.category}
                     </span>
-                    <h3 className="font-[family-name:var(--font-playfair)] text-xl md:text-2xl tracking-[0.15em] text-charcoal mb-3 group-hover:text-gold transition-colors duration-500">
+                    <h3 className="font-(family-name:--font-playfair) text-xl md:text-2xl tracking-[0.15em] text-charcoal mb-3 group-hover:text-gold transition-colors duration-500">
                       {set.name}
                     </h3>
-                    <p className="font-[family-name:var(--font-cormorant)] text-sm text-text-secondary font-light max-w-xs mx-auto">
+                    <p className="font-(family-name:--font-cormorant) text-sm text-text-secondary font-light max-w-xs mx-auto">
                       {set.shortDescription}
                     </p>
                   </div>
@@ -191,11 +192,11 @@ export default function Home() {
 
       {/* ═══════════════ PHILOSOPHY SECTION ═══════════════ */}
       <section className="py-28 md:py-40 bg-white">
-        <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-20">
+        <div className="max-w-350 mx-auto px-6 md:px-12 lg:px-20">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
             {/* Image */}
             <FadeIn>
-              <div className="image-hover-zoom relative aspect-[4/5] bg-medium-gray">
+              <div className="image-hover-zoom relative aspect-4/5 bg-medium-gray">
                 <Image
                   src="https://images.unsplash.com/photo-1604948501466-4e9c339b9c24?w=1000&q=85"
                   alt="Chess craftsmanship"
@@ -209,13 +210,13 @@ export default function Home() {
             {/* Text */}
             <div>
               <FadeInUp>
-                <span className="font-[family-name:var(--font-cormorant)] text-[11px] tracking-[0.5em] text-gold uppercase block mb-6">
+                <span className="font-(family-name:--font-cormorant) text-[11px] tracking-[0.5em] text-gold uppercase block mb-6">
                   PHILOSOPHY
                 </span>
               </FadeInUp>
 
               <FadeInUp delay={0.1}>
-                <h2 className="font-[family-name:var(--font-playfair)] text-3xl md:text-4xl font-normal tracking-[0.08em] text-charcoal mb-8">
+                <h2 className="font-(family-name:--font-playfair) text-3xl md:text-4xl font-normal tracking-[0.08em] text-charcoal mb-8">
                   Crafted With Intention, Designed With Soul
                 </h2>
               </FadeInUp>
@@ -223,7 +224,7 @@ export default function Home() {
               <DividerReveal className="mb-10" />
 
               <FadeInUp delay={0.25}>
-                <p className="font-[family-name:var(--font-cormorant)] text-lg leading-relaxed text-text-secondary font-light mb-6">
+                <p className="font-(family-name:--font-cormorant) text-lg leading-relaxed text-text-secondary font-light mb-6">
                   We believe that chess is more than a game — it is a dialogue
                   between minds, a dance of strategy and intuition. Our sets are
                   designed to honor this timeless exchange by elevating the
@@ -232,7 +233,7 @@ export default function Home() {
               </FadeInUp>
 
               <FadeInUp delay={0.35}>
-                <p className="font-[family-name:var(--font-cormorant)] text-lg leading-relaxed text-text-secondary font-light mb-10">
+                <p className="font-(family-name:--font-cormorant) text-lg leading-relaxed text-text-secondary font-light mb-10">
                   Every material is chosen with purpose. Every line is drawn with
                   meaning. The result is not merely a chess set, but a statement
                   — an object that speaks of taste, heritage, and the quiet
@@ -252,9 +253,9 @@ export default function Home() {
 
       {/* ═══════════════ CITIES / PRESENCE SECTION ═══════════════ */}
       <section className="py-20 md:py-28 bg-warm-gray border-t border-medium-gray">
-        <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-20">
+        <div className="max-w-350 mx-auto px-6 md:px-12 lg:px-20">
           <FadeInUp className="text-center mb-14">
-            <span className="font-[family-name:var(--font-cormorant)] text-[11px] tracking-[0.5em] text-gold uppercase block mb-6">
+            <span className="font-(family-name:--font-cormorant) text-[11px] tracking-[0.5em] text-gold uppercase block mb-6">
               EXHIBITED WORLDWIDE
             </span>
           </FadeInUp>
@@ -263,7 +264,7 @@ export default function Home() {
             {["LONDON", "NEW YORK", "PARIS", "DUBAI", "TOKYO"].map((city) => (
               <span
                 key={city}
-                className="font-[family-name:var(--font-playfair)] text-sm md:text-base tracking-[0.3em] text-text-muted"
+                className="font-(family-name:--font-playfair) text-sm md:text-base tracking-[0.3em] text-text-muted"
               >
                 {city}
               </span>
@@ -276,13 +277,13 @@ export default function Home() {
       <section className="py-28 md:py-40 bg-white">
         <div className="max-w-3xl mx-auto px-6 text-center">
           <FadeInUp>
-            <span className="font-[family-name:var(--font-cormorant)] text-[11px] tracking-[0.5em] text-gold uppercase block mb-8">
+            <span className="font-(family-name:--font-cormorant) text-[11px] tracking-[0.5em] text-gold uppercase block mb-8">
               ENQUIRIES
             </span>
           </FadeInUp>
 
           <FadeInUp delay={0.15}>
-            <h2 className="font-[family-name:var(--font-playfair)] text-3xl md:text-4xl lg:text-5xl font-normal tracking-[0.1em] text-charcoal mb-8">
+            <h2 className="font-(family-name:--font-playfair) text-3xl md:text-4xl lg:text-5xl font-normal tracking-widest text-charcoal mb-8">
               Let Us Begin
             </h2>
           </FadeInUp>
@@ -290,7 +291,7 @@ export default function Home() {
           <DividerReveal className="mx-auto mb-10" />
 
           <FadeInUp delay={0.3}>
-            <p className="font-[family-name:var(--font-cormorant)] text-lg md:text-xl leading-relaxed text-text-secondary font-light mb-12">
+            <p className="font-(family-name:--font-cormorant) text-lg md:text-xl leading-relaxed text-text-secondary font-light mb-12">
               For bespoke collaborations, commissions, and private viewings,
               we welcome the beginning of a meaningful conversation.
             </p>

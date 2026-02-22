@@ -34,7 +34,7 @@ export default function Contact() {
       {/* ═══════════════ HERO BANNER ═══════════════ */}
       <HeroSection
         // src="https://images.unsplash.com/photo-1560174038-da43ac74f01b?w=1920&q=85"
-        src="/contact copy.jpg"
+        src="/contact.jpg"
         alt="Contact us"
         overlayClass="bg-gradient-to-b from-white/40 via-white/90 to-white/50"
         height="h-[65vh] md:h-[75vh]"

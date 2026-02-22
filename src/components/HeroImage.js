@@ -77,7 +77,7 @@ export function HeroSection({
           className={`object-cover transition-opacity duration-1000 ease-out ${
             imageLoaded ? "opacity-100" : "opacity-0"
           }`}
-          priority
+          // priority
           sizes="100vw"
           onLoad={handleLoad}
         />

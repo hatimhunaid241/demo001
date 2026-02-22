@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
+import Logo from "./Logo";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -19,7 +20,9 @@ export default function Navbar() {
   }, []);
 
   useEffect(() => {
-    setMenuOpen(false);
+    // Avoid calling setState synchronously in effect body
+    // Use a microtask to avoid cascading renders
+    Promise.resolve().then(() => setMenuOpen(false));
   }, [pathname]);
 
   // Lock body scroll when menu is open
@@ -49,22 +52,11 @@ export default function Navbar() {
             : "bg-transparent"
         }`}
       >
-        <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-20">
+        <div className="max-w-350 mx-auto px-6 md:px-12 lg:px-20">
           <div className="flex items-center justify-between h-20 md:h-24">
             {/* Logo */}
             <Link href="/" className="relative z-50">
-              <div className="flex flex-col items-start">
-                <span
-                  className="font-[family-name:var(--font-playfair)] text-lg md:text-xl font-semibold tracking-[0.3em] text-charcoal"
-                >
-                  CHESS
-                </span>
-                <span
-                  className="font-[family-name:var(--font-playfair)] text-[10px] md:text-xs tracking-[0.5em] text-gold -mt-1"
-                >
-                  MASTER
-                </span>
-              </div>
+              <Logo className="" />
             </Link>
 
             {/* Desktop Navigation */}
@@ -73,7 +65,7 @@ export default function Navbar() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`nav-link font-[family-name:var(--font-cormorant)] text-[13px] font-medium tracking-[0.2em] transition-colors duration-300 ${
+                  className={`nav-link font-(family-name:--font-cormorant) text-[13px] font-medium tracking-[0.2em] transition-colors duration-300 ${
                     pathname === link.href
                       ? "text-gold"
                       : "text-charcoal hover:text-gold"
@@ -91,17 +83,17 @@ export default function Navbar() {
               aria-label="Toggle menu"
             >
               <span
-                className={`hamburger-line block w-6 h-[1px] bg-charcoal ${
+                className={`hamburger-line block w-6 h-px bg-charcoal ${
                   menuOpen ? "rotate-45 translate-y-[3.5px]" : ""
                 }`}
               />
               <span
-                className={`hamburger-line block w-6 h-[1px] bg-charcoal ${
+                className={`hamburger-line block w-6 h-px bg-charcoal ${
                   menuOpen ? "opacity-0" : ""
                 }`}
               />
               <span
-                className={`hamburger-line block w-6 h-[1px] bg-charcoal ${
+                className={`hamburger-line block w-6 h-px bg-charcoal ${
                   menuOpen ? "-rotate-45 -translate-y-[3.5px]" : ""
                 }`}
               />
@@ -130,7 +122,7 @@ export default function Navbar() {
                 >
                   <Link
                     href={link.href}
-                    className={`font-[family-name:var(--font-playfair)] text-2xl tracking-[0.3em] transition-colors duration-300 ${
+                    className={`font-(family-name:--font-playfair) text-2xl tracking-[0.3em] transition-colors duration-300 ${
                       pathname === link.href
                         ? "text-gold"
                         : "text-charcoal hover:text-gold"
@@ -147,7 +139,7 @@ export default function Navbar() {
               initial={{ width: 0 }}
               animate={{ width: 60 }}
               transition={{ delay: 0.5, duration: 0.8 }}
-              className="mt-16 h-[1px] bg-gradient-to-r from-transparent via-gold to-transparent"
+              className="mt-16 h-px bg-linear-to-r from-transparent via-gold to-transparent"
             />
           </motion.div>
         )}
