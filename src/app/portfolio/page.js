@@ -17,8 +17,8 @@ export default function Portfolio() {
     <>
       {/* ═══════════════ HERO BANNER ═══════════════ */}
       <HeroSection
-        // src="https://images.unsplash.com/photo-1529699211952-734e80c4d42b?w=1920&q=85"
-        src="/portfolio.jpg"
+        src="https://images.unsplash.com/photo-1529699211952-734e80c4d42b?w=1920&q=85"
+        // src="/portfolio.jpg"
         alt="Chess collection"
         overlayClass="bg-gradient-to-b from-white/70 via-white/80 to-white/50"
         height="h-[65vh] md:h-[75vh]"
