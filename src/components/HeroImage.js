@@ -74,7 +74,7 @@ export function HeroSection({
           src={src}
           alt={alt}
           fill
-          className={`object-cover transition-opacity duration-1000 ease-out ${
+          className={`object-cover transition-opacity duration-1000 ease-out grayscale ${
             imageLoaded ? "opacity-100" : "opacity-0"
           }`}
           // priority
