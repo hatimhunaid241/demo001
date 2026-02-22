@@ -36,18 +36,20 @@ export const metadata = {
   title: "CHESS MASTER | The Art of Strategic Elegance",
   description:
     "A curated portfolio of five bespoke chess sets, each a masterwork of design, craftsmanship, and artistic vision. Chess Artists Portfolio.",
-  keywords: "chess, chess sets, luxury chess, chess artists portfolio, bespoke chess, handcrafted chess",
+  keywords:
+    "chess, chess sets, luxury chess, chess artists portfolio, bespoke chess, handcrafted chess",
   icons: {
     icon: "/logo.png",
-  }
+  },
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${playfair.variable} ${cormorant.variable} ${arsenal.variable} ${greatVibes.variable}`}>
+      <body
+        className={`${playfair.variable} ${cormorant.variable} ${arsenal.variable} ${greatVibes.variable}`}>
         <Navbar />
-        <LayoutClient>{children}</LayoutClient>
+        <main>{children}</main>
         <Footer />
       </body>
     </html>

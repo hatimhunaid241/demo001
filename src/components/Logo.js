@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function Logo({ className = "" }) {
   return (
     <div className={`flex items-center gap-1 ${className}`}>
-      <Image src="/logo.png" alt="Logo" width={40} height={40} className="h-10 w-auto" />
+      {/* <Image src="/logo.png" alt="Logo" width={40} height={40} className="h-10 w-auto" /> */}
       <div className="flex flex-col">
         <div className="flex items-baseline text-3xl text-charcoal">
           <span className="font-(family-name:--font-arsenal) font-bold">David</span>
