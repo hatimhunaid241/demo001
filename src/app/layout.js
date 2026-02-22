@@ -2,6 +2,7 @@ import { Playfair_Display, Cormorant_Garamond, Arsenal, Great_Vibes } from "next
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import LayoutClient from "@/components/LayoutClient";
 
 const playfair = Playfair_Display({
   variable: "--font-playfair",
@@ -46,7 +47,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={`${playfair.variable} ${cormorant.variable} ${arsenal.variable} ${greatVibes.variable}`}>
         <Navbar />
-        <main>{children}</main>
+        <LayoutClient>{children}</LayoutClient>
         <Footer />
       </body>
     </html>
