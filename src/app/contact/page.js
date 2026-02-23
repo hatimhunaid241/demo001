@@ -5,6 +5,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { FadeInUp, FadeIn, DividerReveal } from "@/components/Animations";
 import { HeroSection } from "@/components/HeroImage";
+import PhoneField from "@/components/PhoneField";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -13,6 +14,7 @@ export default function Contact() {
     subject: "",
     message: "",
   });
+  const [phone, setPhone] = useState("");
   const [submitted, setSubmitted] = useState(false);
 
   const handleChange = (e) => {
@@ -224,6 +226,7 @@ export default function Contact() {
                       onClick={() => {
                         setSubmitted(false);
                         setFormData({ name: "", email: "", subject: "", message: "" });
+                        setPhone("");
                       }}
                       className="btn-luxury">
                       SEND ANOTHER
@@ -260,6 +263,17 @@ export default function Contact() {
                         required
                         className="w-full bg-transparent border-b border-medium-gray pb-3 text-charcoal font-(family-name:--font-cormorant) text-base focus:border-gold transition-colors duration-300 placeholder:text-text-muted/40"
                         placeholder="Your email address"
+                      />
+                    </div>
+
+                    <div>
+                      <label className="font-(family-name:--font-cormorant) text-[11px] tracking-[0.3em] text-text-muted uppercase block mb-3">
+                        PHONE *
+                      </label>
+                      <PhoneField
+                        value={phone}
+                        onChange={setPhone}
+                        required
                       />
                     </div>
 
