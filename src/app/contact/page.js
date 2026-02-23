@@ -3,11 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import {
-  FadeInUp,
-  FadeIn,
-  DividerReveal,
-} from "@/components/Animations";
+import { FadeInUp, FadeIn, DividerReveal } from "@/components/Animations";
 import { HeroSection } from "@/components/HeroImage";
 
 export default function Contact() {
@@ -34,18 +30,16 @@ export default function Contact() {
       {/* ═══════════════ HERO BANNER ═══════════════ */}
       <HeroSection
         // src="https://images.unsplash.com/photo-1560174038-da43ac74f01b?w=1920&q=85"
-        src="/contact copy.jpg"
+        src="/heroImages/contact.jpg"
         alt="Contact us"
         overlayClass="bg-gradient-to-b from-white/40 via-white/90 to-white/50"
-        height="h-[65vh] md:h-[75vh]"
-      >
+        height="h-[65vh] md:h-[75vh]">
         <div className="text-center px-6">
           <motion.span
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.2 }}
-              className="font-(family-name:--font-cormorant) text-[11px] md:text-[13px] tracking-[0.5em] text-gold uppercase block mb-6"
-          >
+            className="font-(family-name:--font-cormorant) text-[11px] md:text-[13px] tracking-[0.5em] text-gold uppercase block mb-6">
             Get In Touch
           </motion.span>
 
@@ -53,8 +47,7 @@ export default function Contact() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
-              className="font-(family-name:--font-playfair) text-4xl md:text-6xl lg:text-7xl font-normal tracking-[0.15em] text-charcoal mb-6"
-          >
+            className="font-(family-name:--font-playfair) text-4xl md:text-6xl lg:text-7xl font-normal tracking-[0.15em] text-charcoal mb-6">
             CONTACT
           </motion.h1>
 
@@ -62,7 +55,7 @@ export default function Contact() {
             initial={{ width: 0 }}
             animate={{ width: 80 }}
             transition={{ duration: 1, delay: 0.7 }}
-              className="h-px bg-linear-to-r from-transparent via-gold to-transparent mx-auto"
+            className="h-px bg-linear-to-r from-transparent via-gold to-transparent mx-auto"
           />
         </div>
       </HeroSection>
@@ -72,11 +65,10 @@ export default function Contact() {
         <div className="max-w-3xl mx-auto px-6 text-center">
           <FadeInUp>
             <p className="font-(family-name:--font-cormorant) text-lg md:text-xl leading-relaxed text-text-secondary font-light">
-              Elegance speaks softly. Whether you are a collector drawn to the
-              extraordinary, a connoisseur of fine craftsmanship, or simply
-              someone who believes in the art of the game — we welcome the
-              beginning of a meaningful conversation. Every great collaboration
-              starts with a single move.
+              Elegance speaks softly. Whether you are a collector drawn to the extraordinary, a
+              connoisseur of fine craftsmanship, or simply someone who believes in the art of the
+              game — we welcome the beginning of a meaningful conversation. Every great
+              collaboration starts with a single move.
             </p>
           </FadeInUp>
         </div>
@@ -104,10 +96,9 @@ export default function Contact() {
 
               <FadeInUp delay={0.2}>
                 <p className="font-(family-name:--font-cormorant) text-base md:text-lg leading-relaxed text-text-secondary font-light mb-12">
-                  We believe that true artistry resides in connection. If you
-                  feel drawn to our vision and wish to learn more about our
-                  collections, arrange a private viewing, or discuss a bespoke
-                  commission, please reach out. Every meaningful collaboration
+                  We believe that true artistry resides in connection. If you feel drawn to our
+                  vision and wish to learn more about our collections, arrange a private viewing, or
+                  discuss a bespoke commission, please reach out. Every meaningful collaboration
                   begins with a thoughtful conversation.
                 </p>
               </FadeInUp>
@@ -117,26 +108,23 @@ export default function Contact() {
                 <FadeInUp delay={0.3}>
                   <div>
                     <h4 className="font-(family-name:--font-playfair) text-[11px] tracking-[0.3em] text-gold uppercase mb-4">
-                      ADDRESS
+                      EMAIL US
                     </h4>
-                    <p className="font-(family-name:--font-cormorant) text-base text-text-secondary font-light leading-relaxed">
-                      42 King&apos;s Road<br />
-                      Chelsea, London SW3 4UD<br />
-                      United Kingdom
-                    </p>
+                    <a
+                      href="mailto:info@royalchessdesign.com"
+                      className="font-(family-name:--font-cormorant) text-base text-text-secondary font-light hover:text-gold transition-colors duration-300">
+                      info@royalchessdesign.com
+                    </a>
                   </div>
                 </FadeInUp>
 
                 <FadeInUp delay={0.35}>
                   <div>
                     <h4 className="font-(family-name:--font-playfair) text-[11px] tracking-[0.3em] text-gold uppercase mb-4">
-                      EMAIL US
+                      TELEPHONE
                     </h4>
-                    <a
-                      href="mailto:atelier@chessmaster.com"
-                        className="font-(family-name:--font-cormorant) text-base text-text-secondary font-light hover:text-gold transition-colors duration-300"
-                    >
-                      atelier@chessmaster.com
+                    <a className="font-(family-name:--font-cormorant) text-base text-text-secondary font-light duration-300">
+                      Available upon request
                     </a>
                   </div>
                 </FadeInUp>
@@ -144,28 +132,14 @@ export default function Contact() {
                 <FadeInUp delay={0.4}>
                   <div>
                     <h4 className="font-(family-name:--font-playfair) text-[11px] tracking-[0.3em] text-gold uppercase mb-4">
-                      TELEPHONE
-                    </h4>
-                    <a
-                      href="tel:+442012345678"
-                        className="font-(family-name:--font-cormorant) text-base text-text-secondary font-light hover:text-gold transition-colors duration-300"
-                    >
-                      +44 (0) 20 1234 5678
-                    </a>
-                  </div>
-                </FadeInUp>
-
-                <FadeInUp delay={0.45}>
-                  <div>
-                    <h4 className="font-(family-name:--font-playfair) text-[11px] tracking-[0.3em] text-gold uppercase mb-4">
                       FOLLOW US
                     </h4>
                     <div className="flex items-center gap-6">
                       <a
-                        href="#"
+                        href="https://www.instagram.com/royalchessdesign/"
+                        target="_blank"
                         className="text-text-muted hover:text-gold transition-colors duration-300"
-                        aria-label="Instagram"
-                      >
+                        aria-label="Instagram">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           width="20"
@@ -175,18 +149,17 @@ export default function Contact() {
                           stroke="currentColor"
                           strokeWidth="1.5"
                           strokeLinecap="round"
-                          strokeLinejoin="round"
-                        >
+                          strokeLinejoin="round">
                           <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
                           <circle cx="12" cy="12" r="5" />
                           <circle cx="17.5" cy="6.5" r="1" />
                         </svg>
                       </a>
                       <a
-                        href="#"
+                        href="https://www.linkedin.com/in/david-de-jong-55913922/"
+                        target="_blank"
                         className="text-text-muted hover:text-gold transition-colors duration-300"
-                        aria-label="LinkedIn"
-                      >
+                        aria-label="LinkedIn">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           width="20"
@@ -196,8 +169,7 @@ export default function Contact() {
                           stroke="currentColor"
                           strokeWidth="1.5"
                           strokeLinecap="round"
-                          strokeLinejoin="round"
-                        >
+                          strokeLinejoin="round">
                           <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
                           <rect x="2" y="9" width="4" height="12" />
                           <circle cx="4" cy="4" r="2" />
@@ -238,8 +210,7 @@ export default function Contact() {
                         stroke="#B8860B"
                         strokeWidth="1.5"
                         strokeLinecap="round"
-                        strokeLinejoin="round"
-                      >
+                        strokeLinejoin="round">
                         <polyline points="20 6 9 17 4 12" />
                       </svg>
                     </div>
@@ -254,8 +225,7 @@ export default function Contact() {
                         setSubmitted(false);
                         setFormData({ name: "", email: "", subject: "", message: "" });
                       }}
-                      className="btn-luxury"
-                    >
+                      className="btn-luxury">
                       SEND ANOTHER
                     </button>
                   </div>
@@ -357,8 +327,10 @@ export default function Contact() {
                   LONDON
                 </h3>
                 <p className="font-(family-name:--font-cormorant) text-sm text-text-secondary font-light leading-relaxed">
-                  42 King&apos;s Road<br />
-                  Chelsea, SW3 4UD<br />
+                  42 King&apos;s Road
+                  <br />
+                  Chelsea, SW3 4UD
+                  <br />
                   +44 (0) 20 1234 5678
                 </p>
               </div>
@@ -373,8 +345,10 @@ export default function Contact() {
                   NEW YORK
                 </h3>
                 <p className="font-(family-name:--font-cormorant) text-sm text-text-secondary font-light leading-relaxed">
-                  680 Madison Avenue<br />
-                  New York, NY 10065<br />
+                  680 Madison Avenue
+                  <br />
+                  New York, NY 10065
+                  <br />
                   +1 (212) 555-0192
                 </p>
               </div>
@@ -389,8 +363,10 @@ export default function Contact() {
                   DUBAI
                 </h3>
                 <p className="font-(family-name:--font-cormorant) text-sm text-text-secondary font-light leading-relaxed">
-                  DIFC, Gate Village<br />
-                  Building 5, Dubai<br />
+                  DIFC, Gate Village
+                  <br />
+                  Building 5, Dubai
+                  <br />
                   +971 4 818 7274
                 </p>
               </div>

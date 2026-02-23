@@ -2,7 +2,6 @@ import { Playfair_Display, Cormorant_Garamond, Arsenal, Great_Vibes } from "next
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import LayoutClient from "@/components/LayoutClient";
 
 const playfair = Playfair_Display({
   variable: "--font-playfair",

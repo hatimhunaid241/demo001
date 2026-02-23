@@ -21,7 +21,7 @@ export default function Home() {
       {/* ═══════════════ HERO SECTION ═══════════════ */}
       <HeroSection
         // src="https://images.unsplash.com/photo-1528819622765-d6bcf132f793?w=1920&q=85"
-        src="/hero copy.jpg"
+        src="/heroImages/hero.jpg"
         alt="Chess artistry"
         overlayClass="bg-gradient-to-b from-white/70 via-white/60 to-white/80"
         height="h-screen"

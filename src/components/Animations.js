@@ -82,7 +82,7 @@ export function DividerReveal({ className = "" }) {
         delay: 0.2,
         ease: [0.25, 0.46, 0.45, 0.94],
       }}
-      className={`h-[1px] bg-gradient-to-r from-transparent via-gold to-transparent ${className}`}
+      className={`h-px bg-linear-to-r from-transparent via-gold to-transparent ${className}`}
     />
   );
 }

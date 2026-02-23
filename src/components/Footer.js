@@ -15,8 +15,8 @@ export default function Footer() {
           <div className="flex flex-col items-center md:items-start">
             <Logo className="items-center mb-8" />
             <p className="font-(family-name:--font-cormorant) text-[15px] leading-relaxed text-text-muted text-center md:text-left max-w-xs">
-              Five bespoke chess sets, each a masterwork of design,
-              craftsmanship, and artistic vision.
+              Five bespoke chess sets, each a masterwork of design, craftsmanship, and artistic
+              vision.
             </p>
           </div>
 
@@ -34,8 +34,7 @@ export default function Footer() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="font-(family-name:--font-cormorant) text-[13px] tracking-[0.2em] text-text-muted hover:text-gold transition-colors duration-300"
-                >
+                  className="font-(family-name:--font-cormorant) text-[13px] tracking-[0.2em] text-text-muted hover:text-gold transition-colors duration-300">
                   {link.label}
                 </Link>
               ))}
@@ -49,24 +48,17 @@ export default function Footer() {
             </h4>
             <div className="flex flex-col items-center md:items-end gap-4">
               <a
-                href="mailto:atelier@chessmaster.com"
-                className="font-(family-name:--font-cormorant) text-[13px] tracking-[0.15em] text-text-muted hover:text-gold transition-colors duration-300"
-              >
-                atelier@chessmaster.com
-              </a>
-              <a
-                href="tel:+11234567890"
-                className="font-(family-name:--font-cormorant) text-[13px] tracking-[0.15em] text-text-muted hover:text-gold transition-colors duration-300"
-              >
-                +1 (123) 456-7890
+                href="mailto:info@royalchessdesign.com"
+                className="font-(family-name:--font-cormorant) text-[13px] tracking-[0.15em] text-text-muted hover:text-gold transition-colors duration-300">
+                info@royalchessdesign.com
               </a>
               <div className="flex items-center gap-6 mt-4">
                 {/* Instagram */}
                 <a
-                  href="#"
+                  href="https://www.instagram.com/royalchessdesign/"
+                  target="_blank"
                   className="text-text-muted hover:text-gold transition-colors duration-300"
-                  aria-label="Instagram"
-                >
+                  aria-label="Instagram">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="18"
@@ -76,26 +68,18 @@ export default function Footer() {
                     stroke="currentColor"
                     strokeWidth="1.5"
                     strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <rect
-                      x="2"
-                      y="2"
-                      width="20"
-                      height="20"
-                      rx="5"
-                      ry="5"
-                    />
+                    strokeLinejoin="round">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
                     <circle cx="12" cy="12" r="5" />
                     <circle cx="17.5" cy="6.5" r="1" />
                   </svg>
                 </a>
                 {/* LinkedIn */}
                 <a
-                  href="#"
+                  href="https://www.linkedin.com/in/david-de-jong-55913922/"
+                  target="_blank"
                   className="text-text-muted hover:text-gold transition-colors duration-300"
-                  aria-label="LinkedIn"
-                >
+                  aria-label="LinkedIn">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="18"
@@ -105,8 +89,7 @@ export default function Footer() {
                     stroke="currentColor"
                     strokeWidth="1.5"
                     strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
+                    strokeLinejoin="round">
                     <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
                     <rect x="2" y="9" width="4" height="12" />
                     <circle cx="4" cy="4" r="2" />
@@ -128,14 +111,12 @@ export default function Footer() {
             <div className="flex items-center gap-8">
               <Link
                 href="#"
-                className="font-(family-name:--font-cormorant) text-[11px] tracking-[0.15em] text-text-muted hover:text-text-secondary transition-colors duration-300"
-              >
+                className="font-(family-name:--font-cormorant) text-[11px] tracking-[0.15em] text-text-muted hover:text-text-secondary transition-colors duration-300">
                 PRIVACY POLICY
               </Link>
               <Link
                 href="#"
-                className="font-(family-name:--font-cormorant) text-[11px] tracking-[0.15em] text-text-muted hover:text-text-secondary transition-colors duration-300"
-              >
+                className="font-(family-name:--font-cormorant) text-[11px] tracking-[0.15em] text-text-muted hover:text-text-secondary transition-colors duration-300">
                 TERMS OF USE
               </Link>
             </div>

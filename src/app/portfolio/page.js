@@ -17,7 +17,7 @@ export default function Portfolio() {
     <>
       {/* ═══════════════ HERO BANNER ═══════════════ */}
       <HeroSection
-        src="https://images.unsplash.com/photo-1529699211952-734e80c4d42b?w=1920&q=85"
+        src="/heroImages/portfolio.jpg"
         // src="/portfolio.jpg"
         alt="Chess collection"
         overlayClass="bg-gradient-to-b from-white/70 via-white/80 to-white/50"
@@ -79,7 +79,7 @@ export default function Portfolio() {
         {chessSets.map((set, index) => (
           <div
             key={set.id}
-            className={`${index % 2 === 0 ? "bg-warm-gray" : "bg-white"} ${index === chessSets.length - 1 ? '' : 'pb-28 md:pb-40'}`}
+            className={`${index % 2 === 0 ? "bg-warm-gray" : "bg-white"} ${index === chessSets.length - 1 ? '' : ''}`}
           >
             <div className="max-w-350 mx-auto px-6 md:px-12 lg:px-20 py-24 md:py-32">
               <div
@@ -131,7 +131,7 @@ export default function Portfolio() {
                   </FadeInUp>
 
                   <FadeInUp delay={0.35}>
-                    <div className="flex flex-col gap-3 mb-8">
+                    <div className="flex flex-col gap-3">
                       <div className="flex items-start gap-4">
                         <span className="font-(family-name:--font-cormorant) text-[11px] tracking-[0.3em] text-text-muted uppercase min-w-20">
                           Materials
