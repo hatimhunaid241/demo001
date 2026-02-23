@@ -3,7 +3,7 @@
 @theme inline {
   --font-serif: var(--font-playfair);
   --font-body: var(--font-cormorant);
-  --color-gold: #b30000;
+  --color-gold: #305CDE;
   --color-gold-light: #C0392B;
   --color-gold-dark: #6B1010;
   --color-charcoal: #1A1A1A;
@@ -14,6 +14,21 @@
   --color-text-secondary: #555555;
   --color-text-muted: #888888;
 }
+
+/* @theme inline {
+  --font-serif: var(--font-playfair);
+  --font-body: var(--font-cormorant);
+  --color-gold: #b30000;
+  --color-gold-light: #C0392B;
+  --color-gold-dark: #6B1010;
+  --color-charcoal: #1A1A1A;
+  --color-warm-white: #FAFAF8;
+  --color-warm-gray: #F5F5F0;
+  --color-medium-gray: #E8E8E3;
+  --color-text-primary: #1A1A1A;
+  --color-text-secondary: #555555;
+  --color-text-muted: #888888;
+} */
 
 /* Smooth scroll */
 html {
