@@ -70,7 +70,7 @@ export function ScaleIn({ children, delay = 0, className = "" }) {
 
 export function DividerReveal({ className = "" }) {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-40px" });
+  const isInView = useInView(ref, { once: true, margin: "0px" });
 
   return (
     <motion.div
