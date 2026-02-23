@@ -306,7 +306,7 @@ export default function Contact() {
       </section>
 
       {/* ═══════════════ MAP / CITIES SECTION ═══════════════ */}
-      <section className="py-20 md:py-28 bg-white border-t border-medium-gray">
+      {/* <section className="py-20 md:py-28 bg-white border-t border-medium-gray">
         <div className="max-w-350 mx-auto px-6 md:px-12 lg:px-20">
           <FadeInUp className="text-center mb-16">
             <span className="font-(family-name:--font-cormorant) text-[11px] tracking-[0.5em] text-gold uppercase block mb-8">
@@ -373,7 +373,7 @@ export default function Contact() {
             </FadeInUp>
           </div>
         </div>
-      </section>
+      </section> */}
     </>
   );
 }
