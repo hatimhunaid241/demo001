@@ -251,6 +251,114 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ═══════════════ ABOUT THE DESIGNER ═══════════════ */}
+      <section className="bg-warm-gray overflow-hidden">
+        <div className="max-w-350 mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-[5fr_7fr] items-stretch min-h-200">
+
+            {/* ── Image Column ── */}
+            <FadeIn className="relative">
+              <div className="relative h-[70vw] lg:h-full overflow-hidden bg-medium-gray flex items-center justify-center">
+                <Image
+                  src="/about-me.jpeg"
+                  alt="David de Jong — Childhood, Bucaramanga"
+                  fill
+                  className="object-contain object-center"
+                  sizes="(max-width: 1024px) 100vw, 42vw"
+                />
+                {/* Subtle right-side fade into section background */}
+                <div className="hidden lg:block absolute inset-y-0 right-0 w-16 bg-linear-to-r from-transparent to-warm-gray/60" />
+                {/* Caption */}
+                <div className="absolute bottom-6 left-6 right-6">
+                  <p className="font-(family-name:--font-cormorant) text-[10px] tracking-[0.35em]  text-gold-light uppercase">
+                    Bucaramanga, Colombia — Early Childhood
+                  </p>
+                </div>
+              </div>
+            </FadeIn>
+
+            {/* ── Text Column ── */}
+            <div className="flex flex-col justify-center px-8 md:px-12 lg:px-16 xl:px-20 py-24 lg:py-28">
+
+              <FadeInUp>
+                <span className="font-(family-name:--font-cormorant) text-[11px] tracking-[0.55em] text-gold uppercase block mb-8">
+                  THE ARTIST
+                </span>
+              </FadeInUp>
+
+              <FadeInUp delay={0.1}>
+                <h2 className="font-(family-name:--font-playfair) text-3xl md:text-4xl lg:text-5xl font-normal tracking-[0.08em] text-charcoal mb-8">
+                  David de Jong
+                </h2>
+              </FadeInUp>
+
+              <DividerReveal className="mb-10" />
+
+              <div className="space-y-6">
+                <FadeInUp delay={0.2}>
+                  <p className="font-(family-name:--font-cormorant) text-base md:text-lg leading-relaxed text-text-secondary font-light">
+                    Born in Bucaramanga, Colombia and raised across continents, David de Jong unites a life as a master goldsmith with an enduring fascination for the ancient game of chess — creating sculptural chess designs that transform a game of intellect into a work of art.
+                  </p>
+                </FadeInUp>
+
+                <FadeInUp delay={0.25}>
+                  <p className="font-(family-name:--font-cormorant) text-base md:text-lg leading-relaxed text-text-secondary font-light">
+                    His relationship with chess began before language could name it. At three years old, he encountered a chessboard for the first time — sixty-four squares scattered with mysterious figures: kings and queens, bishops and knights, rooks and pawns. He did not yet understand the rules. He knew only the beauty. He arranged the pieces freely, guided by instinct and imagination alone.
+                  </p>
+                </FadeInUp>
+
+                <FadeInUp delay={0.3}>
+                  <p className="font-(family-name:--font-cormorant) text-base md:text-lg leading-[1.4] text-gold/90 italic font-light">
+                    &ldquo;Children do not inherit rules — they invent them.&rdquo;
+                  </p>
+                </FadeInUp>
+
+                <FadeInUp delay={0.35}>
+                  <p className="font-(family-name:--font-cormorant) text-base md:text-lg leading-relaxed text-text-secondary font-light">
+                    As a goldsmith, David works with noble materials — gold, silver, and rock crystal — transforming them into objects of permanence and precision. He designs each element in its entirety: the pieces, the boards, the tables that hold them. This unity of vision is what distinguishes his work from every other.
+                  </p>
+                </FadeInUp>
+
+                <FadeInUp delay={0.4}>
+                  <p className="font-(family-name:--font-cormorant) text-base md:text-lg leading-[1.4] text-gold/80 italic font-light">
+                    &ldquo;Why should a king play with wood when gold, silver, and crystal exist?&rdquo;
+                  </p>
+                </FadeInUp>
+
+                <FadeInUp delay={0.45}>
+                  <p className="font-(family-name:--font-cormorant) text-base md:text-lg leading-relaxed text-text-secondary font-light">
+                    Chess is an ancient language — born from early forms such as Chaturanga in 6th-century India, refined across civilisations, enduring across millennia. Though machines may master its logic, they cannot experience its wonder. Chess remains profoundly human: a balance of strategy, creativity, and quiet emotion.
+                  </p>
+                </FadeInUp>
+
+                <FadeInUp delay={0.5}>
+                  <p className="font-(family-name:--font-cormorant) text-base md:text-lg leading-relaxed text-text-secondary font-light">
+                    Play sharpens the mind. It teaches patience, humility, and vision. His work seeks to honour this timeless game by elevating it to its highest artistic expression.
+                  </p>
+                </FadeInUp>
+              </div>
+
+              {/* Motto */}
+              <FadeInUp delay={0.55} className="mt-12">
+                <div className="pl-6 border-l border-gold">
+                  <p className="font-(family-name:--font-cormorant) text-lg md:text-xl leading-relaxed text-charcoal italic font-light mb-1">
+                    &ldquo;What nature creates can be sculpted by mankind.&rdquo;
+                  </p>
+                </div>
+              </FadeInUp>
+
+              {/* Signature */}
+              <FadeInUp delay={0.62} className="mt-8">
+                <p className="font-(family-name:--font-great-vibes) text-4xl md:text-5xl text-gold">
+                  David de Jong
+                </p>
+              </FadeInUp>
+
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ═══════════════ CITIES / PRESENCE SECTION ═══════════════ */}
       <section className="py-20 md:py-28 bg-warm-gray border-t border-medium-gray">
         <div className="max-w-350 mx-auto px-6 md:px-12 lg:px-20">

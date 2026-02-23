@@ -110,12 +110,12 @@ export default function Footer() {
             </p>
             <div className="flex items-center gap-8">
               <Link
-                href="#"
+                href="/privacy-policy"
                 className="font-(family-name:--font-cormorant) text-[11px] tracking-[0.15em] text-text-muted hover:text-text-secondary transition-colors duration-300">
                 PRIVACY POLICY
               </Link>
               <Link
-                href="#"
+                href="/terms-of-use"
                 className="font-(family-name:--font-cormorant) text-[11px] tracking-[0.15em] text-text-muted hover:text-text-secondary transition-colors duration-300">
                 TERMS OF USE
               </Link>
