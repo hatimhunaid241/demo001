@@ -40,6 +40,7 @@ export default function Navbar() {
   const navLinks = [
     { href: "/", label: "HOME" },
     { href: "/portfolio", label: "PORTFOLIO" },
+    { href: "/the-artist", label: "THE ARTIST" },
     { href: "/contact", label: "CONTACT" },
   ];
 
