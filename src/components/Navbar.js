@@ -40,7 +40,7 @@ export default function Navbar() {
   const navLinks = [
     { href: "/", label: "HOME" },
     { href: "/portfolio", label: "PORTFOLIO" },
-    { href: "/the-artist", label: "THE ARTIST" },
+    // { href: "/the-artist", label: "THE ARTIST" },
     { href: "/contact", label: "CONTACT" },
   ];
 
@@ -56,7 +56,7 @@ export default function Navbar() {
         <div className="max-w-350 mx-auto px-6 md:px-12 lg:px-20">
           <div className="flex items-center justify-between h-20 md:h-24">
             {/* Logo */}
-            <Link href="/" className="relative z-50">
+            <Link href="/the-artist" className="relative z-50">
               <Logo className="" />
             </Link>
 
