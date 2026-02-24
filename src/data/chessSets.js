@@ -212,7 +212,7 @@ export const chessSets = [
         },
       ],
       table: {
-        image: "/chessSets/2/table1.jpeg",
+        image: "/chessSets/2/table1.jpg",
         description:
           "This magnificent, custom-crafted table functions both as a gaming surface and a hidden bar. This stately piece is carved from resilient African Wengé wood, celebrated for its dark, dramatic grain and enduring stability. A breathtaking, incorporated chessboard of polished rock crystal and smoky quartz is the stunning centerpiece of the table's surface.\n\nFor storage, the pieces are discreetly housed within a rich, red-upholstered drawer. This drawer glides out along a discrete panel, becoming a seamless extension of the table for setting aside pieces or beverages.\n\nWith a gentle touch, a concealed panel on the table's side reveals a hidden drink cabinet. This lit interior holds four golden-rimmed crystal glasses — two for whiskey and two for wine — alongside space for the wine and whiskey carafes. Here, you can enjoy a perfect drink while contemplating your next move on the battlefield. Designed for convenience and sophistication, the table is fitted with discreet, high-quality wheels, allowing for elegant, effortless movement.",
         specs: [
