@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import {
   FadeInUp,
@@ -93,7 +94,7 @@ export default function Portfolio() {
                 >
                   <div className="image-hover-zoom relative aspect-4/5 bg-medium-gray">
                     <Image
-                      src={set.heroImage}
+                      src={set.previewImage || set.heroImage}
                       alt={set.name}
                       fill
                       className="object-cover"
@@ -133,7 +134,7 @@ export default function Portfolio() {
                   <FadeInUp delay={0.35}>
                     <div className="flex flex-col gap-3">
                       <div className="flex items-start gap-4">
-                        <span className="font-(family-name:--font-cormorant) text-[11px] tracking-[0.3em] text-text-muted uppercase min-w-20">
+                        <span className="font-(family-name:--font-cormorant) text-[11px] tracking-[0.3em] text-text-muted uppercase min-w-25">
                           Materials
                         </span>
                         <span className="font-(family-name:--font-cormorant) text-sm text-text-secondary font-light">
@@ -141,7 +142,7 @@ export default function Portfolio() {
                         </span>
                       </div>
                       <div className="flex items-start gap-4">
-                        <span className="font-(family-name:--font-cormorant) text-[11px] tracking-[0.3em] text-text-muted uppercase min-w-20">
+                        <span className="font-(family-name:--font-cormorant) text-[11px] tracking-[0.3em] text-text-muted uppercase min-w-25">
                           Year
                         </span>
                         <span className="font-(family-name:--font-cormorant) text-sm text-text-secondary font-light">
@@ -149,6 +150,12 @@ export default function Portfolio() {
                         </span>
                       </div>
                     </div>
+                  </FadeInUp>
+
+                  <FadeInUp delay={0.45} className="mt-10">
+                    <Link href={`/portfolio/${set.id}`} className="btn-luxury">
+                      VIEW SET
+                    </Link>
                   </FadeInUp>
                 </div>
               </div>
