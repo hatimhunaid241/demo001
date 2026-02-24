@@ -33,7 +33,7 @@ function PieceSection({ piece, index }) {
       >
         {/* ── Image ── */}
         <FadeIn
-          className={`relative min-h-[56vw] lg:min-h-0 overflow-hidden ${
+          className={`relative min-h-96 lg:min-h-0 overflow-hidden ${
             imageLeft ? "lg:order-1" : "lg:order-2"
           }`}
         >
