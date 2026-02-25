@@ -98,7 +98,7 @@ export const chessSets = [
         },
       ],
       table: {
-        image: ["/chessSets/1/table1.png", "/chessSets/1/table2.png", "/chessSets/1/table3.jpg"],
+        image: ["/chessSets/1/table1.png", "/chessSets/1/table2.png"],
         description:
           "The scene of the battlefield is composed of square facet-cut in unrutilated rock crystal for the white fields and unrutilated smoky quartz for the black fields. Incorporated into the table and positioned under the chess board, is a light source which illuminates the chess pieces – in this way a match can easily be continued in the twilight. The chess board itself is absorbed into the surface of the table which is made of green marble. Looking from the side, it is almost as if the table with its elongated shape, intends to dive into the future.",
         specs: [
@@ -210,7 +210,7 @@ export const chessSets = [
         },
       ],
       table: {
-        image: ["/chessSets/2/table1.jpg", "/chessSets/2/table2.jpg", "/chessSets/2/table3.jpg", "/chessSets/2/table4.jpg", "/chessSets/2/table5.jpg", "/chessSets/2/table6.jpg", "/chessSets/2/table7.jpeg", "/chessSets/2/table8.jpg"],
+        image: ["/chessSets/2/table1.jpg", "/chessSets/2/table2.jpg", "/chessSets/2/table4.jpg", "/chessSets/2/table5.jpg", "/chessSets/2/table6.jpg", "/chessSets/2/table7.jpeg"],
         description:
           "This magnificent, custom-crafted table functions both as a gaming surface and a hidden bar. This stately piece is carved from resilient African Wengé wood, celebrated for its dark, dramatic grain and enduring stability. A breathtaking, incorporated chessboard of polished rock crystal and smoky quartz is the stunning centerpiece of the table's surface.\n\nFor storage, the pieces are discreetly housed within a rich, red-upholstered drawer. This drawer glides out along a discrete panel, becoming a seamless extension of the table for setting aside pieces or beverages.\n\nWith a gentle touch, a concealed panel on the table's side reveals a hidden drink cabinet. This lit interior holds four golden-rimmed crystal glasses — two for whiskey and two for wine — alongside space for the wine and whiskey carafes. Here, you can enjoy a perfect drink while contemplating your next move on the battlefield. Designed for convenience and sophistication, the table is fitted with discreet, high-quality wheels, allowing for elegant, effortless movement.",
         specs: [
@@ -322,7 +322,7 @@ export const chessSets = [
         },
       ],
       table: {
-        image: ["/chessSets/3/table1.jpg", "/chessSets/3/table2.jpg", "/chessSets/3/table3.jpg", "/chessSets/3/table4.jpg", "/chessSets/3/table5.jpg", "/chessSets/3/table6.jpg", "/chessSets/3/table7.jpg", "/chessSets/3/table8.jpg"],
+        image: ["/chessSets/3/table1.jpg", "/chessSets/3/table2.jpg", "/chessSets/3/table4.jpg", "/chessSets/3/table5.jpg", "/chessSets/3/table6.jpg", "/chessSets/3/table7.jpg", "/chessSets/3/table8.jpg"],
         description:
           "The table is presented with a level of care befitting its exceptional design. The gold pieces are meticulously secured in a custom-fitted, elegant presentation box, ensuring their protection and preservation.\n\nThe chessboard is a marvel of modern craftsmanship. We have cast 64 specially-cut, crystal glass elongated pyramid squares within a crystal-clear, hard epoxy. This technique ensures a flawless, glossy finish that is both durable and resilient. The unique design gives the stunning illusion that the chess pieces float above the playing surface, lending the ensemble an exquisite, ethereal quality.\n\nThe table itself is crafted from durable Maple wood, a choice celebrated for its light, uniform appearance that perfectly complements the intricate board.",
         specs: [
