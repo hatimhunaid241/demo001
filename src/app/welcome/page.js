@@ -11,6 +11,7 @@ function WelcomeContent() {
   const searchParams = useSearchParams();
   const nextPath = searchParams.get("next") || "/";
   const videoRef = useRef(null);
+  const [videoReady, setVideoReady] = useState(false);
 
   useEffect(() => {
     // If consent already exists, skip straight to destination
@@ -37,17 +38,21 @@ function WelcomeContent() {
           muted
           loop
           playsInline
-          onError={() => setVideoError(true)}
+          onCanPlay={() => setVideoReady(true)}
+          onPlaying={() => setVideoReady(true)}
+          onPlayCapture={() => setVideoReady(true)}
+          onError={() => setVideoReady(true)}
           className="max-w-full max-h-full w-full h-full object-contain"
         />
       </div>
 
       {/* ── Cookie prompt ── */}
       <AnimatePresence>
+        {videoReady && (
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1.2 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
           className="fixed bottom-0 left-1/2 -translate-x-1/2 z-50 max-w-[70vw] w-full">
           <div className="bg-white backdrop-blur-sm border border-medium-gray shadow-2xl px-6 py-4 flex justify-center md:justify-between items-center gap-4 md:gap-10 flex-wrap md:flex-nowrap">
             <p className="font-(family-name:--font-cormorant) text-sm md:text-base leading-relaxed text-black font-semibold">
@@ -75,6 +80,7 @@ function WelcomeContent() {
             </div>
           </div>
         </motion.div>
+        )}
       </AnimatePresence>
 
       {/* Keyframe for slow spin */}
