@@ -23,18 +23,18 @@ export const chessSets = [
       "Gold, rutilated quartz and precious stones crafted into sculptural monuments of play.",
     image: "https://images.unsplash.com/photo-1586165368502-1bad197a6461?w=1200&q=90",
     heroImage: "/chessSets/1/table-horizontal.png",
-    previewImage: "/chessSets/1/table-vertical.png",
+    previewImage: "/chessSets/1/table-horizontal.png",
     materials: "18 Karat Yellow & White Gold, Rutilated Smoky Quartz, Rock Crystal, Rubellites, Tanzanites, Green Marble",
     year: "2026",
     category: "Precious Metals",
     detail: {
       setNumber: "I",
-      overview: null,
+      overview: "A limited edition of only three of these 18-karat gold chess sets will ever be crafted.\n\nThis majestic chess set is currently under development; therefore, I'm sharing these 3D designs to highlight its features.",
       pieces: [
         {
           name: "The King",
           height: "111 mm",
-          image: "/chessSets/1/king1.png",
+          image: ["/chessSets/1/king1.png", "/chessSets/1/king2.png"],
           description:
             "The choice of extravagantly contrasting materials starkly highlights the combat pose of the competing Kings. The foot of the King is handmade from 18 karat gold, yellow gold for the black King and white gold for the white King. The base of the foot is circled by a grain like rim of matted and lightly polished square gold thread studded with 16 brilliant-cut red Rubellites / dark blue Tanzanites. The King's body is made of rutilated smokey quartz/rock crystal which extends from the bottom of the base up to his broad shoulders. With the special lighting emanating from the chess board, the King's body is illuminated throughout. This brings the rutilated crystal to life creating a splendid effect. On the crown rests a square-cut Rubellite/Tanzanite with faceted edges. This stone is attached to the body by a connecting piece which is also made of 18 karat gold. A sphere carrying a magnificent cross of Rubellite/Tanzanite is situated in the crown. Attached to the crown there are cabochon-cut Rubellite's/Tanzanite's.",
           quote: {
@@ -45,7 +45,7 @@ export const chessSets = [
         {
           name: "The Queen",
           height: "105 mm",
-          image: "/chessSets/1/queen1.png",
+          image: ["/chessSets/1/queen1.png", "/chessSets/1/queen2.png"],
           description:
             "Here also, the same choice of materials as for the Kings, provides a beautiful contrast on the chess field and continues to do so through all the lower ranks. The workmanship of the base also remains the same in all the chess pieces. The Queen's foot is formed of 18 karat yellow/white gold. The Queen's curvaceous body of rutilated smokey quartz/rock crystal is delicately accentuated. The connecting piece constitutes the Queen's shoulders. Her crown is made of 18 karat yellow/white gold, the edges set with Rubellites/Tanzanites; its centre consists of a big Rubellite/Tanzanite stone, secured by four claws of triangular gold thread.",
           quote: {
@@ -56,7 +56,7 @@ export const chessSets = [
         {
           name: "The Bishop",
           height: "88 mm",
-          image: "/chessSets/1/bishop1.png",
+          image: ["/chessSets/1/bishop1.png", "/chessSets/1/bishop2.png"],
           description:
             "The Bishop's body is cone-shaped and passes through the connecting piece to the head. This allows the light from the chess table to rise up to the bishop's-cap with its playful slit. A petit ball of 18 karat yellow/white gold rests on the cap.",
           quote: {
@@ -67,7 +67,7 @@ export const chessSets = [
         {
           name: "The Knight",
           height: "68 mm",
-          image: "/chessSets/1/knight1.png",
+          image: ["/chessSets/1/knight1.png", "/chessSets/1/knight2.png"],
           description:
             "One sees his horse shape in profile standing ready for the battle, deceivingly oblivious to his adversary. The Knight is hand-cut from a marvellous piece of rutilated smoky quartz/rock crystal and stands proudly on his base of yellow/white gold.",
           quote: {
@@ -78,7 +78,7 @@ export const chessSets = [
         {
           name: "The Rook",
           height: "66 mm",
-          image: "/chessSets/1/rook1.png",
+          image: ["/chessSets/1/rook1.png", "/chessSets/1/rook2.png"],
           description:
             "This massive block of rutilated smoky quartz/rock crystal stands firmly on its base of 18 karat yellow/white gold with 16 brilliant-cut Rubellites/Tanzanites. As in a well-built castle, this piece possesses a strong wall which nevertheless poses no obstacles to the light shining upwards through it.",
           quote: {
@@ -89,7 +89,7 @@ export const chessSets = [
         {
           name: "The Pawn",
           height: "65 mm",
-          image: "/chessSets/1/pawn1.png",
+          image: ["/chessSets/1/pawn1.png", "/chessSets/1/pawn2.png"],
           description:
             "Not to be underestimated, the Pawn looks like a pointed spear and is held firm by its foot. The connecting piece is to be seen halfway up the pointed spear, topped by a golden ball which catches the penetrating light.",
           quote: {
@@ -99,7 +99,7 @@ export const chessSets = [
         },
       ],
       table: {
-        image: "/chessSets/1/table-horizontal.png",
+        image: ["/chessSets/1/table1.png", "/chessSets/1/table2.png", "/chessSets/1/table3.jpg"],
         description:
           "The scene of the battlefield is composed of square facet-cut in unrutilated rock crystal for the white fields and unrutilated smoky quartz for the black fields. Incorporated into the table and positioned under the chess board, is a light source which illuminates the chess pieces – in this way a match can easily be continued in the twilight. The chess board itself is absorbed into the surface of the table which is made of green marble. Looking from the side, it is almost as if the table with its elongated shape, intends to dive into the future.",
         specs: [
@@ -130,8 +130,8 @@ export const chessSets = [
     shortDescription:
       "Solid sterling silver Staunton pieces on a rock crystal and smoky quartz board.",
     image: "https://images.unsplash.com/photo-1529699211952-734e80c4d42b?w=1200&q=90",
-    heroImage: "/chessSets/2/table-vertical.jpg",
-    previewImage: "/chessSets/2/table-vertical.jpg",
+    heroImage: "/chessSets/2/table1.jpg",
+    previewImage: "/chessSets/2/table1.jpg",
     materials: "925 Sterling Silver, Japanese Pearls, Moissanite, Black Tourmaline, Opal, Wengé Wood",
     year: "2026",
     category: "Precious Metals",
@@ -147,7 +147,7 @@ export const chessSets = [
         {
           name: "The King",
           height: "110.95 mm",
-          image: "/chessSets/2/king1.png",
+          image: ["/chessSets/2/king1.png", "/chessSets/2/king2.jpg", "/chessSets/2/king3.jpg", "/chessSets/2/king4.jpg", "/chessSets/2/king5.jpg"],
           description:
             "The magnificent centerpiece of the set, the King, stands regally at 110.95mm. Meticulously crafted from solid 925 sterling silver, the opposing armies present a striking contrast. For the black side, the King's body is polished to a high-sheen, mirror-like finish that takes on an alluring, darkened luster. For the white King, the body receives a delicate, hand-brushed texture that radiates a sophisticated, matte glow. The base of each King's foot is meticulously set with 16 brilliant-cut Moissanite stones — black for the darkened King and white for his elegant counterpart — catching and reflecting light with exceptional fire, providing a final touch of regal brilliance.",
           quote: {
@@ -158,7 +158,7 @@ export const chessSets = [
         {
           name: "The Queen",
           height: "103.05 mm",
-          image: "/chessSets/2/queen1.png",
+          image: ["/chessSets/2/queen1.png", "/chessSets/2/queen2.jpg", "/chessSets/2/queen3.jpg", "/chessSets/2/queen4.jpg", "/chessSets/2/queen5.jpg", "/chessSets/2/queen6.jpg", "/chessSets/2/queen7.jpg"],
           description:
             "As the most powerful piece on the board, the Queen is adorned with a level of luxury befitting her status. Standing at a graceful 103.05mm, this piece is crafted from solid 925 sterling silver and crowned with a precious Japanese pearl. We have selected the highest quality pearls, white and black for the opponent, whose irresistible, natural luster provides the perfect mystical centerpiece for these inimitable queens. As with all pieces in the set, the silver body is finished with either a lustrous dark polish for the black Queen or a sophisticated, hand-brushed matte texture for her white counterpart. Her base is further enhanced with 16 brilliant-cut Moissanite stones, white and black for the opponent, echoing the brilliance of her royal crown.",
           quote: {
@@ -169,7 +169,7 @@ export const chessSets = [
         {
           name: "The Bishop",
           height: "86.25 mm",
-          image: "/chessSets/2/bishop1.png",
+          image: ["/chessSets/2/bishop1.png", "/chessSets/2/bishop2.jpg", "/chessSets/2/bishop3.jpg", "/chessSets/2/bishop4.jpg", "/chessSets/2/bishop5.jpg"],
           description:
             "A symbol of strategic foresight, stands at a refined 86.25mm. Meticulously crafted from solid 925 sterling silver, each Bishop is crowned with a single, precious Japanese pearl. We select only the highest quality pearls — black for the darkened Bishop and pristine white for its lighter counterpart — whose natural, irresistible luster adds a mystical centerpiece to this elegant piece. As with all pieces in the set, the Bishop's body is finished with either a lustrous, dark polish for the black pieces or a sophisticated, hand-brushed matte texture for the white. The final touch of luxury is provided by 16 brilliant-cut Moissanite stones set into the base, echoing the refined elegance of the piece itself.",
           quote: {
@@ -180,7 +180,7 @@ export const chessSets = [
         {
           name: "The Knight",
           height: "66.40 mm",
-          image: "/chessSets/2/knight1.png",
+          image: ["/chessSets/2/knight1.png", "/chessSets/2/knight2.jpg", "/chessSets/2/knight3.jpg", "/chessSets/2/knight4.jpg", "/chessSets/2/knight5.jpg", "/chessSets/2/knight6.jpg"],
           description:
             "A symbol of swift and unpredictable strategy, the Knight stands ready to leap across the board. Embodying the spirit of chivalry, this piece is a testament to both artistry and agility. Standing at a graceful 66.40mm, it is sculpted from solid 925 sterling silver and finished with a striking visual contrast. The black Knights are polished to a high-sheen, mirror-like finish that accentuates the silver's darker luster, while the white Knights possess a delicate, hand-brushed texture for a sophisticated, matte glow. Each Knight's foot is set with 16 brilliant-cut Moissanite stones, completing its noble design with a touch of radiant luxury.",
           quote: {
@@ -191,7 +191,7 @@ export const chessSets = [
         {
           name: "The Rook",
           height: "64.95 mm",
-          image: "/chessSets/2/rook1.png",
+          image: ["/chessSets/2/rook1.png", "/chessSets/2/rook2.jpg", "/chessSets/2/rook3.jpg", "/chessSets/2/rook4.jpg", "/chessSets/2/rook5.jpg"],
           description:
             "A steadfast fortress of the battlefield, stands at a powerful 64.95mm. Meticulously crafted from solid 925 sterling silver, this piece features a black tourmaline gemstone at its peak for the dark side, and an ethereal opal for the white. The solid silver body is finished with a striking contrast: a lustrous, dark polish for the black Rooks and a hand-brushed matte texture for their white counterparts. Each Rook is anchored by a base set with 16 brilliant-cut Moissanite stones, reflecting the piece's unyielding strength.",
           quote: {
@@ -202,7 +202,7 @@ export const chessSets = [
         {
           name: "The Pawn",
           height: "62 mm",
-          image: "/chessSets/2/pawn1.png",
+          image: ["/chessSets/2/pawn1.png", "/chessSets/2/pawn2.jpg", "/chessSets/2/pawn3.jpg", "/chessSets/2/pawn4.jpg", "/chessSets/2/pawn5.jpg", "/chessSets/2/pawn6.jpg"],
           description:
             "The pawn, a steadfast foundation and quiet strength of the battlefield, stands at a refined 62mm. Crafted from solid 925 sterling silver, each piece is crowned with a single, precious Japanese pearl — a mystical gift from the sea and lakes. The high-quality black pearls adorn the darkened Pawns, while luminous white pearls crown their light counterparts. As with all pieces in the set, a distinct finish differentiates the two armies: a lustrous, dark polish for the black pieces and a sophisticated, hand-brushed matte texture for the white. The base of each Pawn is anchored by 16 brilliant-cut Moissanite stones, reflecting its journey from foot soldier to a potential queen.",
           quote: {
@@ -212,7 +212,7 @@ export const chessSets = [
         },
       ],
       table: {
-        image: "/chessSets/2/table1.jpg",
+        image: ["/chessSets/2/table1.jpg", "/chessSets/2/table2.jpg", "/chessSets/2/table3.jpg", "/chessSets/2/table4.jpg", "/chessSets/2/table5.jpg", "/chessSets/2/table6.jpg", "/chessSets/2/table7.jpeg"],
         description:
           "This magnificent, custom-crafted table functions both as a gaming surface and a hidden bar. This stately piece is carved from resilient African Wengé wood, celebrated for its dark, dramatic grain and enduring stability. A breathtaking, incorporated chessboard of polished rock crystal and smoky quartz is the stunning centerpiece of the table's surface.\n\nFor storage, the pieces are discreetly housed within a rich, red-upholstered drawer. This drawer glides out along a discrete panel, becoming a seamless extension of the table for setting aside pieces or beverages.\n\nWith a gentle touch, a concealed panel on the table's side reveals a hidden drink cabinet. This lit interior holds four golden-rimmed crystal glasses — two for whiskey and two for wine — alongside space for the wine and whiskey carafes. Here, you can enjoy a perfect drink while contemplating your next move on the battlefield. Designed for convenience and sophistication, the table is fitted with discreet, high-quality wheels, allowing for elegant, effortless movement.",
         specs: [
@@ -243,7 +243,7 @@ export const chessSets = [
     shortDescription:
       "18 karat gold Staunton pieces floating above a glass-clear epoxy resin board.",
     image: "https://images.unsplash.com/photo-1560174038-da43ac74f01b?w=1200&q=90",
-    heroImage: "https://images.unsplash.com/photo-1560174038-da43ac74f01b?w=1920&q=90",
+    heroImage: "/chessSets/3/table1.jpg",
     materials: "18 Karat Yellow & White Gold, Crystal Glass, Hard Epoxy Resin, Maple Wood",
     year: "2026",
     category: "Precious Metals",
@@ -259,7 +259,7 @@ export const chessSets = [
         {
           name: "The King",
           height: "44.10 mm",
-          image: IMG.c,
+          image: ["/chessSets/3/king1.png", "/chessSets/3/king2.png", "/chessSets/3/king3.png"],
           description:
             "Beginning with the King, each piece is a testament to meticulous craftsmanship. The king, a graceful figure at 44.10mm, is carved from solid 18 karat yellow gold, while his rival is rendered in luminous 18 karat white gold. A majestic contrast that sets the stage for a game of unparalleled elegance. Each King gleams with its own unique and commanding luster.",
           quote: {
@@ -270,7 +270,7 @@ export const chessSets = [
         {
           name: "The Queen",
           height: "43.35 mm",
-          image: IMG.d,
+          image: ["/chessSets/3/queen1.png", "/chessSets/3/queen2.png", "/chessSets/3/queen3.png"],
           description:
             "The set's most formidable piece, the Queen, stands at a graceful 43.35mm. Meticulously carved from solid 18 karat yellow gold, she combines both authority and elegance. The opposing pieces are rendered in luminous 18 karat white gold, with each queen gleaming with its own unique luster and presence.",
           quote: {
@@ -281,7 +281,7 @@ export const chessSets = [
         {
           name: "The Bishop",
           height: "36.40 mm",
-          image: IMG.e,
+          image: ["/chessSets/3/bishop1.png", "/chessSets/3/bishop2.png", "/chessSets/3/bishop3.png"],
           description:
             "Meticulously carved from solid 18 karat gold, the Bishop commands its diagonal domain with precision. The black Bishop, standing at 36.40mm, is fashioned from rich yellow gold, while its white counterpart is rendered in pure white gold. This contrast in precious metals creates a striking visual effect, accentuating the Bishop's elegant form and strategic importance.",
           quote: {
@@ -292,7 +292,7 @@ export const chessSets = [
         {
           name: "The Knight",
           height: "30 mm",
-          image: IMG.f,
+          image: ["/chessSets/3/knight1.png", "/chessSets/3/knight2.png", "/chessSets/3/knight3.png"],
           description:
             "Embodying the spirit of chivalry, the Knight is a symbol of swift and unpredictable grace. Each miniature equine figure, standing at a refined 30mm, is individually carved from solid 18 karat gold, capturing the essence of a horse in full stride. The black Knights are crafted from the warm tones of yellow gold, creating a dramatic contrast with the pure luster of the white gold used for the white pieces.",
           quote: {
@@ -303,7 +303,7 @@ export const chessSets = [
         {
           name: "The Rook",
           height: "26.60 mm",
-          image: IMG.a,
+          image: ["/chessSets/3/rook1.png", "/chessSets/3/rook2.png", "/chessSets/3/rook3.png"],
           description:
             "The Rook, the steadfast fortress of the battlefield, stands at a precise 26.60mm. Crafted from solid 18 karat gold, its classic castle-like form is a testament to unwavering strength and purpose. The black Rooks are cast in rich yellow gold, while their white counterparts gleam in the cool luminescence of white gold, ready to command the board with undeniable power.",
           quote: {
@@ -314,7 +314,7 @@ export const chessSets = [
         {
           name: "The Pawn",
           height: "25.70 mm",
-          image: IMG.b,
+          image: ["/chessSets/3/pawn1.png", "/chessSets/3/pawn2.png", "/chessSets/3/pawn3.png"],
           description:
             "As the foot soldiers of the army, the Pawns serve as the guardians of the battlefield, representing the formidable strength of the collective. Each of the eight identical pieces is expertly carved from solid 18 karat gold, ensuring both a consistent weight and a luxurious feel. Standing at a uniform 25.70mm, these foundational pieces are crafted in striking yellow and white gold for the opponent, a visual testament to the power of a unified front and the strategic importance they hold in every game.",
           quote: {
@@ -324,7 +324,7 @@ export const chessSets = [
         },
       ],
       table: {
-        image: IMG.c,
+        image: ["/chessSets/3/table1.jpg", "/chessSets/3/table2.jpg", "/chessSets/3/table3.jpg", "/chessSets/3/table4.jpg", "/chessSets/3/table5.jpg", "/chessSets/3/table6.jpg", "/chessSets/3/table7.jpg", "/chessSets/3/table8.jpg"],
         description:
           "The table is presented with a level of care befitting its exceptional design. The gold pieces are meticulously secured in a custom-fitted, elegant presentation box, ensuring their protection and preservation.\n\nThe chessboard is a marvel of modern craftsmanship. We have cast 64 specially-cut, crystal glass elongated pyramid squares within a crystal-clear, hard epoxy. This technique ensures a flawless, glossy finish that is both durable and resilient. The unique design gives the stunning illusion that the chess pieces float above the playing surface, lending the ensemble an exquisite, ethereal quality.\n\nThe table itself is crafted from durable Maple wood, a choice celebrated for its light, uniform appearance that perfectly complements the intricate board.",
         specs: [
@@ -355,7 +355,7 @@ export const chessSets = [
     shortDescription:
       "Gold pieces on crystal cubes with laser-engraved 3D galaxy stars within each square.",
     image: "https://images.unsplash.com/photo-1604948501466-4e9c339b9c24?w=1200&q=90",
-    heroImage: "https://images.unsplash.com/photo-1604948501466-4e9c339b9c24?w=1920&q=90",
+    heroImage: "/chessSets/4/table1.jpg",
     materials: "18 Karat Yellow & White Gold, Crystal Glass Cubes, Laser-Engraved 3D Galaxy Detail, Maple Wood",
     year: "2026",
     category: "Avant-Garde",
@@ -371,7 +371,7 @@ export const chessSets = [
         {
           name: "The King",
           height: "44.10 mm",
-          image: IMG.d,
+          image: ["/chessSets/4/king1.png", "/chessSets/4/king2.png", "/chessSets/4/king3.png"],
           description:
             "Beginning with the King, each piece is a testament to meticulous craftsmanship. The king, a graceful figure at 44.10mm, is carved from solid 18 karat yellow gold, while his rival is rendered in luminous 18 karat white gold. A majestic contrast that sets the stage for a game of unparalleled elegance. Each King gleams with its own unique and commanding luster.",
           quote: {
@@ -382,7 +382,7 @@ export const chessSets = [
         {
           name: "The Queen",
           height: "43.35 mm",
-          image: IMG.e,
+          image: ["/chessSets/4/queen1.png", "/chessSets/4/queen2.png", "/chessSets/4/queen3.png"],
           description:
             "The set's most formidable piece, the Queen, stands at a graceful 43.35mm. Meticulously carved from solid 18 karat yellow gold, she combines both authority and elegance. The opposing pieces are rendered in luminous 18 karat white gold, with each queen gleaming with its own unique luster and presence.",
           quote: {
@@ -393,7 +393,7 @@ export const chessSets = [
         {
           name: "The Bishop",
           height: "36.40 mm",
-          image: IMG.f,
+          image: ["/chessSets/4/bishop1.png", "/chessSets/4/bishop2.png", "/chessSets/4/bishop3.png"],
           description:
             "Meticulously carved from solid 18 karat gold, the Bishop commands its diagonal domain with precision. The black Bishop, standing at 36.40mm, is fashioned from rich yellow gold, while its white counterpart is rendered in pure white gold. This contrast in precious metals creates a striking visual effect, accentuating the Bishop's elegant form and strategic importance.",
           quote: {
@@ -404,7 +404,7 @@ export const chessSets = [
         {
           name: "The Knight",
           height: "30 mm",
-          image: IMG.a,
+          image: ["/chessSets/4/knight1.png", "/chessSets/4/knight2.png", "/chessSets/4/knight3.png"],
           description:
             "Embodying the spirit of chivalry, the Knight is a symbol of swift and unpredictable grace. Each miniature equine figure, standing at a refined 30mm, is individually carved from solid 18 karat gold, capturing the essence of a horse in full stride. The black Knights are crafted from the warm tones of yellow gold, creating a dramatic contrast with the pure luster of the white gold used for the white pieces.",
           quote: {
@@ -415,7 +415,7 @@ export const chessSets = [
         {
           name: "The Rook",
           height: "26.60 mm",
-          image: IMG.b,
+          image: ["/chessSets/4/rook1.png", "/chessSets/4/rook2.png", "/chessSets/4/rook3.png"],
           description:
             "The Rook, the steadfast fortress of the battlefield, stands at a precise 26.60mm. Crafted from solid 18 karat gold, its classic castle-like form is a testament to unwavering strength and purpose. The black Rooks are cast in rich yellow gold, while their white counterparts gleam in the cool luminescence of white gold, ready to command the board with undeniable power.",
           quote: {
@@ -426,7 +426,7 @@ export const chessSets = [
         {
           name: "The Pawn",
           height: "25.70 mm",
-          image: IMG.c,
+          image: ["/chessSets/4/pawn1.png", "/chessSets/4/pawn2.png", "/chessSets/4/pawn3.png"],
           description:
             "As the foot soldiers of the army, the Pawns serve as the guardians of the battlefield, representing the formidable strength of the collective. Each of the eight identical pieces is expertly carved from solid 18 karat gold, ensuring both a consistent weight and a luxurious feel. Standing at a uniform 25.70mm, these foundational pieces are crafted in striking yellow and white gold, a visual testament to the power of a unified front and the strategic importance they hold in every game.",
           quote: {
@@ -436,7 +436,7 @@ export const chessSets = [
         },
       ],
       table: {
-        image: IMG.d,
+        image: ["/chessSets/3/table1.jpg", "/chessSets/3/table2.jpg", "/chessSets/3/table3.jpg", "/chessSets/3/table4.jpg", "/chessSets/3/table5.jpg", "/chessSets/3/table6.jpg", "/chessSets/3/table7.jpg", "/chessSets/3/table8.jpg", "/chessSets/4/table9.jpg", "/chessSets/4/table10.jpg", "/chessSets/4/table11.jpg"],
         description:
           "The table is an embodiment of modern sophistication and timeless gameplay. The exquisite gold pieces are securely nestled within a custom-fitted, padded presentation case, ensuring their safekeeping with the same elegance they display on the board.\n\nCrafted from durable, light-toned Maple wood, the table features an eye-catching, beam-like infinity design. The wood's light, uniform appearance was chosen to perfectly complement the set's aesthetic, offering the renowned strength and longevity of premium hardwood.\n\nA striking crystal glass chess board is seamlessly integrated into the table's surface, creating a flawless and luminous playing area. The clear and frosted squares provide a beautiful, sophisticated contrast.",
         specs: [
@@ -467,7 +467,7 @@ export const chessSets = [
     shortDescription:
       "3D laser-etched crystal pieces with gold and silver finishes on an infinity glass board.",
     image: "https://images.unsplash.com/photo-1580541832626-2a7131ee809f?w=1200&q=90",
-    heroImage: "https://images.unsplash.com/photo-1580541832626-2a7131ee809f?w=1920&q=90",
+    heroImage: "/chessSets/5/table1.jpg",
     materials: "Crystal Glass, 3D Laser Etching, Gold & Silver Coating, Jatoba Wood",
     year: "2026",
     category: "Contemporary",
@@ -479,91 +479,22 @@ export const chessSets = [
         text: "Life is like a chess game, you don't want to waste a move.",
         author: "Albert Einstein",
       },
-      pieces: [
-        {
-          name: "The King",
-          height: "100 mm",
-          base: "40 × 40 mm",
-          image: IMG.e,
-          description:
-            "The King — the ultimate objective and the most regal presence on the board — stands at 100mm within its flawless crystal cube. The 3D laser-etched figure suspended within the crystal creates a captivating illusion of depth and presence. The top is finished in gleaming gold for one army, brilliant silver for the opposing force — a distinction as definitive as the piece's role in the game.",
-          quote: {
-            text: "Life is like a chess game, you don't want to waste a move.",
-            author: "Albert Einstein",
-          },
-        },
-        {
-          name: "The Queen",
-          height: "85 mm",
-          base: "40 × 40 mm",
-          image: IMG.f,
-          description:
-            "The Queen, the most powerful force on the board, stands at 85mm. Her 3D laser-etched form floats within the crystal, commanding attention from every angle. The gold and silver crowning finishes distinguish the two great powers with elegance and clarity — a sovereign presence in every sense.",
-          quote: {
-            text: "Life is like a chess game, you don't want to waste a move.",
-            author: "Albert Einstein",
-          },
-        },
-        {
-          name: "The Bishop",
-          height: "80 mm",
-          base: "38 × 38 mm",
-          image: IMG.a,
-          description:
-            "The Bishop, the guardian of diagonals, stands at 80mm. A master of long distances, its 3D laser-etched silhouette within the crystal captures the elegance of this strategic piece. The gold and silver apex finishes provide the visual distinction between the competing dioceses.",
-          quote: {
-            text: "Life is like a chess game, you don't want to waste a move.",
-            author: "Albert Einstein",
-          },
-        },
-        {
-          name: "The Knight",
-          height: "60 mm",
-          base: "40 × 40 mm",
-          image: IMG.b,
-          description:
-            "The Knight — the only piece that leaps — stands at 60mm. Its 3D laser-etched equine form within the crystal captures the spirit of chivalry and unpredictable movement. The gold and silver finishes mark the allegiance of these noble warriors while the crystal body makes their presence on the board truly otherworldly.",
-          quote: {
-            text: "Life is like a chess game, you don't want to waste a move.",
-            author: "Albert Einstein",
-          },
-        },
-        {
-          name: "The Rook",
-          height: "57 mm",
-          base: "35 × 35 mm",
-          image: IMG.c,
-          description:
-            "The Rook, the fortress of the battlefield, stands at 57mm. Its 3D laser-etched tower form within the crystal is a study in solidity and power. The gold and silver crown finishes mark the allegiances of these mighty castles, their crystalline bodies refracting light into a constellation of chess.",
-          quote: {
-            text: "Life is like a chess game, you don't want to waste a move.",
-            author: "Albert Einstein",
-          },
-        },
-        {
-          name: "The Pawn",
-          height: "55 mm",
-          base: "35 × 35 mm",
-          image: IMG.d,
-          description:
-            "The Pawn — humble in origin yet limitless in potential — stands at 55mm. Each crystal cube contains a 3D laser-etched pawn figure, a quiet foot soldier awaiting transformation. The gold and silver tops mark their armies, while within the crystal, every pawn carries the silent promise of becoming a queen.",
-          quote: {
-            text: "Life is like a chess game, you don't want to waste a move.",
-            author: "Albert Einstein",
-          },
-        },
-      ],
+      pieces: null,
       table: {
-        image: IMG.e,
+        image: ["/chessSets/5/table1.jpg", "/chessSets/5/table2.jpg", "/chessSets/5/table3.jpg", "/chessSets/5/table4.jpg", "/chessSets/5/table5.jpg", "/chessSets/5/table6.jpg", "/chessSets/5/table7.jpg", "/chessSets/5/table8.jpg"],
         description:
-          "The crystal chess pieces, works of art in their own right, are presented in a finely crafted, padded wooden case, designed for both protection and elegant display.\n\nThe centerpiece of this set is a truly unique table, masterfully crafted from Jatoba wood, an exceptionally strong and dense hardwood. Known for its rich, reddish-brown tones and remarkable durability, this wood provides the perfect foundation for a game of high strategy. Integrated seamlessly into the table is a spectacular glass chessboard, featuring a mesmerizing 'beam square infinity design.' This intricate pattern creates a captivating optical effect, appearing to draw the eye into an infinite series of illuminated squares.\n\nThis is more than a game; it is an experience where meticulous craftsmanship meets visual artistry. The table, a work of enduring quality, is a masterpiece unto itself.",
+          "The crystal chess pieces, works of art in their own right, are presented in a finely crafted, padded wooden case, designed for both protection and elegant display.\n\nThe centerpiece of this set is a truly unique table, masterfully crafted from Jatoba wood, an exceptionally strong and dense hardwood. Known for its rich, reddish-brown tones and remarkable durability, this wood provides the perfect foundation for a game of high strategy. Integrated seamlessly into the table is a spectacular glass chessboard, featuring a mesmerizing 'beam square infinity design.' This intricate pattern creates a captivating optical effect, appearing to draw the eye into an infinite series of illuminated squares.\n\nThis is more than a game; it is an experience where meticulous craftsmanship meets visual artistry. The table, a work of enduring quality, stands at a perfectly balanced 500x500mm square, with a total height of 500mm.",
         specs: [
+          { label: "King", value: "100 mm height · 40 × 40 mm base" },
+          { label: "Queen", value: "85 mm height · 40 × 40 mm base" },
+          { label: "Bishop", value: "80 mm height · 38 × 38 mm base" },
+          { label: "Knight", value: "60 mm height · 40 × 40 mm base" },
+          { label: "Rook", value: "57 mm height · 35 × 35 mm base" },
+          { label: "Pawn", value: "55 mm height · 35 × 35 mm base" },
           { label: "Table Material", value: "Durable Jatoba Wood" },
-          { label: "Table Dimensions", value: "500 × 500 mm (square)" },
-          { label: "Table Height", value: "500 mm" },
           { label: "Board Material", value: "Special Cut Crystal Glass" },
-          { label: "Board Dimensions", value: "400 × 400 mm" },
-          { label: "Board Thickness", value: "10 mm" },
+          { label: "Board Dimensions", value: "400 × 400 mm, 10 mm height" },
+          { label: "Table Dimensions", value: "500 × 500 mm, 500 mm height" },
         ],
         quote: {
           text: "After a bad opening, there is hope for the middle game. After a bad middle game, there is hope for the endgame. But once you are in the endgame, the moment of truth has arrived.",

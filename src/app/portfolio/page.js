@@ -22,15 +22,13 @@ export default function Portfolio() {
         // src="/portfolio.jpg"
         alt="Chess collection"
         overlayClass="bg-gradient-to-b from-white/70 via-white/80 to-white/50"
-        height="h-[65vh] md:h-[75vh]"
-      >
+        height="h-[65vh] md:h-[75vh]">
         <div className="text-center px-6">
           <motion.span
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.2 }}
-            className="font-(family-name:--font-cormorant) text-[11px] md:text-[13px] tracking-[0.5em] text-gold uppercase block mb-6"
-          >
+            className="font-(family-name:--font-cormorant) text-[11px] md:text-[13px] tracking-[0.5em] text-gold uppercase block mb-6">
             Chess Artists Portfolio
           </motion.span>
 
@@ -38,8 +36,7 @@ export default function Portfolio() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
-            className="font-(family-name:--font-playfair) text-4xl md:text-6xl lg:text-7xl font-normal tracking-[0.15em] text-charcoal mb-6"
-          >
+            className="font-(family-name:--font-playfair) text-4xl md:text-6xl lg:text-7xl font-normal tracking-[0.15em] text-charcoal mb-6">
             OUR COLLECTION
           </motion.h1>
 
@@ -54,8 +51,7 @@ export default function Portfolio() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1.2, delay: 1.0 }}
-            className="font-(family-name:--font-cormorant) text-lg md:text-xl font-light tracking-[0.08em] text-text-secondary max-w-xl mx-auto"
-          >
+            className="font-(family-name:--font-cormorant) text-lg md:text-xl font-light tracking-[0.08em] text-text-secondary max-w-xl mx-auto">
             Each set is a crafted expression of identity, intention, and elegance.
           </motion.p>
         </div>
@@ -66,10 +62,9 @@ export default function Portfolio() {
         <div className="max-w-3xl mx-auto px-6 text-center">
           <FadeInUp>
             <p className="font-(family-name:--font-cormorant) text-lg md:text-xl leading-relaxed text-text-secondary font-light">
-              Five bespoke chess sets, each born from a distinct vision. From
-              regal opulence to cosmic wonder, every collection invites you to
-              experience the game through the eyes of an artist. These are not
-              products — they are statements of beauty and intention.
+              Five bespoke chess sets, each born from a distinct vision. From regal opulence to
+              cosmic wonder, every collection invites you to experience the game through the eyes of
+              an artist. These are not products — they are statements of beauty and intention.
             </p>
           </FadeInUp>
         </div>
@@ -80,24 +75,21 @@ export default function Portfolio() {
         {chessSets.map((set, index) => (
           <div
             key={set.id}
-            className={`${index % 2 === 0 ? "bg-warm-gray" : "bg-white"} ${index === chessSets.length - 1 ? '' : ''}`}
-          >
+            className={`${index % 2 === 0 ? "bg-warm-gray" : "bg-white"} ${index === chessSets.length - 1 ? "" : ""}`}>
             <div className="max-w-350 mx-auto px-6 md:px-12 lg:px-20 py-24 md:py-32">
               <div
                 className={`grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center ${
                   index % 2 !== 0 ? "lg:direction-rtl" : ""
-                }`}
-              >
+                }`}>
                 {/* Image */}
-                <FadeIn
-                  className={`${index % 2 !== 0 ? "lg:order-2" : ""}`}
-                >
-                  <div className="image-hover-zoom relative aspect-4/5 bg-medium-gray">
+                <FadeIn className={`${index % 2 !== 0 ? "lg:order-2" : ""}`}>
+                  <div className="image-hover-zoom relative bg-medium-gray lg:aspect-4/5">
                     <Image
                       src={set.previewImage || set.heroImage}
                       alt={set.name}
-                      fill
-                      className="object-cover"
+                      width={800}
+                      height={1000}
+                      className="w-full h-auto lg:absolute lg:inset-0 lg:w-full lg:h-full object-contain"
                       sizes="(max-width: 1024px) 100vw, 50vw"
                     />
                   </div>
@@ -189,9 +181,8 @@ export default function Portfolio() {
 
           <FadeInUp delay={0.3}>
             <p className="font-(family-name:--font-cormorant) text-lg md:text-xl leading-relaxed text-text-secondary font-light mb-12">
-              Each chess set can be experienced in person through private
-              viewings. We welcome collectors, connoisseurs, and those who
-              simply appreciate the extraordinary.
+              Each chess set can be experienced in person through private viewings. We welcome
+              collectors, connoisseurs, and those who simply appreciate the extraordinary.
             </p>
           </FadeInUp>
 

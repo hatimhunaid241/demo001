@@ -1,134 +1,196 @@
 "use client";
 
-import { use } from "react";
+import { use, useState, useEffect, useCallback } from "react";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { chessSets } from "@/data/chessSets";
 import { FadeInUp, FadeIn, DividerReveal } from "@/components/Animations";
 
 /* ─────────────────────────────────────────────────────────
-   PIECE SECTION  (alternating left / right)
+   LIGHTBOX
 ───────────────────────────────────────────────────────── */
-function PieceSection({ piece, index }) {
-  const imageLeft = index % 2 === 0;
+function Lightbox({ images, index, onClose, onPrev, onNext }) {
+  const multi = images.length > 1;
+
+  useEffect(() => {
+    const onKey = (e) => {
+      if (e.key === "Escape") onClose();
+      if (multi && e.key === "ArrowLeft") onPrev();
+      if (multi && e.key === "ArrowRight") onNext();
+    };
+    document.addEventListener("keydown", onKey);
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.body.style.overflow = "";
+    };
+  }, [multi, onClose, onPrev, onNext]);
 
   return (
-    <section
-      className={`relative overflow-hidden ${
-        index % 2 === 0 ? "bg-white" : "bg-warm-gray"
-      }`}
-    >
-      {/* Giant watermark number */}
-      <span
-        aria-hidden
-        className="pointer-events-none select-none absolute -bottom-6 right-4 font-(family-name:--font-playfair) text-[22vw] leading-none text-charcoal/[0.035]"
+    <AnimatePresence>
+      <motion.div
+        key="lightbox-backdrop"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.3 }}
+        className="fixed inset-0 z-9999 bg-charcoal/95 flex items-center justify-center"
+        onClick={onClose}
       >
-        {String(index + 1).padStart(2, "0")}
-      </span>
+        {/* Close */}
+        <button
+          onClick={onClose}
+          aria-label="Close"
+          className="absolute top-5 right-6 font-(family-name:--font-cormorant) text-[11px] tracking-[0.4em] text-white/60 uppercase hover:text-white transition-colors duration-200 z-10"
+        >
+          CLOSE ✕
+        </button>
 
-      <div
-        className={`grid grid-cols-1 lg:grid-cols-2 min-h-155`}
-      >
-        {/* ── Image ── */}
-        <FadeIn
-          className={`relative aspect-3/4 lg:aspect-auto lg:min-h-0 overflow-hidden ${
-            imageLeft ? "lg:order-1" : "lg:order-2"
-          }`}
+        {/* Counter */}
+        {multi && (
+          <span className="absolute top-5 left-6 font-(family-name:--font-cormorant) text-[11px] tracking-[0.4em] text-white/40 uppercase">
+            {index + 1} / {images.length}
+          </span>
+        )}
+
+        {/* Image */}
+        <motion.div
+          key={images[index]}
+          initial={{ opacity: 0, scale: 0.96 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0.96 }}
+          transition={{ duration: 0.3 }}
+          className="relative w-full h-full max-w-6xl max-h-[90vh] mx-auto px-16 flex items-center justify-center"
+          onClick={(e) => e.stopPropagation()}
         >
           <Image
-            src={piece.image}
-            alt={piece.name}
+            src={images[index]}
+            alt=""
             fill
-            className="object-cover"
-            sizes="(max-width: 1024px) 100vw, 50vw"
+            className="object-contain"
+            sizes="100vw"
           />
-          {/* Subtle vignette */}
-          <div className="absolute inset-0 bg-linear-to-b from-transparent via-transparent to-charcoal/20" />
+        </motion.div>
 
-          {/* Piece name tag at bottom of image */}
-          <div className="absolute bottom-0 left-0 right-0 px-8 pb-6 pt-10 bg-linear-to-t from-charcoal/40 to-transparent">
-            <p className="font-(family-name:--font-cormorant) text-[11px] tracking-[0.45em] text-white/80 uppercase">
-              {piece.name}
-            </p>
-          </div>
-        </FadeIn>
+        {/* Arrows */}
+        {multi && (
+          <>
+            <button
+              onClick={(e) => { e.stopPropagation(); onPrev(); }}
+              aria-label="Previous"
+              className="absolute left-4 top-1/2 -translate-y-1/2 text-white/50 hover:text-white text-3xl transition-colors duration-200 px-3 py-4 z-10"
+            >
+              ←
+            </button>
+            <button
+              onClick={(e) => { e.stopPropagation(); onNext(); }}
+              aria-label="Next"
+              className="absolute right-4 top-1/2 -translate-y-1/2 text-white/50 hover:text-white text-3xl transition-colors duration-200 px-3 py-4 z-10"
+            >
+              →
+            </button>
+          </>
+        )}
+      </motion.div>
+    </AnimatePresence>
+  );
+}
 
-        {/* ── Text ── */}
+/* ─────────────────────────────────────────────────────────
+   PIECE SECTION  (mirrors portfolio listing layout)
+───────────────────────────────────────────────────────── */
+function PieceSection({ piece, index, onOpen }) {
+  const images = Array.isArray(piece.image) ? piece.image : [piece.image];
+  return (
+    <div className={index % 2 === 0 ? "bg-warm-gray" : "bg-white"}>
+      <div className="max-w-350 mx-auto px-6 md:px-12 lg:px-20 py-24 md:py-32">
         <div
-          className={`flex flex-col justify-center px-8 md:px-12 lg:px-16 xl:px-20 py-16 lg:py-20 ${
-            imageLeft ? "lg:order-2" : "lg:order-1"
-          }`}
+          className={`grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center`}
         >
-          {/* Category label */}
-          <FadeInUp>
-            <span className="font-(family-name:--font-cormorant) text-[10px] tracking-[0.5em] text-gold uppercase block mb-5">
-              THE PIECE
-            </span>
-          </FadeInUp>
-
-          {/* Piece name */}
-          <FadeInUp delay={0.08}>
-            <h2 className="font-(family-name:--font-playfair) text-3xl md:text-4xl lg:text-5xl font-normal tracking-[0.06em] text-charcoal">
-              {piece.name}
-            </h2>
-          </FadeInUp>
-
-          {/* Height + base badge */}
-          <FadeInUp delay={0.14}>
-            <div className="flex flex-wrap items-center gap-4 mt-4 mb-0">
-              {piece.height && (
-                <span className="inline-flex items-center gap-2">
-                  <span className="w-5 h-px bg-gold" />
-                  <span className="font-(family-name:--font-cormorant) text-[11px] tracking-[0.35em] text-text-muted uppercase">
-                    Height&nbsp;&nbsp;{piece.height}
-                  </span>
-                </span>
-              )}
-              {piece.base && (
-                <span className="inline-flex items-center gap-2">
-                  <span className="w-5 h-px bg-gold/40" />
-                  <span className="font-(family-name:--font-cormorant) text-[11px] tracking-[0.35em] text-text-muted uppercase">
-                    Base&nbsp;&nbsp;{piece.base}
-                  </span>
-                </span>
-              )}
+          {/* ── Image ── */}
+          <FadeIn className={`${index % 2 !== 0 ? "lg:order-2" : ""}`}>
+            <div
+              className="image-hover-zoom relative bg-medium-gray lg:aspect-4/5 cursor-zoom-in"
+              onClick={() => onOpen(images, 0)}
+            >
+              <Image
+                src={images[0]}
+                alt={piece.name}
+                width={800}
+                height={1000}
+                className="w-full h-auto lg:absolute lg:inset-0 lg:w-full lg:h-full object-contain"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
             </div>
-          </FadeInUp>
+          </FadeIn>
 
-          <DividerReveal className="my-8" />
+          {/* ── Content ── */}
+          <div className={`${index % 2 !== 0 ? "lg:order-1" : ""}`}>
+            <FadeInUp>
+              <span className="font-(family-name:--font-cormorant) text-[10px] tracking-[0.5em] text-gold uppercase block mb-4">
+                THE PIECE — {String(index + 1).padStart(2, "0")}
+              </span>
+            </FadeInUp>
 
-          {/* Description */}
-          <FadeInUp delay={0.22}>
-            <p className="font-(family-name:--font-cormorant) text-base md:text-lg leading-relaxed text-text-secondary font-light">
-              {piece.description}
-            </p>
-          </FadeInUp>
+            <FadeInUp delay={0.1}>
+              <h2 className="font-(family-name:--font-playfair) text-3xl md:text-4xl lg:text-5xl font-normal tracking-widest text-charcoal mb-3">
+                {piece.name}
+              </h2>
+            </FadeInUp>
 
-          {/* Quote */}
-          {piece.quote && (
-            <FadeInUp delay={0.32} className="mt-10">
-              <blockquote className="pl-5 border-l-2 border-gold/50">
-                <p className="font-(family-name:--font-cormorant) text-base md:text-lg leading-relaxed text-gold/80 italic font-light">
+            {piece.quote && (
+              <FadeInUp delay={0.15}>
+                <p className="font-(family-name:--font-cormorant) text-base md:text-lg tracking-widest text-gold italic mb-8">
                   &ldquo;{piece.quote.text}&rdquo;
                 </p>
-                <cite className="font-(family-name:--font-cormorant) text-[10px] tracking-[0.4em] text-text-muted uppercase not-italic mt-3 block">
-                  — {piece.quote.author}
-                </cite>
-              </blockquote>
+              </FadeInUp>
+            )}
+
+            <DividerReveal className="mb-8" />
+
+            <FadeInUp delay={0.25}>
+              <p className="font-(family-name:--font-cormorant) text-base md:text-lg leading-relaxed text-text-secondary font-light mb-8">
+                {piece.description}
+              </p>
             </FadeInUp>
-          )}
+
+            <FadeInUp delay={0.35}>
+              <div className="flex flex-col gap-3">
+                {piece.height && (
+                  <div className="flex items-start gap-4">
+                    <span className="font-(family-name:--font-cormorant) text-[11px] tracking-[0.3em] text-text-muted uppercase min-w-25">
+                      Height
+                    </span>
+                    <span className="font-(family-name:--font-cormorant) text-sm text-text-secondary font-light">
+                      {piece.height}
+                    </span>
+                  </div>
+                )}
+                {piece.base && (
+                  <div className="flex items-start gap-4">
+                    <span className="font-(family-name:--font-cormorant) text-[11px] tracking-[0.3em] text-text-muted uppercase min-w-25">
+                      Base
+                    </span>
+                    <span className="font-(family-name:--font-cormorant) text-sm text-text-secondary font-light">
+                      {piece.base}
+                    </span>
+                  </div>
+                )}
+              </div>
+            </FadeInUp>
+          </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 }
 
 /* ─────────────────────────────────────────────────────────
    TABLE SECTION
 ───────────────────────────────────────────────────────── */
-function TableSection({ table, heroImage }) {
+function TableSection({ table, heroImage, onOpen }) {
   return (
     <section className="relative bg-white overflow-hidden">
       {/* Subtle background accent */}
@@ -181,15 +243,15 @@ function TableSection({ table, heroImage }) {
 
             {table.image && (
             <FadeInUp delay={0.5} className="mt-12">
-              {/* Image */}
-              <div className="relative aspect-6/4 overflow-hidden bg-medium-gray">
+              <div
+                className="image-hover-zoom relative aspect-6/4 overflow-hidden bg-medium-gray cursor-zoom-in"
+                onClick={() => onOpen(Array.isArray(table.image) ? table.image : [table.image], 0)}
+              >
                 <Image
-                  src={table.image || heroImage}
+                  src={Array.isArray(table.image) ? table.image[0] : table.image}
                   alt="The Table"
                   fill
                   className="object-cover"
-                  // width={1000}
-                  // height={800}
                 />
                 <div className="absolute inset-0 bg-linear-to-t from-charcoal/30 to-transparent" />
               </div>
@@ -239,6 +301,12 @@ export default function ChessSetPage({ params }) {
   const setIndex = chessSets.indexOf(set);
   const prevSet = setIndex > 0 ? chessSets[setIndex - 1] : null;
   const nextSet = setIndex < chessSets.length - 1 ? chessSets[setIndex + 1] : null;
+
+  const [lightbox, setLightbox] = useState(null);
+  const openLightbox = useCallback((images, index) => setLightbox({ images, index }), []);
+  const closeLightbox = useCallback(() => setLightbox(null), []);
+  const prevImage = useCallback(() => setLightbox((lb) => ({ ...lb, index: (lb.index - 1 + lb.images.length) % lb.images.length })), []);
+  const nextImage = useCallback(() => setLightbox((lb) => ({ ...lb, index: (lb.index + 1) % lb.images.length })), []);
 
   return (
     <>
@@ -312,10 +380,14 @@ export default function ChessSetPage({ params }) {
             <span className="font-(family-name:--font-cormorant) text-[11px] tracking-[0.35em] uppercase flex items-center">
               {set.year}
             </span>
+            {set.detail.pieces && (
+              <>
             <span className="">·</span>
             <span className="font-(family-name:--font-cormorant) text-[11px] tracking-[0.35em] uppercase flex items-center">
-              {set.detail.pieces.length} Pieces
+              {Array.isArray(set.detail.pieces) ? set.detail.pieces.length : 0} Pieces
             </span>
+            </>
+            )}
           </motion.div>
         </div>
 
@@ -406,6 +478,7 @@ export default function ChessSetPage({ params }) {
       )}
 
       {/* ═══════════════ PIECES DIVIDER ═══════════════ */}
+      {set.detail.pieces && (
       <div className="bg-warm-gray py-10 border-y border-medium-gray">
         <div className="max-w-350 mx-auto px-6 md:px-12 lg:px-20 flex items-center gap-8">
           <FadeInUp>
@@ -416,20 +489,32 @@ export default function ChessSetPage({ params }) {
           <div className="flex-1 h-px bg-medium-gray" />
           <FadeInUp>
             <span className="font-(family-name:--font-cormorant) text-[11px] tracking-[0.35em] text-text-muted uppercase">
-              {set.detail.pieces.length} Pieces
+              {Array.isArray(set.detail.pieces) ? set.detail.pieces.length : 0} Pieces
             </span>
           </FadeInUp>
         </div>
       </div>
+      )}
 
       {/* ═══════════════ PIECES ═══════════════ */}
-      {detail.pieces.map((piece, i) => (
-        <PieceSection key={piece.name} piece={piece} index={i} />
+      {detail.pieces && detail.pieces.map((piece, i) => (
+        <PieceSection key={piece.name} piece={piece} index={i} onOpen={openLightbox} />
       ))}
 
       {/* ═══════════════ TABLE ═══════════════ */}
       {detail.table && (
-        <TableSection table={detail.table} heroImage={set.heroImage} />
+        <TableSection table={detail.table} heroImage={set.heroImage} onOpen={openLightbox} />
+      )}
+
+      {/* ═══════════════ LIGHTBOX ═══════════════ */}
+      {lightbox && (
+        <Lightbox
+          images={lightbox.images}
+          index={lightbox.index}
+          onClose={closeLightbox}
+          onPrev={prevImage}
+          onNext={nextImage}
+        />
       )}
 
       {/* ═══════════════ MATERIALS STRIP ═══════════════ */}
