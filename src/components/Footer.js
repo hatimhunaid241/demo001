@@ -119,6 +119,11 @@ export default function Footer() {
                 className="font-(family-name:--font-cormorant) text-[11px] tracking-[0.15em] text-text-muted hover:text-text-secondary transition-colors duration-300">
                 TERMS OF USE
               </Link>
+              <Link
+                href="/cookie-policy"
+                className="font-(family-name:--font-cormorant) text-[11px] tracking-[0.15em] text-text-muted hover:text-text-secondary transition-colors duration-300">
+                COOKIE POLICY
+              </Link>
             </div>
           </div>
         </div>

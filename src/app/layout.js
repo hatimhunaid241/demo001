@@ -1,7 +1,6 @@
 import { Playfair_Display, Cormorant_Garamond, Arsenal, Great_Vibes } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import ConditionalShell from "@/components/ConditionalShell";
 
 const playfair = Playfair_Display({
   variable: "--font-playfair",
@@ -47,9 +46,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body
         className={`${playfair.variable} ${cormorant.variable} ${arsenal.variable} ${greatVibes.variable}`}>
-        <Navbar />
-        <main>{children}</main>
-        <Footer />
+        <ConditionalShell>{children}</ConditionalShell>
       </body>
     </html>
   );
