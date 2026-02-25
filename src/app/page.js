@@ -253,7 +253,7 @@ export default function Home() {
           </FadeInUp>
 
           <FadeIn className="flex flex-wrap justify-center gap-x-12 md:gap-x-20 gap-y-4">
-            {["LONDON", "NEW YORK", "PARIS", "DUBAI", "TOKYO"].map((city) => (
+            {["LONDON", "NEW YORK", "PARIS", "DUBAI", "HONG KONG", "TOKYO"].map((city) => (
               <span
                 key={city}
                 className="font-(family-name:--font-playfair) text-sm md:text-base tracking-[0.3em] text-text-muted">
