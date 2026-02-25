@@ -85,7 +85,7 @@ export default function Portfolio() {
                 <FadeIn className={`${index % 2 !== 0 ? "lg:order-2" : ""}`}>
                   <div className="image-hover-zoom relative bg-medium-gray lg:aspect-4/5">
                     <Image
-                      src={set.previewImage || set.heroImage}
+                      src={set.heroImage}
                       alt={set.name}
                       width={800}
                       height={1000}

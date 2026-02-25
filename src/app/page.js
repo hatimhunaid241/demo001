@@ -148,7 +148,7 @@ export default function Home() {
                 <div className="group cursor-pointer">
                   <div className="image-hover-zoom relative aspect-3/4 mb-8 bg-medium-gray">
                     <Image
-                      src={set.heroImage}
+                      src={set.image}
                       alt={set.name}
                       fill
                       className="object-contain"

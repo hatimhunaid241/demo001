@@ -21,9 +21,8 @@ export const chessSets = [
       "An extraordinary union of 18 karat gold, rutilated smoky quartz, and brilliant-cut gemstones. Each piece is a sculptural monument — illuminated from within by a custom light source integrated into the green marble table, bringing the rutilated crystal to life in every game.",
     shortDescription:
       "Gold, rutilated quartz and precious stones crafted into sculptural monuments of play.",
-    image: "https://images.unsplash.com/photo-1586165368502-1bad197a6461?w=1200&q=90",
-    heroImage: "/chessSets/1/table-horizontal.png",
-    previewImage: "/chessSets/1/table-horizontal.png",
+    image: "/chessSets/1/table1.png",
+    heroImage: "/chessSets/1/table1.png",
     materials: "18 Karat Yellow & White Gold, Rutilated Smoky Quartz, Rock Crystal, Rubellites, Tanzanites, Green Marble",
     year: "2026",
     category: "Precious Metals",
@@ -129,9 +128,8 @@ export const chessSets = [
       "The classic Staunton design, reimagined in solid 925 sterling silver with Japanese pearls, black tourmaline, opals and brilliant-cut Moissanite stones. Presented on a breathtaking board of polished rock crystal and smoky quartz, set into a hidden-bar Wengé table.",
     shortDescription:
       "Solid sterling silver Staunton pieces on a rock crystal and smoky quartz board.",
-    image: "https://images.unsplash.com/photo-1529699211952-734e80c4d42b?w=1200&q=90",
+    image: "/chessSets/2/table1.jpg",
     heroImage: "/chessSets/2/table1.jpg",
-    previewImage: "/chessSets/2/table1.jpg",
     materials: "925 Sterling Silver, Japanese Pearls, Moissanite, Black Tourmaline, Opal, Wengé Wood",
     year: "2026",
     category: "Precious Metals",
@@ -212,7 +210,7 @@ export const chessSets = [
         },
       ],
       table: {
-        image: ["/chessSets/2/table1.jpg", "/chessSets/2/table2.jpg", "/chessSets/2/table3.jpg", "/chessSets/2/table4.jpg", "/chessSets/2/table5.jpg", "/chessSets/2/table6.jpg", "/chessSets/2/table7.jpeg"],
+        image: ["/chessSets/2/table1.jpg", "/chessSets/2/table2.jpg", "/chessSets/2/table3.jpg", "/chessSets/2/table4.jpg", "/chessSets/2/table5.jpg", "/chessSets/2/table6.jpg", "/chessSets/2/table7.jpeg", "/chessSets/2/table8.jpg"],
         description:
           "This magnificent, custom-crafted table functions both as a gaming surface and a hidden bar. This stately piece is carved from resilient African Wengé wood, celebrated for its dark, dramatic grain and enduring stability. A breathtaking, incorporated chessboard of polished rock crystal and smoky quartz is the stunning centerpiece of the table's surface.\n\nFor storage, the pieces are discreetly housed within a rich, red-upholstered drawer. This drawer glides out along a discrete panel, becoming a seamless extension of the table for setting aside pieces or beverages.\n\nWith a gentle touch, a concealed panel on the table's side reveals a hidden drink cabinet. This lit interior holds four golden-rimmed crystal glasses — two for whiskey and two for wine — alongside space for the wine and whiskey carafes. Here, you can enjoy a perfect drink while contemplating your next move on the battlefield. Designed for convenience and sophistication, the table is fitted with discreet, high-quality wheels, allowing for elegant, effortless movement.",
         specs: [
@@ -242,7 +240,7 @@ export const chessSets = [
       "Solid 18 karat yellow and white gold Staunton pieces, played on a stunning transparent epoxy resin board with 64 crystal-glass pyramid squares. The illusion: the gold pieces appear to float above the playing surface in midair.",
     shortDescription:
       "18 karat gold Staunton pieces floating above a glass-clear epoxy resin board.",
-    image: "https://images.unsplash.com/photo-1560174038-da43ac74f01b?w=1200&q=90",
+    image: "/chessSets/3/table1.jpg",
     heroImage: "/chessSets/3/table1.jpg",
     materials: "18 Karat Yellow & White Gold, Crystal Glass, Hard Epoxy Resin, Maple Wood",
     year: "2026",
@@ -354,7 +352,7 @@ export const chessSets = [
       "18 karat yellow and white gold Staunton pieces on a board of precision-cut crystal glass cubes, each containing a laser-engraved 3D galaxy star deep within. An experience where the cosmos meets the stratosphere of fine craftsmanship.",
     shortDescription:
       "Gold pieces on crystal cubes with laser-engraved 3D galaxy stars within each square.",
-    image: "https://images.unsplash.com/photo-1604948501466-4e9c339b9c24?w=1200&q=90",
+    image: "/chessSets/4/table1.jpg",
     heroImage: "/chessSets/4/table1.jpg",
     materials: "18 Karat Yellow & White Gold, Crystal Glass Cubes, Laser-Engraved 3D Galaxy Detail, Maple Wood",
     year: "2026",
@@ -466,7 +464,7 @@ export const chessSets = [
       "A triumph of modern artistry. Each piece is a flawless crystal cube with a stunning 3D laser-etched figure within. One side crowned in gold, the opposing side in silver. Played on a beam-square infinity glass board set into a Jatoba hardwood table.",
     shortDescription:
       "3D laser-etched crystal pieces with gold and silver finishes on an infinity glass board.",
-    image: "https://images.unsplash.com/photo-1580541832626-2a7131ee809f?w=1200&q=90",
+    image: "/chessSets/5/table1.jpg",
     heroImage: "/chessSets/5/table1.jpg",
     materials: "Crystal Glass, 3D Laser Etching, Gold & Silver Coating, Jatoba Wood",
     year: "2026",
