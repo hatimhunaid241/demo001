@@ -434,7 +434,7 @@ export const chessSets = [
         },
       ],
       table: {
-        image: ["/chessSets/3/table1.jpg", "/chessSets/3/table2.jpg", "/chessSets/3/table3.jpg", "/chessSets/3/table4.jpg", "/chessSets/3/table5.jpg", "/chessSets/3/table6.jpg", "/chessSets/3/table7.jpg", "/chessSets/3/table8.jpg", "/chessSets/4/table9.jpg", "/chessSets/4/table10.jpg", "/chessSets/4/table11.jpg"],
+        image: ["/chessSets/4/table1.jpg", "/chessSets/4/table2.jpg", "/chessSets/4/table3.jpg", "/chessSets/4/table4.jpg", "/chessSets/4/table5.jpg", "/chessSets/4/table6.jpg", "/chessSets/4/table7.jpg", "/chessSets/4/table8.jpg", "/chessSets/4/table9.jpg", "/chessSets/4/table10.jpg", "/chessSets/4/table11.jpg"],
         description:
           "The table is an embodiment of modern sophistication and timeless gameplay. The exquisite gold pieces are securely nestled within a custom-fitted, padded presentation case, ensuring their safekeeping with the same elegance they display on the board.\n\nCrafted from durable, light-toned Maple wood, the table features an eye-catching, beam-like infinity design. The wood's light, uniform appearance was chosen to perfectly complement the set's aesthetic, offering the renowned strength and longevity of premium hardwood.\n\nA striking crystal glass chess board is seamlessly integrated into the table's surface, creating a flawless and luminous playing area. The clear and frosted squares provide a beautiful, sophisticated contrast.",
         specs: [
