@@ -148,10 +148,10 @@ export default function Home() {
                 <div className="group cursor-pointer">
                   <div className="image-hover-zoom relative aspect-3/4 mb-8 bg-medium-gray">
                     <Image
-                      src={set.image}
+                      src={set.heroImage}
                       alt={set.name}
                       fill
-                      className="object-cover"
+                      className="object-contain"
                       sizes="(max-width: 768px) 100vw, 33vw"
                     />
                     {/* Overlay on hover */}
