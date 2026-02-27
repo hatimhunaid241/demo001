@@ -204,7 +204,7 @@ export default function Home() {
             <FadeIn>
               <div className="image-hover-zoom relative aspect-square bg-medium-gray">
                 <Image
-                  src="/otherImages/homePhilosophy3.jpg"
+                  src="/otherImages/homePhilosophy2.jpg"
                   alt="Chess craftsmanship"
                   fill
                   className="object-contain"
