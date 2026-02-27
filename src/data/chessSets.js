@@ -98,7 +98,7 @@ export const chessSets = [
         },
       ],
       table: {
-        image: ["/chessSets/1/table1.png", "/chessSets/1/table2.png"],
+        image: ["/chessSets/1/table1.png", "/chessSets/1/table2.png", "/chessSets/1/table3.png", "/chessSets/1/table4.png"],
         description:
           "The scene of the battlefield is composed of square facet-cut in unrutilated rock crystal for the white fields and unrutilated smoky quartz for the black fields. Incorporated into the table and positioned under the chess board, is a light source which illuminates the chess pieces – in this way a match can easily be continued in the twilight. The chess board itself is absorbed into the surface of the table which is made of green marble. Looking from the side, it is almost as if the table with its elongated shape, intends to dive into the future.",
         specs: [
