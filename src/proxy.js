@@ -1,9 +1,38 @@
 import { NextResponse } from "next/server";
 
-export function proxy(request) {
+// ─── Kill Switch ──────────────────────────────────────────────────────────────
+// Create a GitHub Gist with a single file named "flag.json" containing:
+//   { "enabled": true }
+// Paste the raw URL below. To disable the site, change "enabled" to false.
+const KILL_SWITCH_URL =
+  "https://gist.githubusercontent.com/hatimhunaid241/b2a46398611fcc2d4595d875dc274e23/raw/royalchessdesign.json";
+
+// In-memory cache so we only hit GitHub at most once per minute
+let _siteEnabled = true;
+let _lastChecked = 0;
+const CACHE_TTL = 60_000; // 1 minute
+
+async function isSiteEnabled() {
+  const now = Date.now();
+  if (now - _lastChecked < CACHE_TTL) return _siteEnabled;
+  try {
+    const res = await fetch(`${KILL_SWITCH_URL}?t=${Date.now()}`, { cache: "no-store" });
+    const json = await res.json();
+    _siteEnabled = json.enabled !== false;
+    console.log(json)
+  } catch (err) {
+    _siteEnabled = true; // fail open — never accidentally lock out on network errors
+    console.log(err);
+  }
+  _lastChecked = Date.now();
+  return _siteEnabled;
+}
+// ─────────────────────────────────────────────────────────────────────────────
+
+export async function proxy(request) {
   const { pathname } = request.nextUrl;
 
-  // Skip: welcome page, cookie-policy page, Next.js internals, API routes, static files
+  // Always allow static assets and internals through
   if (
     pathname.startsWith("/welcome") ||
     pathname.startsWith("/cookie-policy") ||
@@ -12,6 +41,23 @@ export function proxy(request) {
     pathname.includes(".")
   ) {
     return NextResponse.next();
+  }
+
+  // Kill switch check
+  const enabled = await isSiteEnabled();
+
+  // Block access to /maintenance when site is live
+  if (pathname.startsWith("/maintenance")) {
+    return enabled
+      ? NextResponse.redirect(new URL("/", request.url))
+      : NextResponse.next();
+  }
+
+  // Redirect all other pages to maintenance when site is disabled
+  if (!enabled) {
+    const maintenanceUrl = new URL("/maintenance", request.url);
+    maintenanceUrl.searchParams.set("next", pathname);
+    return NextResponse.redirect(maintenanceUrl);
   }
 
   const consent = request.cookies.get("cookie_consent");
