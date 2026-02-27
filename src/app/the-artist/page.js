@@ -16,7 +16,7 @@ export default function TheArtist() {
       <HeroSection
         src="/heroImages/artist.webp"
         alt="David de Jong — Chess Designer"
-        overlayClass="bg-gradient-to-b from-white/20 via-white/60 to-white/20"
+        overlayClass="bg-gradient-to-b from-white/60 via-white/90 to-white/60"
         height="h-[60vh] md:h-[70vh]"
         showScrollIndicator>
         <div className="text-center px-6 max-w-4xl mx-auto">
