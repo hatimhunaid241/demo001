@@ -53,6 +53,7 @@ export function HeroSection({
   alt,
   overlayClass,
   height = "h-screen",
+  showScrollIndicator = false,
   children,
 }) {
   const [imageLoaded, setImageLoaded] = useState(false);
@@ -98,6 +99,26 @@ export function HeroSection({
             className="relative z-10 w-full h-full flex items-center justify-center"
           >
             {children}
+
+            {showScrollIndicator && (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 1.8, duration: 1 }}
+                className="absolute bottom-10 left-1/2 -translate-x-1/2"
+              >
+                <motion.div
+                  animate={{ y: [0, 8, 0] }}
+                  transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                  className="flex flex-col items-center gap-2"
+                >
+                  <span className="font-(family-name:--font-cormorant) text-[10px] tracking-[0.3em]">
+                    SCROLL
+                  </span>
+                  <div className="w-px h-8 bg-linear-to-b from-gold/60 to-transparent" />
+                </motion.div>
+              </motion.div>
+            )}
           </motion.div>
         )}
       </AnimatePresence>

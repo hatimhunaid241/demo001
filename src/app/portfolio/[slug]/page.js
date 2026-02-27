@@ -251,9 +251,8 @@ function TableSection({ table, heroImage, onOpen }) {
                   src={Array.isArray(table.image) ? table.image[0] : table.image}
                   alt="The Table"
                   fill
-                  className="object-cover"
+                  className="object-contain"
                 />
-                <div className="absolute inset-0 bg-linear-to-t from-charcoal/30 to-transparent" />
               </div>
             </FadeInUp>
           )}
@@ -395,13 +394,17 @@ export default function ChessSetPage({ params }) {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 1.8 }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+          transition={{ delay: 1.8, duration: 1 }}
+          className="absolute bottom-10 left-1/2 -translate-x-1/2"
         >
           <motion.div
             animate={{ y: [0, 8, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}
+            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+            className="flex flex-col items-center gap-2"
           >
+            <span className="font-(family-name:--font-cormorant) text-[10px] tracking-[0.3em] text-charcoal">
+              SCROLL
+            </span>
             <div className="w-px h-8 bg-linear-to-b from-gold/60 to-transparent" />
           </motion.div>
         </motion.div>

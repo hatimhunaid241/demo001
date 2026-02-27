@@ -35,7 +35,8 @@ export default function Contact() {
         src="/heroImages/contact.jpg"
         alt="Contact us"
         overlayClass="bg-gradient-to-b from-white/40 via-white/90 to-white/50"
-        height="h-[65vh] md:h-[75vh]">
+        height="h-[60vh] md:h-[70vh]"
+        showScrollIndicator>
         <div className="text-center px-6">
           <motion.span
             initial={{ opacity: 0, y: -10 }}

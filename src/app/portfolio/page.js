@@ -22,7 +22,8 @@ export default function Portfolio() {
         // src="/portfolio.jpg"
         alt="Chess collection"
         overlayClass="bg-gradient-to-b from-white/70 via-white/80 to-white/50"
-        height="h-[65vh] md:h-[75vh]">
+        height="h-[65vh] md:h-[75vh]"
+        showScrollIndicator>
         <div className="text-center px-6">
           <motion.span
             initial={{ opacity: 0, y: -10 }}

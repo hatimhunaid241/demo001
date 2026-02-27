@@ -37,24 +37,38 @@ export default function Home() {
           </motion.div>
 
           <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
+            variants={{
+              hidden: {},
+              visible: { transition: { staggerChildren: 0.22, delayChildren: 0.4 } },
+            }}
+            initial="hidden"
+            animate="visible"
             className="font-(family-name:--font-great-vibes)! text-6xl md:text-7xl lg:text-7xl xl:text-8xl font-normal tracking-[0.05em] text-charcoal mb-6">
-            Royal Chess Design
+            {"Royal Chess Design".split("").map((char, i) => (
+              <motion.span
+                key={i}
+                variants={{
+                  hidden: { opacity: 0 },
+                  visible: { opacity: 1, transition: { duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] } },
+                }}
+                style={{ display: "inline-block", whiteSpace: char === " " ? "pre" : "normal" }}
+              >
+                {char === " " ? "\u00A0" : char}
+              </motion.span>
+            ))}
           </motion.h1>
 
           <motion.div
             initial={{ width: 0 }}
             animate={{ width: 80 }}
-            transition={{ duration: 1, delay: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
+            transition={{ duration: 1, delay: 5.2, ease: [0.25, 0.46, 0.45, 0.94] }}
             className="h-px bg-linear-to-r from-transparent via-gold to-transparent mx-auto mb-6"
           />
 
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 1.2, delay: 1.0 }}
+            transition={{ duration: 1.2, delay: 5.6 }}
             className="font-(family-name:--font-cormorant) text-lg md:text-xl lg:text-2xl font-normal tracking-wide text-text-primary max-w-2xl mx-auto mb-12">
             The Art of Strategic Elegance
           </motion.p>
@@ -62,7 +76,7 @@ export default function Home() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1.3 }}>
+            transition={{ duration: 0.8, delay: 5.9 }}>
             <Link href="/portfolio" className="btn-luxury">
               VIEW COLLECTION
             </Link>
@@ -73,7 +87,7 @@ export default function Home() {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 1.8, duration: 1 }}
+          transition={{ delay: 6.5, duration: 1 }}
           className="absolute bottom-10 left-1/2 -translate-x-1/2">
           <motion.div
             animate={{ y: [0, 8, 0] }}
@@ -190,7 +204,7 @@ export default function Home() {
             <FadeIn>
               <div className="image-hover-zoom relative aspect-4/5 bg-medium-gray">
                 <Image
-                  src="https://images.unsplash.com/photo-1604948501466-4e9c339b9c24?w=1000&q=85"
+                  src="/otherImages/homePhilosophy.jpg"
                   alt="Chess craftsmanship"
                   fill
                   className="object-cover"

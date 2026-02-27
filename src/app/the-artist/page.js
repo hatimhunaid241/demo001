@@ -13,10 +13,11 @@ export default function TheArtist() {
     <>
       {/* ═══════════════ HERO ═══════════════ */}
       <HeroSection
-        src="/heroImages/hero.jpg"
+        src="/heroImages/artist.webp"
         alt="David de Jong — Chess Designer"
-        overlayClass="bg-gradient-to-b from-white/70 via-white/60 to-white/80"
-        height="h-[60vh] md:h-[70vh]">
+        overlayClass="bg-gradient-to-b from-white/20 via-white/60 to-white/20"
+        height="h-[60vh] md:h-[70vh]"
+        showScrollIndicator>
         <div className="text-center px-6 max-w-4xl mx-auto">
           <FadeInUp>
             <span className="font-(family-name:--font-cormorant) text-[13px] md:text-[15px] tracking-[0.5em] text-gold uppercase block mb-6">

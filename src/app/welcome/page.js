@@ -21,6 +21,15 @@ function WelcomeContent() {
     }
   }, [nextPath, router]);
 
+  // When video is cached the canplay event fires before React attaches handlers.
+  // Check readyState after mount and set a fallback timeout.
+  useEffect(() => {
+    const vid = videoRef.current;
+    if (!vid) return;
+    const fallback = setTimeout(() => setVideoReady(true), vid.readyState >= 3 ? 0 : 3000);
+    return () => clearTimeout(fallback);
+  }, []);
+
   function saveConsent(value) {
     const maxAge = 60 * 60 * 24 * 365; // 1 year
     document.cookie = `cookie_consent=${value}; path=/; max-age=${maxAge}; SameSite=Lax`;
@@ -39,8 +48,6 @@ function WelcomeContent() {
           loop
           playsInline
           onCanPlay={() => setVideoReady(true)}
-          onPlaying={() => setVideoReady(true)}
-          onPlayCapture={() => setVideoReady(true)}
           onError={() => setVideoReady(true)}
           className="max-w-full max-h-full w-full h-full object-contain"
         />
