@@ -161,8 +161,13 @@ export default function TheArtist() {
               </p>
             </FadeInUp>
 
+            {/* Signature */}
+            <FadeInUp delay={0.68} className="mt-4">
+              <Image src="/otherImages/artist.jpg" alt="David de Jong" width={800} height={600} className="w-full h-auto object-cover rounded-lg shadow-lg" />
+            </FadeInUp>
+
             {/* CTA */}
-            <FadeInUp delay={0.68} className="mt-16">
+            <FadeInUp delay={0.76} className="mt-16">
               <DividerReveal className="mb-12" />
               <div className="flex flex-col sm:flex-row gap-6 items-start">
                 <Link href="/portfolio" className="btn-luxury">
