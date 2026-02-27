@@ -202,12 +202,12 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
             {/* Image */}
             <FadeIn>
-              <div className="image-hover-zoom relative aspect-4/5 bg-medium-gray">
+              <div className="image-hover-zoom relative aspect-square bg-medium-gray">
                 <Image
                   src="/otherImages/homePhilosophy.jpg"
                   alt="Chess craftsmanship"
                   fill
-                  className="object-cover"
+                  className="object-contain"
                   sizes="(max-width: 1024px) 100vw, 50vw"
                 />
               </div>
