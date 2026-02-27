@@ -17,7 +17,7 @@ export default function TheArtist() {
         src="/heroImages/artist.webp"
         alt="David de Jong — Chess Designer"
         overlayClass="bg-gradient-to-b from-white/60 via-white/90 to-white/60"
-        height="h-[65vh] md:h-[100vh]"
+        height="h-[70vh] md:h-[75vh]"
         showScrollIndicator>
         <div className="text-center px-6 max-w-4xl mx-auto">
           <FadeInUp>
