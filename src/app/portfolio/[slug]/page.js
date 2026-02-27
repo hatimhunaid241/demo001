@@ -551,7 +551,7 @@ export default function ChessSetPage({ params }) {
           </FadeInUp>
           <FadeInUp delay={0.12}>
             <h2 className="font-(family-name:--font-playfair) text-3xl md:text-4xl lg:text-5xl font-normal tracking-[0.08em] text-charcoal mb-6">
-              Commission This Set
+              Acquire by Private Commission
             </h2>
           </FadeInUp>
           <FadeInUp delay={0.2}>

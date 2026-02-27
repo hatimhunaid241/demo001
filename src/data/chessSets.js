@@ -128,8 +128,8 @@ export const chessSets = [
       "The classic Staunton design, reimagined in solid 925 sterling silver with Japanese pearls, black tourmaline, opals and brilliant-cut Moissanite stones. Presented on a breathtaking board of polished rock crystal and smoky quartz, set into a hidden-bar Wengé table.",
     shortDescription:
       "Solid sterling silver Staunton pieces on a rock crystal and smoky quartz board.",
-    image: "/chessSets/2/table1.jpg",
-    heroImage: "/chessSets/2/table1.jpg",
+    image: "/chessSets/2/table2.jpg",
+    heroImage: "/chessSets/2/table2.jpg",
     materials: "925 Sterling Silver, Japanese Pearls, Moissanite, Black Tourmaline, Opal, Wengé Wood",
     year: "2026",
     category: "Precious Metals",
@@ -210,7 +210,7 @@ export const chessSets = [
         },
       ],
       table: {
-        image: ["/chessSets/2/table1.jpg", "/chessSets/2/table2.jpg", "/chessSets/2/table4.jpg", "/chessSets/2/table5.jpg", "/chessSets/2/table6.jpg", "/chessSets/2/table7.jpeg"],
+        image: ["/chessSets/2/table2.jpg", "/chessSets/2/table1.jpg", "/chessSets/2/table4.jpg", "/chessSets/2/table5.jpg", "/chessSets/2/table6.jpg", "/chessSets/2/table7.jpeg"],
         description:
           "This magnificent, custom-crafted table functions both as a gaming surface and a hidden bar. This stately piece is carved from resilient African Wengé wood, celebrated for its dark, dramatic grain and enduring stability. A breathtaking, incorporated chessboard of polished rock crystal and smoky quartz is the stunning centerpiece of the table's surface.\n\nFor storage, the pieces are discreetly housed within a rich, red-upholstered drawer. This drawer glides out along a discrete panel, becoming a seamless extension of the table for setting aside pieces or beverages.\n\nWith a gentle touch, a concealed panel on the table's side reveals a hidden drink cabinet. This lit interior holds four golden-rimmed crystal glasses — two for whiskey and two for wine — alongside space for the wine and whiskey carafes. Here, you can enjoy a perfect drink while contemplating your next move on the battlefield. Designed for convenience and sophistication, the table is fitted with discreet, high-quality wheels, allowing for elegant, effortless movement.",
         specs: [
