@@ -142,9 +142,16 @@ function PieceSection({ piece, index, onOpen }) {
 
             {piece.quote && (
               <FadeInUp delay={0.15}>
-                <p className="font-(family-name:--font-cormorant) text-base md:text-lg tracking-widest text-gold italic mb-8">
-                  &ldquo;{piece.quote.text}&rdquo;
-                </p>
+                <blockquote className="mb-8">
+                  <p className="font-(family-name:--font-cormorant) text-base md:text-lg tracking-widest text-gold italic">
+                    &ldquo;{piece.quote.text}&rdquo;
+                  </p>
+                  {piece.quote.author && (
+                    <cite className="font-(family-name:--font-cormorant) text-[10px] tracking-[0.4em] text-text-muted uppercase not-italic mt-2 block">
+                      — {piece.quote.author}
+                    </cite>
+                  )}
+                </blockquote>
               </FadeInUp>
             )}
 
