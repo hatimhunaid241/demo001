@@ -7,6 +7,7 @@ import {
   DividerReveal,
 } from "@/components/Animations";
 import { HeroSection } from "@/components/HeroImage";
+import Image from "next/image";
 
 export default function TheArtist() {
   return (
@@ -152,11 +153,11 @@ export default function TheArtist() {
 
             {/* Signature */}
             <FadeInUp delay={0.6} className="mt-10">
-              <p className="font-(family-name:--font-cormorant) text-[10px] tracking-[0.45em] text-text-muted uppercase mb-4">
+              <p className="font-(family-name:--font-cormorant) text-[10px] tracking-[0.45em] text-text-muted uppercase">
                 SINCERELY,
               </p>
               <p className="font-(family-name:--font-great-vibes) text-4xl md:text-5xl text-gold">
-                David de Jong
+                <Image src="/otherImages/signature.png" alt="David de Jong" width={200} height={80} />
               </p>
             </FadeInUp>
 
