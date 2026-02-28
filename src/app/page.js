@@ -69,7 +69,7 @@ export default function Home() {
             }}
             initial="hidden"
             animate="visible"
-            className="font-(family-name:--font-great-vibes)! text-4xl md:text-5xl lg:text-6xl font-normal tracking-[0.05em] text-charcoal mb-6">
+            className="font-(family-name:--font-great-vibes)! text-4xl md:text-5xl lg:text-6xl font-normal tracking-[0.05em] text-charcoal mb-6 select-none">
             {"Royal Chess Design".split("").map((char, i) =>
               char === " " ? (
                 <span key={i} style={{ display: "inline-block" }}>&nbsp;</span>

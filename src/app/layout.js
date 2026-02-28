@@ -31,7 +31,7 @@ const greatVibes = Great_Vibes({
 });
 
 export const metadata = {
-  title: "CHESS MASTER | The Art of Strategic Elegance",
+  title: "ROYAL CHESS DESIGN | The Art of Strategic Elegance",
   description:
     "A curated portfolio of five bespoke chess sets, each a masterwork of design, craftsmanship, and artistic vision. Chess Artists Portfolio.",
   keywords:
