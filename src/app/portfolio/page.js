@@ -20,7 +20,7 @@ export default function Portfolio() {
       <HeroSection
         src="/heroImages/portfolio.jpg"
         // src="/portfolio.jpg"
-        alt="Chess collection"
+        alt="Royal Chess Design portfolio — luxury bespoke chess collection by David de Jong"
         overlayClass="bg-gradient-to-b from-white/70 via-white/80 to-white/50"
         height="h-[65vh] md:h-[75vh]"
         showScrollIndicator>

@@ -15,7 +15,7 @@ export default function TheArtist() {
       {/* ═══════════════ HERO ═══════════════ */}
       <HeroSection
         src="/heroImages/artist.webp"
-        alt="David de Jong — Chess Designer"
+        alt="David de Jong — luxury chess designer and artist, founder of Royal Chess Design atelier"
         overlayClass="bg-gradient-to-b from-white/60 via-white/90 to-white/60"
         height="h-[70vh] md:h-[75vh]"
         showScrollIndicator>
@@ -163,7 +163,7 @@ export default function TheArtist() {
 
             {/* Signature */}
             <FadeInUp delay={0.68} className="mt-4">
-              <Image src="/otherImages/artist.jpg" alt="David de Jong" width={800} height={600} className="w-full h-auto object-cover rounded-lg shadow-lg" />
+              <Image src="/otherImages/artist.jpg" alt="David de Jong — chess designer and artist behind Royal Chess Design" width={800} height={600} className="w-full h-auto object-cover rounded-lg shadow-lg" />
             </FadeInUp>
 
             {/* CTA */}

@@ -1,0 +1,13 @@
+{
+  "name": "Royal Chess Design",
+  "short_name": "RCD",
+  "description": "Ultra-luxury bespoke chess sets by David de Jong",
+  "icons": [
+    { "src": "/android-chrome-192x192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/android-chrome-512x512.png", "sizes": "512x512", "type": "image/png" }
+  ],
+  "theme_color": "#181985",
+  "background_color": "#f5f0eb",
+  "display": "standalone",
+  "start_url": "/"
+}

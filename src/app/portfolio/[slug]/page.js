@@ -7,6 +7,7 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { chessSets } from "@/data/chessSets";
 import { FadeInUp, FadeIn, DividerReveal } from "@/components/Animations";
+import { BASE_URL } from "@/config/site";
 
 /* ─────────────────────────────────────────────────────────
    LIGHTBOX
@@ -197,7 +198,7 @@ function PieceSection({ piece, index, onOpen }) {
 /* ─────────────────────────────────────────────────────────
    TABLE SECTION
 ───────────────────────────────────────────────────────── */
-function TableSection({ table, heroImage, onOpen }) {
+function TableSection({ table, heroImage, onOpen, setName }) {
   return (
     <section className="relative bg-white overflow-hidden">
       {/* Subtle background accent */}
@@ -256,7 +257,7 @@ function TableSection({ table, heroImage, onOpen }) {
               >
                 <Image
                   src={Array.isArray(table.image) ? table.image[0] : table.image}
-                  alt="The Table"
+                  alt={`Chess table for ${setName} — Royal Chess Design`}
                   fill
                   className="object-contain"
                 />
@@ -314,8 +315,41 @@ export default function ChessSetPage({ params }) {
   const prevImage = useCallback(() => setLightbox((lb) => ({ ...lb, index: (lb.index - 1 + lb.images.length) % lb.images.length })), []);
   const nextImage = useCallback(() => setLightbox((lb) => ({ ...lb, index: (lb.index + 1) % lb.images.length })), []);
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Product",
+        "@id": `${BASE_URL}/portfolio/${set.id}#product`,
+        name: set.name,
+        description: set.shortDescription,
+        image: set.heroImage ? `${BASE_URL}${set.heroImage}` : `${BASE_URL}${set.image}`,
+        brand: { "@type": "Brand", name: "Royal Chess Design" },
+        manufacturer: { "@type": "Organization", "@id": `${BASE_URL}/#organization` },
+        material: set.materials,
+        category: `Luxury Chess Sets — ${set.category}`,
+        url: `${BASE_URL}/portfolio/${set.id}`,
+        offers: {
+          "@type": "Offer",
+          availability: "https://schema.org/LimitedAvailability",
+          priceCurrency: "EUR",
+          seller: { "@type": "Organization", name: "Royal Chess Design", url: BASE_URL },
+        },
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: BASE_URL },
+          { "@type": "ListItem", position: 2, name: "Portfolio", item: `${BASE_URL}/portfolio` },
+          { "@type": "ListItem", position: 3, name: set.name, item: `${BASE_URL}/portfolio/${set.id}` },
+        ],
+      },
+    ],
+  };
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       {/* ═══════════════ HERO ═══════════════ */}
       <section className="relative h-[85vh] min-h-150 overflow-hidden">
         <Image
@@ -513,7 +547,7 @@ export default function ChessSetPage({ params }) {
 
       {/* ═══════════════ TABLE ═══════════════ */}
       {detail.table && (
-        <TableSection table={detail.table} heroImage={set.heroImage} onOpen={openLightbox} />
+        <TableSection table={detail.table} heroImage={set.heroImage} onOpen={openLightbox} setName={set.name} />
       )}
 
       {/* ═══════════════ LIGHTBOX ═══════════════ */}

@@ -22,7 +22,7 @@ export default function Home() {
       <HeroSection
         // src="https://images.unsplash.com/photo-1528819622765-d6bcf132f793?w=1920&q=85"
         src="/heroImages/hero.jpg"
-        alt="Chess artistry"
+        alt="Luxury bespoke chess pieces by Royal Chess Design — handcrafted from gold and precious gemstones"
         overlayClass="bg-gradient-to-b from-white/70 via-white/60 to-white/80"
         height="h-screen">
         <div className="text-center px-6 max-w-4xl mx-auto">
@@ -235,7 +235,7 @@ export default function Home() {
               <div className="image-hover-zoom relative aspect-square bg-medium-gray">
                 <Image
                   src="/otherImages/homePhilosophy2.jpg"
-                  alt="Chess craftsmanship"
+                  alt="Handcrafted luxury chess set detail — Royal Chess Design atelier by David de Jong"
                   fill
                   className="object-contain"
                   sizes="(max-width: 1024px) 100vw, 50vw"
