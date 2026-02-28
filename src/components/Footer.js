@@ -104,11 +104,12 @@ export default function Footer() {
       {/* Bottom Bar */}
       <div className="border-t border-medium-gray">
         <div className="max-w-350 mx-auto px-6 md:px-12 lg:px-20 py-6">
-          <div className="flex flex-col items-center justify-between gap-4">
+          <div className="flex flex-col lg:flex-row items-center justify-center align-center gap-x-6 gap-y-3 text-center">
             <p className="font-(family-name:--font-cormorant) text-[11px] tracking-[0.2em] text-text-muted">
               © {new Date().getFullYear()} ROYAL CHESS DESIGN. ALL RIGHTS RESERVED.
             </p>
-            <div className="flex items-center gap-8">
+              <div className="w-15 h-px bg-linear-to-r from-transparent via-gold to-transparent" />
+            <div className="flex items-center justify-center flex-wrap gap-x-6">
               <Link
                 href="/privacy-policy"
                 className="font-(family-name:--font-cormorant) text-[11px] tracking-[0.15em] text-text-muted hover:text-text-secondary transition-colors duration-300">

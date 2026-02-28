@@ -62,7 +62,7 @@ function WelcomeContent() {
           transition={{ duration: 0.8, delay: 0.3 }}
           className="fixed bottom-0 left-1/2 -translate-x-1/2 z-50 max-w-[70vw] w-full">
           <div className="bg-white backdrop-blur-sm border border-medium-gray shadow-2xl px-6 py-4 flex justify-center md:justify-between items-center gap-4 md:gap-10 flex-wrap md:flex-nowrap">
-            <p className="font-(family-name:--font-cormorant) text-sm md:text-base leading-relaxed text-black font-semibold">
+            <p className="font-(family-name:--font-cormorant) text-sm md:text-base leading-relaxed text-text-muted font-semibold">
               This website uses cookies to improve user experience. By using our website you consent
               to all cookies in accordance with our{" "}
               <a
