@@ -65,7 +65,7 @@ export default function Home() {
           <motion.h1
             initial={{ clipPath: "inset(-15px 50%)", opacity: 0 }}
             animate={{ clipPath: "inset(-15px 0%)", opacity: 1 }}
-            transition={{ duration: 5.0, delay: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
+            transition={{ duration: 3.0, delay: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
             className="font-(family-name:--font-great-vibes)! text-6xl md:text-7xl lg:text-7xl xl:text-8xl font-normal tracking-[0.05em] text-charcoal mb-6">
             Royal Chess Design
           </motion.h1>
