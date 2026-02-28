@@ -61,26 +61,44 @@ export default function Home() {
           </motion.h1>
           */}
 
-          {/* Center-outward reveal on the whole title */}
+          {/* Trailing fade — letters stagger with long overlap so ~6 are fading simultaneously */}
           <motion.h1
-            initial={{ clipPath: "inset(-15px 50%)", opacity: 0 }}
-            animate={{ clipPath: "inset(-15px 0%)", opacity: 1 }}
-            transition={{ duration: 3.0, delay: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
-            className="font-(family-name:--font-great-vibes)! text-6xl md:text-7xl lg:text-7xl xl:text-8xl font-normal tracking-[0.05em] text-charcoal mb-6">
-            Royal Chess Design
+            variants={{
+              hidden: {},
+              visible: { transition: { staggerChildren: 0.22, delayChildren: 0.4 } },
+            }}
+            initial="hidden"
+            animate="visible"
+            className="font-(family-name:--font-great-vibes)! text-4xl md:text-5xl lg:text-6xl font-normal tracking-[0.05em] text-charcoal mb-6">
+            {"Royal Chess Design".split("").map((char, i) =>
+              char === " " ? (
+                <span key={i} style={{ display: "inline-block" }}>&nbsp;</span>
+              ) : (
+                <motion.span
+                  key={i}
+                  variants={{
+                    hidden: { opacity: 0 },
+                    visible: { opacity: 1, transition: { duration: 2.2, ease: "linear" } },
+                  }}
+                  style={{ display: "inline-block" }}
+                >
+                  {char}
+                </motion.span>
+              )
+            )}
           </motion.h1>
 
           <motion.div
             initial={{ width: 0 }}
             animate={{ width: 80 }}
-            transition={{ duration: 1, delay: 7.6, ease: [0.25, 0.46, 0.45, 0.94] }}
+            transition={{ duration: 1, delay: 6.2, ease: [0.25, 0.46, 0.45, 0.94] }}
             className="h-px bg-linear-to-r from-transparent via-gold to-transparent mx-auto mb-6"
           />
 
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 1.2, delay: 8.0 }}
+            transition={{ duration: 1.2, delay: 6.6 }}
             className="font-(family-name:--font-cormorant) text-lg md:text-xl lg:text-2xl font-normal tracking-wide text-text-primary max-w-2xl mx-auto mb-12">
             The Art of Strategic Elegance
           </motion.p>
@@ -88,7 +106,7 @@ export default function Home() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 8.3 }}>
+            transition={{ duration: 0.8, delay: 6.9 }}>
             <Link href="/portfolio" className="btn-luxury">
               VIEW COLLECTION
             </Link>
@@ -99,7 +117,7 @@ export default function Home() {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 8.8, duration: 1 }}
+          transition={{ delay: 7.4, duration: 1 }}
           className="absolute bottom-10 left-1/2 -translate-x-1/2">
           <motion.div
             animate={{ y: [0, 8, 0] }}
