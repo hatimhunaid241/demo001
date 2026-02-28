@@ -98,7 +98,7 @@ const sections = [
     content: [
       "For any enquiries relating to these Terms, please contact:",
       "David de Jong Chess Design",
-      "Email: royalchessdesign@gmail.com",
+      "Email: info@royalchessdesign.com",
     ],
   },
 ];
