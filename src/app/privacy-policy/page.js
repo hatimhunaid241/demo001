@@ -96,7 +96,7 @@ const sections = [
     content: [
       "For all enquiries relating to this Privacy Policy, your personal data, or to exercise your rights, please contact us at:",
       "David de Jong Chess Design",
-      "Email: royalchessdesign@gmail.com",
+      "Email: info@royalchessdesign.com",
     ],
   },
 ];
