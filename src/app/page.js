@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -15,6 +16,7 @@ import { chessSets } from "@/data/chessSets";
 
 export default function Home() {
   const featuredSets = chessSets.slice(0, 3);
+  const [logoLoaded, setLogoLoaded] = useState(false);
 
   return (
     <>
@@ -88,10 +90,10 @@ export default function Home() {
             )}
           </motion.h1> */}
 
-          {/* Title image — fading clip reveal left to right */}
+          {/* Title image — fading clip reveal left to right, starts only after image has loaded */}
           <motion.div
             initial={{ clipPath: "inset(0 100% 0 0)", opacity: 0 }}
-            animate={{ clipPath: "inset(0 0% 0 0)", opacity: 1 }}
+            animate={logoLoaded ? { clipPath: "inset(0 0% 0 0)", opacity: 1 } : { clipPath: "inset(0 100% 0 0)", opacity: 0 }}
             transition={{ duration: 2.2, delay: 0.4, ease: "linear" }}
             className="flex justify-center">
             <Image
@@ -101,19 +103,20 @@ export default function Home() {
               height={120}
               className="w-auto max-w-[min(560px,85vw)] opacity-75"
               priority
+              onLoad={() => setLogoLoaded(true)}
             />
           </motion.div>
 
           <motion.div
             initial={{ width: 0 }}
-            animate={{ width: 80 }}
+            animate={logoLoaded ? { width: 80 } : { width: 0 }}
             transition={{ duration: 1, delay: 3.0, ease: [0.25, 0.46, 0.45, 0.94] }}
             className="h-px bg-linear-to-r from-transparent via-gold to-transparent mx-auto mb-6"
           />
 
           <motion.p
             initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
+            animate={logoLoaded ? { opacity: 1 } : { opacity: 0 }}
             transition={{ duration: 1.2, delay: 3.4 }}
             className="font-(family-name:--font-cormorant) text-lg md:text-xl lg:text-2xl font-normal tracking-wide text-text-primary max-w-2xl mx-auto mb-12">
             The Art of Strategic Elegance
@@ -121,7 +124,7 @@ export default function Home() {
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            animate={logoLoaded ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.8, delay: 3.7 }}>
             <Link href="/portfolio" className="btn-luxury">
               VIEW COLLECTION
@@ -132,7 +135,7 @@ export default function Home() {
         {/* Scroll Indicator */}
         <motion.div
           initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          animate={logoLoaded ? { opacity: 1 } : { opacity: 0 }}
           transition={{ delay: 4.2, duration: 1 }}
           className="absolute bottom-10 left-1/2 -translate-x-1/2">
           <motion.div
