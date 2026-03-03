@@ -5,6 +5,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import { Suspense } from "react";
+import Navbar from "@/components/Navbar";
 
 function WelcomeContent() {
   const router = useRouter();
@@ -37,12 +38,14 @@ function WelcomeContent() {
   }
 
   return (
-    <div className="fixed inset-0 bg-black overflow-hidden flex items-center justify-center">
+    <>
+    <Navbar showLinks={false}/>
+    <div className="fixed inset-0 bg-white overflow-hidden flex items-center justify-center">
       {/* ── Video ── */}
       <div className="absolute inset-0 flex items-center justify-center">
         <video
           ref={videoRef}
-          src="/cookie_video.mp4"
+          src="/welcome_video.mp4"
           autoPlay
           muted
           loop
@@ -61,8 +64,8 @@ function WelcomeContent() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
           className="fixed bottom-0 left-1/2 -translate-x-1/2 z-50 max-w-[70vw] w-full">
-          <div className="bg-white backdrop-blur-sm border border-medium-gray shadow-2xl px-6 py-4 flex justify-center md:justify-between items-center gap-4 md:gap-10 flex-wrap md:flex-nowrap">
-            <p className="font-(family-name:--font-cormorant) text-sm md:text-base leading-relaxed text-text-muted font-semibold">
+          <div className="border px-6 py-4 flex justify-center md:justify-between items-center gap-4 md:gap-20 flex-wrap md:flex-nowrap border-none text-center md:text-start">
+            <p className="font-(family-name:--font-cormorant) md:text-[14px] leading-relaxed text-text-muted font-semibold text-balance">
               This website uses cookies to improve user experience. By using our website you consent
               to all cookies in accordance with our{" "}
               <a
@@ -98,6 +101,7 @@ function WelcomeContent() {
         }
       `}</style>
     </div>
+    </>
   );
 }
 

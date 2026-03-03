@@ -18,11 +18,11 @@ export default function Portfolio() {
     <>
       {/* ═══════════════ HERO BANNER ═══════════════ */}
       <HeroSection
-        src="/heroImages/portfolio.jpg"
+        src="/heroImages/WebSchaakFoto__01_V1B.png"
         // src="/portfolio.jpg"
         alt="Royal Chess Design portfolio — luxury bespoke chess collection by David de Jong"
-        overlayClass="bg-gradient-to-b from-white/70 via-white/80 to-white/50"
-        height="h-[65vh] md:h-[75vh]"
+        overlayClass="bg-gradient-to-b from-white/60 via-white/80 to-white/50"
+        height="h-[65vh] md:h-[85vh]"
         showScrollIndicator>
         <div className="text-center px-6">
           <motion.span

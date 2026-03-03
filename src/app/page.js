@@ -21,7 +21,7 @@ export default function Home() {
       {/* ═══════════════ HERO SECTION ═══════════════ */}
       <HeroSection
         // src="https://images.unsplash.com/photo-1528819622765-d6bcf132f793?w=1920&q=85"
-        src="/heroImages/hero.jpg"
+        src="/heroImages/WebSchaakFoto__02_V1A.png"
         alt="Luxury bespoke chess pieces by Royal Chess Design — handcrafted from gold and precious gemstones"
         overlayClass="bg-gradient-to-b from-white/70 via-white/60 to-white/80"
         height="h-screen">
@@ -30,7 +30,7 @@ export default function Home() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2, delay: 0.2, ease: [0.25, 0.46, 0.45, 0.94] }}
-            className="mb-6">
+            className="">
             <span className="font-(family-name:--font-cormorant) text-[14px] md:text-[16px] tracking-[0.5em] text-gold uppercase">
               Chess Designers Portfolio
             </span>
@@ -62,7 +62,7 @@ export default function Home() {
           */}
 
           {/* Trailing fade — letters stagger with long overlap so ~6 are fading simultaneously */}
-          <motion.h1
+          {/* <motion.h1
             variants={{
               hidden: {},
               visible: { transition: { staggerChildren: 0.22, delayChildren: 0.4 } },
@@ -86,19 +86,35 @@ export default function Home() {
                 </motion.span>
               )
             )}
-          </motion.h1>
+          </motion.h1> */}
+
+          {/* Title image — fading clip reveal left to right */}
+          <motion.div
+            initial={{ clipPath: "inset(0 100% 0 0)", opacity: 0 }}
+            animate={{ clipPath: "inset(0 0% 0 0)", opacity: 1 }}
+            transition={{ duration: 2.2, delay: 0.4, ease: "linear" }}
+            className="flex justify-center">
+            <Image
+              src="/royalchessdesign.png"
+              alt="Royal Chess Design"
+              width={560}
+              height={120}
+              className="w-auto max-w-[min(560px,85vw)] opacity-75"
+              priority
+            />
+          </motion.div>
 
           <motion.div
             initial={{ width: 0 }}
             animate={{ width: 80 }}
-            transition={{ duration: 1, delay: 6.2, ease: [0.25, 0.46, 0.45, 0.94] }}
+            transition={{ duration: 1, delay: 3.0, ease: [0.25, 0.46, 0.45, 0.94] }}
             className="h-px bg-linear-to-r from-transparent via-gold to-transparent mx-auto mb-6"
           />
 
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 1.2, delay: 6.6 }}
+            transition={{ duration: 1.2, delay: 3.4 }}
             className="font-(family-name:--font-cormorant) text-lg md:text-xl lg:text-2xl font-normal tracking-wide text-text-primary max-w-2xl mx-auto mb-12">
             The Art of Strategic Elegance
           </motion.p>
@@ -106,7 +122,7 @@ export default function Home() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 6.9 }}>
+            transition={{ duration: 0.8, delay: 3.7 }}>
             <Link href="/portfolio" className="btn-luxury">
               VIEW COLLECTION
             </Link>
@@ -117,7 +133,7 @@ export default function Home() {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 7.4, duration: 1 }}
+          transition={{ delay: 4.2, duration: 1 }}
           className="absolute bottom-10 left-1/2 -translate-x-1/2">
           <motion.div
             animate={{ y: [0, 8, 0] }}

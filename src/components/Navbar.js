@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import Logo from "./Logo";
 
-export default function Navbar() {
+export default function Navbar({showLinks = true}) {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
@@ -37,12 +37,12 @@ export default function Navbar() {
     };
   }, [menuOpen]);
 
-  const navLinks = [
+  const navLinks = showLinks ? [
     { href: "/", label: "HOME" },
     { href: "/portfolio", label: "PORTFOLIO" },
     // { href: "/the-artist", label: "THE ARTIST" },
     { href: "/contact", label: "CONTACT" },
-  ];
+  ] : [];
 
   return (
     <>
@@ -78,6 +78,7 @@ export default function Navbar() {
             </div>
 
             {/* Mobile Menu Button */}
+            {navLinks.length > 0 && (
             <button
               onClick={() => setMenuOpen(!menuOpen)}
               className="md:hidden relative z-50 w-8 h-8 flex flex-col items-center justify-center gap-1.5"
@@ -99,13 +100,14 @@ export default function Navbar() {
                 }`}
               />
             </button>
+            )}
           </div>
         </div>
       </nav>
 
       {/* Mobile Menu Overlay */}
       <AnimatePresence>
-        {menuOpen && (
+        {navLinks.length > 0 && menuOpen && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}

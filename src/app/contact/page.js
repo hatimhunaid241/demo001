@@ -32,10 +32,10 @@ export default function Contact() {
       {/* ═══════════════ HERO BANNER ═══════════════ */}
       <HeroSection
         // src="https://images.unsplash.com/photo-1560174038-da43ac74f01b?w=1920&q=85"
-        src="/heroImages/contact.jpg"
+        src="/heroImages/WebSchaakFoto__03_V1D.png"
         alt="Contact Royal Chess Design — commission a bespoke luxury chess set by David de Jong"
         overlayClass="bg-gradient-to-b from-white/40 via-white/90 to-white/50"
-        height="h-[60vh] md:h-[70vh]"
+        height="h-[60vh] md:h-[85vh]"
         showScrollIndicator>
         <div className="text-center px-6">
           <motion.span
