@@ -42,7 +42,7 @@ function WelcomeContent() {
     <Navbar showLinks={false}/>
     <div className="fixed inset-0 bg-white overflow-hidden flex items-center justify-center">
       {/* ── Video ── */}
-      <div className="absolute inset-0 flex items-center justify-center bg-white">
+      <div className="absolute inset-0 flex items-center justify-center bg-white overflow-hidden">
         <video
           ref={videoRef}
           src="/welcome_video.mp4"
@@ -52,7 +52,7 @@ function WelcomeContent() {
           playsInline
           onCanPlay={() => setVideoReady(true)}
           onError={() => setVideoReady(true)}
-          className="max-w-full max-h-full w-full h-full object-contain bg-transparent border-none"
+          className="block max-w-full max-h-full w-full h-full object-contain outline-none"
         />
       </div>
 
