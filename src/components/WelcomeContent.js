@@ -63,7 +63,7 @@ export default function WelcomeContent({ saveConsent }) {
                   </button>
                   <button
                     onClick={() => saveConsent("rejected")}
-                    className="font-(family-name:--font-cormorant) text-[11px] tracking-[0.35em] uppercase text-text-muted hover:text-charcoal transition-colors duration-200 px-4 py-2">
+                    className="btn-luxury text-[10px] py-2! px-6!">
                     Reject
                   </button>
                 </div>

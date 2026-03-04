@@ -35,7 +35,7 @@ export default function Contact() {
         src="/heroImages/Contact page.jpg"
         alt="Contact Royal Chess Design — commission a bespoke luxury chess set by David de Jong"
         overlayClass="bg-gradient-to-b from-white/40 via-white/90 to-white/50"
-        height="h-[60vh] md:h-[75vh]"
+        height="h-[65vh] md:h-[75vh]"
         showScrollIndicator>
         <div className="text-center px-6">
           <motion.span
