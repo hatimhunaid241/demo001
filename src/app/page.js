@@ -21,7 +21,7 @@ export default function Home() {
       {/* ═══════════════ HERO SECTION ═══════════════ */}
       <HeroSection
         // src="https://images.unsplash.com/photo-1528819622765-d6bcf132f793?w=1920&q=85"
-        src="/heroImages/Home page.jpg"
+        src="/heroImages/WebSchaakFoto__04_V6A.png"
         alt="Luxury bespoke chess pieces by Royal Chess Design — handcrafted from gold and precious gemstones"
         overlayClass="bg-gradient-to-b from-white/70 via-white/60 to-white/80"
         height="h-screen">

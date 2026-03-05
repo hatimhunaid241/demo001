@@ -32,7 +32,7 @@ export default function Contact() {
       {/* ═══════════════ HERO BANNER ═══════════════ */}
       <HeroSection
         // src="https://images.unsplash.com/photo-1560174038-da43ac74f01b?w=1920&q=85"
-        src="/heroImages/Contact page.jpg"
+        src="/heroImages/Test 01.jpg"
         alt="Contact Royal Chess Design — commission a bespoke luxury chess set by David de Jong"
         overlayClass="bg-gradient-to-b from-white/40 via-white/60 to-white/50"
         height="h-[65vh] md:h-[75vh]"
