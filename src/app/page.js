@@ -2,7 +2,8 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   FadeInUp,
   FadeIn,
@@ -13,8 +14,60 @@ import {
 import { HeroSection } from "@/components/HeroImage";
 import { chessSets } from "@/data/chessSets";
 
+function VideoModal({ onClose }) {
+  useEffect(() => {
+    const onKey = (e) => { if (e.key === "Escape") onClose(); };
+    document.addEventListener("keydown", onKey);
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.body.style.overflow = "";
+    };
+  }, [onClose]);
+
+  return (
+    <AnimatePresence>
+      <motion.div
+        key="video-backdrop"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.3 }}
+        className="fixed inset-0 z-9999 bg-charcoal/95 flex items-center justify-center"
+        onClick={onClose}
+      >
+        <button
+          onClick={onClose}
+          aria-label="Close"
+          className="absolute top-5 right-6 font-(family-name:--font-cormorant) text-[11px] tracking-[0.4em] text-white/60 uppercase hover:text-white transition-colors duration-200 z-10000"
+        >
+          CLOSE ✕
+        </button>
+
+        <motion.div
+          initial={{ opacity: 0, scale: 0.96 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0.96 }}
+          transition={{ duration: 0.3 }}
+          className="relative w-full max-w-5xl mx-auto px-6"
+          onClick={(e) => e.stopPropagation()}
+        >
+          <video
+            src="/welcome_video.mp4"
+            autoPlay
+            controls
+            playsInline
+            className="w-full max-h-[85vh] object-contain"
+          />
+        </motion.div>
+      </motion.div>
+    </AnimatePresence>
+  );
+}
+
 export default function Home() {
   const featuredSets = chessSets.slice(0, 3);
+  const [videoOpen, setVideoOpen] = useState(false);
 
   return (
     <>
@@ -116,17 +169,30 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 2.3 }}>
-            <Link href="/portfolio" className="btn-luxury">
+            <Link href="/portfolio" className="btn-luxury mb-2">
               VIEW COLLECTION
             </Link>
           </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 2.8 }}>
+            <button
+              onClick={() => setVideoOpen(true)}
+              className="font-(family-name:--font-cormorant) text-[12px] tracking-[0.35em] uppercase hover:text-gold-light transition-colors duration-300 flex items-center gap-2 mx-auto group font-bold opacity-70 hover:opacity-100">
+              <span className="w-4 h-px bg-text-muted group-hover:bg-gold transition-colors duration-200" />
+              Watch Film
+              <span className="w-4 h-px bg-text-muted group-hover:bg-gold transition-colors duration-200" />
+            </button>
+          </motion.div>
         </div>
+
 
         {/* Scroll Indicator */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 2.8, duration: 1 }}
+          transition={{ delay: 3.5, duration: 1 }}
           className="absolute bottom-10 left-1/2 -translate-x-1/2">
           <motion.div
             animate={{ y: [0, 8, 0] }}
@@ -139,6 +205,8 @@ export default function Home() {
           </motion.div>
         </motion.div>
       </HeroSection>
+
+      {videoOpen && <VideoModal onClose={() => setVideoOpen(false)} />}
 
       {/* ═══════════════ INTRODUCTION SECTION ═══════════════ */}
       <section className="py-28 md:py-40 bg-white">

@@ -23,6 +23,7 @@ export const chessSets = [
       "Gold, rutilated quartz and precious stones crafted into sculptural monuments of play.",
     image: "/chessSets/1/table1.png",
     heroImage: "/chessSets/1/table1.png",
+    videos: ["/welcome_video.mp4"],
     materials: "18 Karat Yellow & White Gold, Rutilated Smoky Quartz, Rock Crystal, Rubellites, Tanzanites, Green Marble",
     year: "2026",
     category: "Precious Metals",

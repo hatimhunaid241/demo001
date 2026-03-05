@@ -10,6 +10,59 @@ import { FadeInUp, FadeIn, DividerReveal } from "@/components/Animations";
 import { BASE_URL } from "@/config/site";
 
 /* ─────────────────────────────────────────────────────────
+   VIDEO MODAL
+───────────────────────────────────────────────────────── */
+function VideoModal({ src, onClose }) {
+  useEffect(() => {
+    const onKey = (e) => { if (e.key === "Escape") onClose(); };
+    document.addEventListener("keydown", onKey);
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.body.style.overflow = "";
+    };
+  }, [onClose]);
+
+  return (
+    <AnimatePresence>
+      <motion.div
+        key="video-backdrop"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.3 }}
+        className="fixed inset-0 z-9999 bg-charcoal/95 flex items-center justify-center"
+        onClick={onClose}
+      >
+        <button
+          onClick={onClose}
+          aria-label="Close"
+          className="absolute top-5 right-6 font-(family-name:--font-cormorant) text-[11px] tracking-[0.4em] text-white/60 uppercase hover:text-white transition-colors duration-200 z-10000"
+        >
+          CLOSE ✕
+        </button>
+        <motion.div
+          initial={{ opacity: 0, scale: 0.96 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0.96 }}
+          transition={{ duration: 0.3 }}
+          className="relative w-full max-w-5xl mx-auto px-6"
+          onClick={(e) => e.stopPropagation()}
+        >
+          <video
+            src={src}
+            autoPlay
+            controls
+            playsInline
+            className="w-full max-h-[85vh] object-contain"
+          />
+        </motion.div>
+      </motion.div>
+    </AnimatePresence>
+  );
+}
+
+/* ─────────────────────────────────────────────────────────
    LIGHTBOX
 ───────────────────────────────────────────────────────── */
 function Lightbox({ images, index, onClose, onPrev, onNext }) {
@@ -315,6 +368,8 @@ export default function ChessSetPage({ params }) {
   const prevImage = useCallback(() => setLightbox((lb) => ({ ...lb, index: (lb.index - 1 + lb.images.length) % lb.images.length })), []);
   const nextImage = useCallback(() => setLightbox((lb) => ({ ...lb, index: (lb.index + 1) % lb.images.length })), []);
 
+  const [videoOpen, setVideoOpen] = useState(false);
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
@@ -395,7 +450,7 @@ export default function ChessSetPage({ params }) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.75 }}
-            className="font-(family-name:--font-cormorant) text-base md:text-lg text-gold italic font-light tracking-wide mb-10"
+            className="font-(family-name:--font-cormorant) text-base md:text-lg text-gold italic font-light tracking-wide mb-5"
           >
             {set.subtitle}
           </motion.p>
@@ -404,7 +459,7 @@ export default function ChessSetPage({ params }) {
             initial={{ width: 0 }}
             animate={{ width: 64 }}
             transition={{ duration: 1, delay: 0.9 }}
-            className="h-px bg-linear-to-r from-transparent via-gold to-transparent mx-auto mb-10"
+            className="h-px bg-linear-to-r from-transparent via-gold to-transparent mx-auto mb-5"
           />
 
           <motion.div
@@ -429,7 +484,24 @@ export default function ChessSetPage({ params }) {
             </>
             )}
           </motion.div>
+          {set.videos?.length > 0 && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 1.4 }}
+              className="mt-6"
+            >
+              <button
+                onClick={() => setVideoOpen(true)}
+                className="font-(family-name:--font-cormorant) text-[12px] tracking-[0.35em] uppercase hover:text-gold transition-colors duration-300 flex items-center gap-2 mx-auto group font-bold opacity-70 hover:opacity-100">
+                <span className="w-4 h-px bg-text-muted group-hover:bg-gold transition-colors duration-200" />
+                Watch Film
+                <span className="w-4 h-px bg-text-muted group-hover:bg-gold transition-colors duration-200" />
+              </button>
+            </motion.div>
+          )}
         </div>
+
 
         {/* Scroll indicator */}
         <motion.div
@@ -559,6 +631,10 @@ export default function ChessSetPage({ params }) {
           onPrev={prevImage}
           onNext={nextImage}
         />
+      )}
+
+      {videoOpen && set.videos?.length > 0 && (
+        <VideoModal src={set.videos[0]} onClose={() => setVideoOpen(false)} />
       )}
 
       {/* ═══════════════ MATERIALS STRIP ═══════════════ */}
