@@ -119,8 +119,8 @@ export const chessSets = [
       "The classic Staunton design, reimagined in solid 925 sterling silver with Japanese pearls, black tourmaline, opals and brilliant-cut Moissanite stones. Presented on a breathtaking board of polished rock crystal and smoky quartz, set into a hidden-bar Wengé table.",
     shortDescription:
       "Solid sterling silver Staunton pieces on a rock crystal and smoky quartz board.",
-    image: "/chessSets/2/table2.jpg",
-    heroImage: "/chessSets/2/table2.jpg",
+    image: "/chessSets/2/table1.jpg",
+    heroImage: "/chessSets/2/table1.jpg",
     materials: "925 Sterling Silver, Japanese Pearls, Moissanite, Black Tourmaline, Opal, Wengé Wood",
     year: "2026",
     category: "Precious Metals",
