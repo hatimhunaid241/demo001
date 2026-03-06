@@ -221,7 +221,7 @@ export default function Contact() {
                       Thank You
                     </h3>
                     <p className="font-(family-name:--font-cormorant) text-lg text-text-secondary font-light mb-8">
-                      Your message has been received. We will be in touch shortly.
+                      Your message has been received and will receive my personal attention.
                     </p>
                     <button
                       onClick={() => {

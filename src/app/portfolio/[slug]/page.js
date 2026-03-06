@@ -441,7 +441,7 @@ export default function ChessSetPage({ params }) {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.1, delay: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
-            className="font-(family-name:--font-playfair) text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal tracking-[0.08em] text-charcoal mb-4"
+            className="font-(family-name:--font-playfair) text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal tracking-[0.08em] text-charcoal mb-4 md:max-w-xl lg:max-w-2xl"
           >
             {set.name}
           </motion.h1>
@@ -466,7 +466,7 @@ export default function ChessSetPage({ params }) {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.1 }}
-            className="flex flex-wrap justify-center gap-6"
+            className="flex flex-wrap justify-center gap-6 mb-4"
           >
             <span className="font-(family-name:--font-cormorant) text-[11px] tracking-[0.35em] uppercase flex items-center">
               {set.category}
@@ -479,26 +479,24 @@ export default function ChessSetPage({ params }) {
               <>
             <span className="">·</span>
             <span className="font-(family-name:--font-cormorant) text-[11px] tracking-[0.35em] uppercase flex items-center">
-              {Array.isArray(set.detail.pieces) ? set.detail.pieces.length : 0} Pieces
+              {["Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen", "Twenty"][Array.isArray(set.detail.pieces) ? set.detail.pieces.length : 0]} Pieces
             </span>
             </>
             )}
           </motion.div>
           {set.videos?.length > 0 && (
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1.4 }}
-              className="mt-6"
-            >
-              <button
-                onClick={() => setVideoOpen(true)}
-                className="font-(family-name:--font-cormorant) text-[12px] tracking-[0.35em] uppercase hover:text-gold transition-colors duration-300 flex items-center gap-2 mx-auto group font-bold opacity-70 hover:opacity-100">
-                <span className="w-4 h-px bg-text-muted group-hover:bg-gold transition-colors duration-200" />
-                Watch Film
-                <span className="w-4 h-px bg-text-muted group-hover:bg-gold transition-colors duration-200" />
-              </button>
-            </motion.div>
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1.4 }}>
+            <button
+              onClick={() => setVideoOpen(true)}
+              className="nav-link relative font-(family-name:--font-cormorant) text-[12px] tracking-[0.2em] uppercase transition-colors duration-300 mx-auto group font-bold opacity-70 hover:opacity-100 hover:text-gold">
+              <span className="absolute top-1/2 -translate-y-1/2 right-[calc(100%+8px)] w-4 h-px bg-text-muted group-hover:bg-gold transition-colors duration-200" />
+              Watch Film
+              <span className="absolute top-1/2 -translate-y-1/2 left-[calc(100%+8px)] w-4 h-px bg-text-muted group-hover:bg-gold transition-colors duration-200" />
+            </button>
+          </motion.div>
           )}
         </div>
 

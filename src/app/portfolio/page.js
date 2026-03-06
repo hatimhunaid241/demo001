@@ -52,7 +52,7 @@ export default function Portfolio() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1.2, delay: 1.0 }}
-            className="font-(family-name:--font-cormorant) text-lg md:text-xl font-light tracking-[0.08em] text-text-secondary max-w-xl mx-auto">
+            className="font-(family-name:--font-cormorant) text-lg md:text-xl font-light tracking-[0.08em] text-text-secondary max-w-lg mx-auto">
             Each set is a crafted expression of identity, intention, and elegance.
           </motion.p>
         </div>

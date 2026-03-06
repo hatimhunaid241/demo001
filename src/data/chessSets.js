@@ -1,13 +1,3 @@
-// ─── Shared placeholder images (replace with real photography later) ───────────
-const IMG = {
-  a: "https://images.unsplash.com/photo-1586165368502-1bad197a6461?w=900&q=85",
-  b: "https://images.unsplash.com/photo-1529699211952-734e80c4d42b?w=900&q=85",
-  c: "https://images.unsplash.com/photo-1560174038-da43ac74f01b?w=900&q=85",
-  d: "https://images.unsplash.com/photo-1604948501466-4e9c339b9c24?w=900&q=85",
-  e: "https://images.unsplash.com/photo-1580541832626-2a7131ee809f?w=900&q=85",
-  f: "https://images.unsplash.com/photo-1528819622765-d6bcf132f793?w=900&q=85",
-};
-
 // Chess set data for the portfolio
 export const chessSets = [
   /* ═══════════════════════════════════════════════════════
@@ -235,7 +225,7 @@ export const chessSets = [
   ═══════════════════════════════════════════════════════ */
   {
     id: "royal-gold-classic",
-    name: "Royal Gold Petite Chess Set",
+    name: "Royal Gold Petite Classic Chess Set",
     subtitle: "New Classic — 18 Karat Gold on Epoxy Resin",
     description:
       "Solid 18 karat yellow and white gold Staunton pieces, played on a stunning transparent epoxy resin board with 64 crystal-glass pyramid squares. The illusion: the gold pieces appear to float above the playing surface in midair.",
@@ -347,7 +337,7 @@ export const chessSets = [
   ═══════════════════════════════════════════════════════ */
   {
     id: "royal-gold-geometric",
-    name: "Royal Gold Petite Chess Set",
+    name: "Royal Gold Petite Geometra Chess Set",
     subtitle: "Geometric — 18 Karat Gold on Laser-Engraved Crystal",
     description:
       "18 karat yellow and white gold Staunton pieces on a board of precision-cut crystal glass cubes, each containing a laser-engraved 3D galaxy star deep within. An experience where the cosmos meets the stratosphere of fine craftsmanship.",

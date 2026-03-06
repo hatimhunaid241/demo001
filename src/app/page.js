@@ -145,7 +145,7 @@ export default function Home() {
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
+            transition={{ duration: 3, delay: 0.4, ease: [0.25, 0.46, 0.65, 0.94] }}
             className="">
             <Image src="/royalchessdesign.png" alt="Royal Chess Design" width={550} height={100} className="mx-auto" />
           </motion.h1>
@@ -164,12 +164,12 @@ export default function Home() {
             className="font-(family-name:--font-cormorant) text-lg md:text-xl lg:text-2xl font-normal tracking-wide text-text-primary max-w-2xl mx-auto mb-12">
             The Art of Strategic Elegance
           </motion.p>
-
+  
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 2.3 }}>
-            <Link href="/portfolio" className="btn-luxury mb-2">
+            <Link href="/portfolio" className="btn-luxury mb-6">
               VIEW COLLECTION
             </Link>
           </motion.div>
@@ -179,10 +179,10 @@ export default function Home() {
             transition={{ duration: 0.8, delay: 2.8 }}>
             <button
               onClick={() => setVideoOpen(true)}
-              className="font-(family-name:--font-cormorant) text-[12px] tracking-[0.35em] uppercase hover:text-gold-light transition-colors duration-300 flex items-center gap-2 mx-auto group font-bold opacity-70 hover:opacity-100">
-              <span className="w-4 h-px bg-text-muted group-hover:bg-gold transition-colors duration-200" />
+              className="nav-link relative font-(family-name:--font-cormorant) text-[12px] tracking-[0.2em] uppercase transition-colors duration-300 mx-auto group font-bold opacity-70 hover:opacity-100 hover:text-gold">
+              <span className="absolute top-1/2 -translate-y-1/2 right-[calc(100%+8px)] w-4 h-px bg-text-muted group-hover:bg-gold transition-colors duration-200" />
               Watch Film
-              <span className="w-4 h-px bg-text-muted group-hover:bg-gold transition-colors duration-200" />
+              <span className="absolute top-1/2 -translate-y-1/2 left-[calc(100%+8px)] w-4 h-px bg-text-muted group-hover:bg-gold transition-colors duration-200" />
             </button>
           </motion.div>
         </div>
