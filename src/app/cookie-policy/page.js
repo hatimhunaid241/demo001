@@ -132,7 +132,6 @@ export default function CookiePolicy() {
       {/* ── Content ── */}
       <section className="py-24 md:py-32 bg-white">
         <div className="max-w-3xl mx-auto px-6 md:px-8">
-
           {/* Intro */}
           <FadeInUp>
             <p className="font-(family-name:--font-cormorant) text-lg md:text-xl leading-relaxed text-text-secondary font-light mb-16 pb-16 border-b border-medium-gray">
