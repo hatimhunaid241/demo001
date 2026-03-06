@@ -13,6 +13,8 @@ import { BASE_URL } from "@/config/site";
    VIDEO MODAL
 ───────────────────────────────────────────────────────── */
 function VideoModal({ src, onClose }) {
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
     const onKey = (e) => { if (e.key === "Escape") onClose(); };
     document.addEventListener("keydown", onKey);
@@ -49,12 +51,18 @@ function VideoModal({ src, onClose }) {
           className="relative w-full max-w-5xl mx-auto px-6"
           onClick={(e) => e.stopPropagation()}
         >
+          {loading && (
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="w-8 h-8 border border-white/30 border-t-white rounded-full animate-spin" />
+            </div>
+          )}
           <video
             src={src}
             autoPlay
             controls
             playsInline
-            className="w-full max-h-[85vh] object-contain"
+            onCanPlay={() => setLoading(false)}
+            className={`w-full max-h-[85vh] object-contain transition-opacity duration-300 ${loading ? "opacity-0" : "opacity-100"}`}
           />
         </motion.div>
       </motion.div>
@@ -65,6 +73,27 @@ function VideoModal({ src, onClose }) {
 /* ─────────────────────────────────────────────────────────
    LIGHTBOX
 ───────────────────────────────────────────────────────── */
+function LightboxImage({ src }) {
+  const [loading, setLoading] = useState(true);
+  return (
+    <>
+      {loading && (
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="w-8 h-8 border border-white/30 border-t-white rounded-full animate-spin" />
+        </div>
+      )}
+      <Image
+        src={src}
+        alt=""
+        fill
+        onLoad={() => setLoading(false)}
+        className={`object-contain transition-opacity duration-300 ${loading ? "opacity-0" : "opacity-100"}`}
+        sizes="100vw"
+      />
+    </>
+  );
+}
+
 function Lightbox({ images, index, onClose, onPrev, onNext }) {
   const multi = images.length > 1;
 
@@ -119,13 +148,7 @@ function Lightbox({ images, index, onClose, onPrev, onNext }) {
           className="relative w-full h-full max-w-6xl max-h-[90vh] mx-auto px-16 flex items-center justify-center"
           onClick={(e) => e.stopPropagation()}
         >
-          <Image
-            src={images[index]}
-            alt=""
-            fill
-            className="object-contain"
-            sizes="100vw"
-          />
+          <LightboxImage src={images[index]} />
         </motion.div>
 
         {/* Arrows */}

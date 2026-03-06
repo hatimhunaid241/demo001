@@ -15,6 +15,8 @@ import { HeroSection } from "@/components/HeroImage";
 import { chessSets } from "@/data/chessSets";
 
 function VideoModal({ onClose }) {
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
     const onKey = (e) => { if (e.key === "Escape") onClose(); };
     document.addEventListener("keydown", onKey);
@@ -52,12 +54,18 @@ function VideoModal({ onClose }) {
           className="relative w-full max-w-5xl mx-auto px-6"
           onClick={(e) => e.stopPropagation()}
         >
+          {loading && (
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="w-8 h-8 border border-white/30 border-t-white rounded-full animate-spin" />
+            </div>
+          )}
           <video
             src="/welcome_video.mp4"
             autoPlay
             controls
             playsInline
-            className="w-full max-h-[85vh] object-contain"
+            onCanPlay={() => setLoading(false)}
+            className={`w-full max-h-[85vh] object-contain transition-opacity duration-300 ${loading ? "opacity-0" : "opacity-100"}`}
           />
         </motion.div>
       </motion.div>

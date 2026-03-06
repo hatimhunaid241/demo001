@@ -1,30 +1,34 @@
 "use client";
 
+import { useActionState, useRef } from "react";
 import { useState } from "react";
-import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { FadeInUp, FadeIn, DividerReveal } from "@/components/Animations";
 import { HeroSection } from "@/components/HeroImage";
 import PhoneField from "@/components/PhoneField";
+import { sendContactMessage } from "@/actions/contact";
 
 export default function Contact() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-  });
+  const [state, action, pending] = useActionState(sendContactMessage, undefined);
   const [phone, setPhone] = useState("");
-  const [submitted, setSubmitted] = useState(false);
+  const router = useRouter();
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+  const startTimeRef = useRef(null);
+
+  const handleFirstInteraction = () => {
+    if (startTimeRef.current === null) {
+      startTimeRef.current = Date.now();
+    }
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-    // In production, this would send to a backend
-    setSubmitted(true);
+    const form = e.currentTarget;
+    const elapsedInput = form.querySelector('input[name="elapsed"]');
+    if (elapsedInput && startTimeRef.current !== null) {
+      elapsedInput.value = ((Date.now() - startTimeRef.current) / 1000).toString();
+    }
+    startTimeRef.current = null;
   };
 
   return (
@@ -200,7 +204,7 @@ export default function Contact() {
 
               <DividerReveal className="mb-10" />
 
-              {submitted ? (
+              {state?.success ? (
                 <FadeIn>
                   <div className="text-center py-16">
                     <div className="w-16 h-16 mx-auto mb-8 rounded-full border border-gold flex items-center justify-center">
@@ -221,14 +225,10 @@ export default function Contact() {
                       Thank You
                     </h3>
                     <p className="font-(family-name:--font-cormorant) text-lg text-text-secondary font-light mb-8">
-                      Your message has been received and will receive my personal attention.
+                      Your enquiry has been received and will receive my personal attention.
                     </p>
                     <button
-                      onClick={() => {
-                        setSubmitted(false);
-                        setFormData({ name: "", email: "", subject: "", message: "" });
-                        setPhone("");
-                      }}
+                      onClick={() => router.refresh()}
                       className="btn-luxury">
                       SEND ANOTHER
                     </button>
@@ -236,20 +236,42 @@ export default function Contact() {
                 </FadeIn>
               ) : (
                 <FadeInUp delay={0.2}>
-                  <form onSubmit={handleSubmit} className="space-y-8">
+                  <form
+                    action={action}
+                    onSubmit={handleSubmit}
+                    className="space-y-8"
+                    autoComplete="off"
+                  >
+                    {/* Honeypot — hidden from users, visible to bots */}
+                    <div style={{ position: "absolute", left: "-9999px", width: 0, height: 0, overflow: "hidden" }} aria-hidden="true">
+                      <input type="text" name="name" tabIndex={-1} autoComplete="off" />
+                      <input type="email" name="email" tabIndex={-1} autoComplete="off" />
+                      <textarea name="message" tabIndex={-1} autoComplete="off" />
+                    </div>
+                    {/* Hidden elapsed timer field */}
+                    <input type="hidden" name="elapsed" defaultValue="" />
+                    {/* Hidden phone value from PhoneField */}
+                    <input type="hidden" name="phone" value={phone} readOnly />
+
                     <div>
                       <label className="font-(family-name:--font-cormorant) text-[11px] tracking-[0.3em] text-text-muted uppercase block mb-3">
                         NAME *
                       </label>
                       <input
                         type="text"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleChange}
+                        name="eman"
                         required
+                        autoComplete="off"
+                        onFocus={handleFirstInteraction}
+                        onChange={handleFirstInteraction}
                         className="w-full bg-transparent border-b border-medium-gray pb-3 text-charcoal font-(family-name:--font-cormorant) text-base focus:border-gold transition-colors duration-300 placeholder:text-text-muted/40"
                         placeholder="Your full name"
                       />
+                      {state?.errors?.name && (
+                        <p className="font-(family-name:--font-cormorant) text-sm text-red-500 mt-2 tracking-wide">
+                          {state.errors.name[0]}
+                        </p>
+                      )}
                     </div>
 
                     <div>
@@ -258,13 +280,19 @@ export default function Contact() {
                       </label>
                       <input
                         type="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleChange}
+                        name="liame"
                         required
+                        autoComplete="off"
+                        onFocus={handleFirstInteraction}
+                        onChange={handleFirstInteraction}
                         className="w-full bg-transparent border-b border-medium-gray pb-3 text-charcoal font-(family-name:--font-cormorant) text-base focus:border-gold transition-colors duration-300 placeholder:text-text-muted/40"
                         placeholder="Your email address"
                       />
+                      {state?.errors?.email && (
+                        <p className="font-(family-name:--font-cormorant) text-sm text-red-500 mt-2 tracking-wide">
+                          {state.errors.email[0]}
+                        </p>
+                      )}
                     </div>
 
                     <div>
@@ -285,8 +313,9 @@ export default function Contact() {
                       <input
                         type="text"
                         name="subject"
-                        value={formData.subject}
-                        onChange={handleChange}
+                        autoComplete="off"
+                        onFocus={handleFirstInteraction}
+                        onChange={handleFirstInteraction}
                         className="w-full bg-transparent border-b border-medium-gray pb-3 text-charcoal font-(family-name:--font-cormorant) text-base focus:border-gold transition-colors duration-300 placeholder:text-text-muted/40"
                         placeholder="Private viewing, commission, or general enquiry"
                       />
@@ -297,19 +326,35 @@ export default function Contact() {
                         MESSAGE *
                       </label>
                       <textarea
-                        name="message"
-                        value={formData.message}
-                        onChange={handleChange}
+                        name="egassem"
                         required
                         rows={5}
+                        autoComplete="off"
+                        onFocus={handleFirstInteraction}
+                        onChange={handleFirstInteraction}
                         className="w-full bg-transparent border-b border-medium-gray pb-3 text-charcoal font-(family-name:--font-cormorant) text-base focus:border-gold transition-colors duration-300 resize-none placeholder:text-text-muted/40"
                         placeholder="Tell us about your interest..."
                       />
+                      {state?.errors?.message && (
+                        <p className="font-(family-name:--font-cormorant) text-sm text-red-500 mt-2 tracking-wide">
+                          {state.errors.message[0]}
+                        </p>
+                      )}
                     </div>
 
+                    {/* Server error banner */}
+                    {state?.message && !state?.success && (
+                      <p className="font-(family-name:--font-cormorant) text-sm text-red-500 tracking-wide">
+                        {state.message}
+                      </p>
+                    )}
+
                     <div className="pt-4">
-                      <button type="submit" className="btn-luxury-filled">
-                        SUBMIT
+                      <button
+                        type="submit"
+                        disabled={pending}
+                        className="btn-luxury-filled disabled:opacity-50 disabled:cursor-not-allowed">
+                        {pending ? "SENDING..." : "SUBMIT"}
                       </button>
                     </div>
                   </form>
