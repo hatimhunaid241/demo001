@@ -440,7 +440,7 @@ export default function ChessSetPage({ params }) {
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.1, delay: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
+            transition={{ duration: 3, delay: 0.4, ease: [0.25, 0.46, 0.65, 0.94] }}
             className="font-(family-name:--font-playfair) text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal tracking-[0.08em] text-charcoal mb-4 md:max-w-xl lg:max-w-2xl"
           >
             {set.name}
