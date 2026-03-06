@@ -24,7 +24,7 @@ export default function WelcomeContent({ saveConsent }) {
         <div className="absolute inset-0 flex items-center justify-center bg-white overflow-hidden">
           <video
             ref={videoRef}
-            src="/welcome_video.mp4"
+            src="/videos/welcome_video.mp4"
             autoPlay
             muted
             loop

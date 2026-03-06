@@ -60,7 +60,7 @@ function VideoModal({ onClose }) {
             </div>
           )}
           <video
-            src="/welcome_video.mp4"
+            src="/videos/intro_story.mp4"
             autoPlay
             controls
             playsInline

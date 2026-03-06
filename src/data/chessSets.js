@@ -13,7 +13,7 @@ export const chessSets = [
       "Gold, rutilated quartz and precious stones crafted into sculptural monuments of play.",
     image: "/chessSets/1/table1.png",
     heroImage: "/chessSets/1/table1.png",
-    videos: ["/welcome_video.mp4"],
+    videos: ["/chessSets/1/video.mp4"],
     materials: "18 Karat Yellow & White Gold, Rutilated Smoky Quartz, Rock Crystal, Rubellites, Tanzanites, Green Marble",
     year: "2026",
     category: "Precious Metals",
@@ -169,7 +169,7 @@ export const chessSets = [
         {
           name: "The Knight",
           height: "66.40 mm",
-          image: ["/chessSets/2/knight1.png", "/chessSets/2/knight2.jpg", "/chessSets/2/knight3.jpg", "/chessSets/2/knight4.jpg", "/chessSets/2/knight5.jpg", "/chessSets/2/knight6.jpg"],
+          image: ["/chessSets/2/knight1.png", "/chessSets/2/knight2.jpg", "/chessSets/2/knight3.jpg", "/chessSets/2/knight4.jpg", "/chessSets/2/knight5.jpg"],
           description:
             "A symbol of swift and unpredictable strategy, the Knight stands ready to leap across the board. Embodying the spirit of chivalry, this piece is a testament to both artistry and agility. Standing at a graceful 66.40mm, it is sculpted from solid 925 sterling silver and finished with a striking visual contrast. The black Knights are polished to a high-sheen, mirror-like finish that accentuates the silver's darker luster, while the white Knights possess a delicate, hand-brushed texture for a sophisticated, matte glow. Each Knight's foot is set with 16 brilliant-cut Moissanite stones, completing its noble design with a touch of radiant luxury.",
           quote: {
@@ -180,7 +180,7 @@ export const chessSets = [
         {
           name: "The Rook",
           height: "64.95 mm",
-          image: ["/chessSets/2/rook1.png", "/chessSets/2/rook2.jpg", "/chessSets/2/rook3.jpg", "/chessSets/2/rook4.jpg", "/chessSets/2/rook5.jpg"],
+          image: ["/chessSets/2/rook1.png", "/chessSets/2/rook2.jpg", "/chessSets/2/rook3.jpg", "/chessSets/2/rook4.jpg"],
           description:
             "A steadfast fortress of the battlefield, stands at a powerful 64.95mm. Meticulously crafted from solid 925 sterling silver, this piece features a black tourmaline gemstone at its peak for the dark side, and an ethereal opal for the white. The solid silver body is finished with a striking contrast: a lustrous, dark polish for the black Rooks and a hand-brushed matte texture for their white counterparts. Each Rook is anchored by a base set with 16 brilliant-cut Moissanite stones, reflecting the piece's unyielding strength.",
           quote: {
@@ -191,7 +191,7 @@ export const chessSets = [
         {
           name: "The Pawn",
           height: "62 mm",
-          image: ["/chessSets/2/pawn1.png", "/chessSets/2/pawn2.jpg", "/chessSets/2/pawn3.jpg", "/chessSets/2/pawn4.jpg", "/chessSets/2/pawn5.jpg", "/chessSets/2/pawn6.jpg"],
+          image: ["/chessSets/2/pawn1.png", "/chessSets/2/pawn2.jpg", "/chessSets/2/pawn3.jpg", "/chessSets/2/pawn4.jpg"],
           description:
             "The pawn, a steadfast foundation and quiet strength of the battlefield, stands at a refined 62mm. Crafted from solid 925 sterling silver, each piece is crowned with a single, precious Japanese pearl — a mystical gift from the sea and lakes. The high-quality black pearls adorn the darkened Pawns, while luminous white pearls crown their light counterparts. As with all pieces in the set, a distinct finish differentiates the two armies: a lustrous, dark polish for the black pieces and a sophisticated, hand-brushed matte texture for the white. The base of each Pawn is anchored by 16 brilliant-cut Moissanite stones, reflecting its journey from foot soldier to a potential queen.",
           quote: {
@@ -201,7 +201,7 @@ export const chessSets = [
         },
       ],
       table: {
-        image: ["/chessSets/2/table2.jpg", "/chessSets/2/table1.jpg", "/chessSets/2/table4.jpg", "/chessSets/2/table5.jpg", "/chessSets/2/table6.jpg", "/chessSets/2/table7.jpeg"],
+        image: ["/chessSets/2/table1.jpg", "/chessSets/2/table2.jpg", "/chessSets/2/table3.jpg", "/chessSets/2/table4.jpg", "/chessSets/2/table5.jpg", "/chessSets/2/table6.jpg", "/chessSets/2/table7.jpeg"],
         description:
           "This magnificent, custom-crafted table functions both as a gaming surface and a hidden bar. This stately piece is carved from resilient African Wengé wood, celebrated for its dark, dramatic grain and enduring stability. A breathtaking, incorporated chessboard of polished rock crystal and smoky quartz is the stunning centerpiece of the table's surface.\n\nFor storage, the pieces are discreetly housed within a rich, red-upholstered drawer. This drawer glides out along a discrete panel, becoming a seamless extension of the table for setting aside pieces or beverages.\n\nWith a gentle touch, a concealed panel on the table's side reveals a hidden drink cabinet. This lit interior holds four golden-rimmed crystal glasses — two for whiskey and two for wine — alongside space for the wine and whiskey carafes. Here, you can enjoy a perfect drink while contemplating your next move on the battlefield. Designed for convenience and sophistication, the table is fitted with discreet, high-quality wheels, allowing for elegant, effortless movement.",
         specs: [
@@ -313,7 +313,7 @@ export const chessSets = [
         },
       ],
       table: {
-        image: ["/chessSets/3/table1.jpg", "/chessSets/3/table2.jpg", "/chessSets/3/table4.jpg", "/chessSets/3/table5.jpg", "/chessSets/3/table6.jpg", "/chessSets/3/table7.jpg", "/chessSets/3/table8.jpg"],
+        image: ["/chessSets/3/table1.jpg", "/chessSets/3/table2.jpg", "/chessSets/3/table3.jpg", "/chessSets/3/table4.jpg", "/chessSets/3/table5.jpg", "/chessSets/3/table6.jpg"],
         description:
           "The table is presented with a level of care befitting its exceptional design. The gold pieces are meticulously secured in a custom-fitted, elegant presentation box, ensuring their protection and preservation.\n\nThe chessboard is a marvel of modern craftsmanship. We have cast 64 specially-cut, crystal glass elongated pyramid squares within a crystal-clear, hard epoxy. This technique ensures a flawless, glossy finish that is both durable and resilient. The unique design gives the stunning illusion that the chess pieces float above the playing surface, lending the ensemble an exquisite, ethereal quality.\n\nThe table itself is crafted from durable Maple wood, a choice celebrated for its light, uniform appearance that perfectly complements the intricate board.",
         specs: [
@@ -425,7 +425,7 @@ export const chessSets = [
         },
       ],
       table: {
-        image: ["/chessSets/4/table1.jpg", "/chessSets/4/table2.jpg", "/chessSets/4/table3.jpg", "/chessSets/4/table4.jpg", "/chessSets/4/table5.jpg", "/chessSets/4/table6.jpg", "/chessSets/4/table7.jpg", "/chessSets/4/table8.jpg", "/chessSets/4/table9.jpg", "/chessSets/4/table10.jpg", "/chessSets/4/table11.jpg"],
+        image: ["/chessSets/4/table1.jpg", "/chessSets/4/table2.jpg", "/chessSets/4/table3.jpg", "/chessSets/4/table4.jpg", "/chessSets/4/table5.jpg", "/chessSets/4/table6.jpg", "/chessSets/4/table7.jpg", "/chessSets/4/table8.jpg", "/chessSets/4/table9.jpg", "/chessSets/4/table10.jpg"],
         description:
           "The table is an embodiment of modern sophistication and timeless gameplay. The exquisite gold pieces are securely nestled within a custom-fitted, padded presentation case, ensuring their safekeeping with the same elegance they display on the board.\n\nCrafted from durable, light-toned Maple wood, the table features an eye-catching, beam-like infinity design. The wood's light, uniform appearance was chosen to perfectly complement the set's aesthetic, offering the renowned strength and longevity of premium hardwood.\n\nA striking crystal glass chess board is seamlessly integrated into the table's surface, creating a flawless and luminous playing area. The clear and frosted squares provide a beautiful, sophisticated contrast.",
         specs: [
