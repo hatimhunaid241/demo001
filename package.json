@@ -2,20 +2,30 @@
   "name": "royal-chess-design-by-david-de-jong",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "db:create": "node --env-file=.env.local scripts/db-create.js",
+    "db:seed": "node --env-file=.env.local scripts/db-seed.js",
+    "db:upload-media": "node --env-file=.env.local scripts/db-upload-media.js",
+    "db:admin": "node --env-file=.env.local scripts/db-admin.js"
   },
   "dependencies": {
+    "@neondatabase/serverless": "^1.0.2",
     "@react-email/render": "^2.0.4",
+    "@vercel/blob": "^2.3.1",
+    "bcryptjs": "^3.0.3",
     "framer-motion": "^12.34.3",
     "next": "16.1.6",
+    "next-auth": "^5.0.0-beta.30",
     "react": "19.2.3",
     "react-dom": "19.2.3",
     "react-phone-number-input": "^3.4.16",
     "resend": "^6.9.3",
+    "uuid": "^13.0.0",
     "zod": "^4.3.6"
   },
   "devDependencies": {

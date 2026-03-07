@@ -4,7 +4,15 @@ import { useRef, useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 
-export default function WelcomeContent({ saveConsent }) {
+const FALLBACK = {
+  "video.url": "",
+  "cookie.text":
+    "This website uses cookies to improve user experience. By using our website you consent to all cookies in accordance with our Cookie Policy.",
+  "cookie.policyUrl": "/cookie-policy",
+};
+
+export default function WelcomeContent({ saveConsent, content = {} }) {
+  const c = { ...FALLBACK, ...content };
   const videoRef = useRef(null);
   const [videoReady, setVideoReady] = useState(false);
 
@@ -24,7 +32,7 @@ export default function WelcomeContent({ saveConsent }) {
         <div className="absolute inset-0 flex items-center justify-center bg-white overflow-hidden">
           <video
             ref={videoRef}
-            src="/videos/welcome_video.mp4"
+            src={c["video.url"]}
             autoPlay
             muted
             loop
@@ -45,10 +53,9 @@ export default function WelcomeContent({ saveConsent }) {
               className="fixed bottom-0 left-1/2 -translate-x-1/2 z-50 max-w-[70vw] w-full">
               <div className="border px-6 py-4 flex justify-center md:justify-between items-center gap-4 md:gap-20 flex-wrap md:flex-nowrap border-none text-center md:text-start">
                 <p className="font-(family-name:--font-cormorant) md:text-[14px] leading-relaxed text-text-muted font-semibold text-balance">
-                  This website uses cookies to improve user experience. By using our website you
-                  consent to all cookies in accordance with our{" "}
+                  {c["cookie.text"].replace(" Cookie Policy.", " ")}
                   <a
-                    href="/cookie-policy"
+                    href={c["cookie.policyUrl"]}
                     className="text-gold underline underline-offset-2 hover:text-gold-dark transition-colors">
                     Cookie Policy
                   </a>

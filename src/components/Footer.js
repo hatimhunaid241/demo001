@@ -1,9 +1,22 @@
 import Link from "next/link";
 import Logo from "./Logo";
+import SubscribeForm from "./site/SubscribeForm";
 
 export default function Footer() {
   return (
     <footer className="bg-white text-charcoal">
+      {/* Subscribe Section */}
+      <div className="border-t border-medium-gray">
+        <div className="max-w-350 mx-auto px-6 md:px-12 lg:px-20 py-16 text-center">
+          <h4 className="font-(family-name:--font-playfair) text-[11px] tracking-[0.3em] text-gold mb-4">
+            STAY INFORMED
+          </h4>
+          <p className="font-(family-name:--font-cormorant) text-[15px] leading-relaxed text-text-muted mb-8 max-w-sm mx-auto">
+            Receive updates on new collections and exclusive showcases.
+          </p>
+          <SubscribeForm />
+        </div>
+      </div>
       {/* Top Separator */}
       <div className="flex justify-center">
         <div className="w-3/4 md:w-1/2 h-px bg-linear-to-r from-transparent via-gold to-transparent" />
@@ -100,6 +113,7 @@ export default function Footer() {
           </div>
         </div>
       </div>
+
 
       {/* Bottom Bar */}
       <div className="border-t border-medium-gray">

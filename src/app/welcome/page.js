@@ -1,7 +1,8 @@
 import { Suspense } from "react";
 import { redirect } from "next/navigation";
 import { cookies } from "next/headers";
-import WelcomeContent from "@/components/WelcomeContent";
+import { getSiteContent } from "@/lib/site-content";
+import WelcomeContent from "@/components/site/WelcomeContent";
 
 export default async function WelcomePage({ searchParams }) {
   const { next = "/" } = await searchParams;
@@ -11,6 +12,8 @@ export default async function WelcomePage({ searchParams }) {
   if (hasConsent) {
     redirect(next);
   }
+
+  const content = await getSiteContent("welcome");
 
   async function saveConsent(value) {
     "use server";
@@ -25,7 +28,7 @@ export default async function WelcomePage({ searchParams }) {
 
   return (
     <Suspense>
-      <WelcomeContent saveConsent={saveConsent} />
+      <WelcomeContent saveConsent={saveConsent} content={content} />
     </Suspense>
   );
 }

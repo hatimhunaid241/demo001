@@ -1,8 +1,7 @@
-import { chessSets } from "@/data/chessSets";
-
+import sql from "@/lib/db";
 import { BASE_URL } from "@/config/site";
 
-export default function sitemap() {
+export default async function sitemap() {
   const now = new Date();
 
   const staticRoutes = [
@@ -32,8 +31,9 @@ export default function sitemap() {
     },
   ];
 
-  const dynamicRoutes = chessSets.map((set) => ({
-    url: `${BASE_URL}/portfolio/${set.id}`,
+  const sets = await sql`SELECT slug FROM "ChessSet" WHERE published = true ORDER BY "order"`;
+  const dynamicRoutes = sets.map((set) => ({
+    url: `${BASE_URL}/portfolio/${set.slug}`,
     lastModified: now,
     changeFrequency: "monthly",
     priority: 0.85,

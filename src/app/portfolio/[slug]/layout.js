@@ -1,10 +1,12 @@
-import { chessSets } from "@/data/chessSets";
-
+import sql from "@/lib/db";
 import { BASE_URL } from "@/config/site";
 
 export async function generateMetadata({ params }) {
   const { slug } = await params;
-  const set = chessSets.find((s) => s.id === slug);
+  const [set] = await sql`
+    SELECT name, "shortDescription", materials, category, image, "heroImage"
+    FROM "ChessSet" WHERE slug = ${slug} LIMIT 1
+  `;
   if (!set) return {};
 
   return {

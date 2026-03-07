@@ -45,27 +45,21 @@ export async function sendContactMessage(state, formData) {
         };
     }
     const { name, email, message } = validatedFields.data;
-    console.log("[contact] Validation passed", { name, email });
-
-    console.log("[contact] Attempting to send emails", { name, email, subject });
-    console.log("[contact] RESEND_API_KEY present:", !!process.env.RESEND_API_KEY);
 
     try {
         const r1 = await resend.emails.send({
-            from: "info@royalchessdesign.com",
+            from: "Royal Chess Design Enquiry <info@royalchessdesign.com>",
             to: "motleydesign@gmail.com",
             subject: subject ? `Enquiry: ${subject}` : "New Enquiry — Royal Chess Design",
             react: ContactHatim({ name, email, phone, subject, message }),
         });
-        console.log("[contact] Atelier email result:", JSON.stringify(r1));
 
         const r2 = await resend.emails.send({
-            from: "info@royalchessdesign.com",
+            from: "Royal Chess Design Enquiry <info@royalchessdesign.com>",
             to: email,
             subject: "Thank You for Your Enquiry — Royal Chess Design",
             react: ContactClient({ name, email, message }),
         });
-        console.log("[contact] Client email result:", JSON.stringify(r2));
 
         return { success: true, message: "Your enquiry has been received. We will be in touch shortly." };
     } catch (err) {
