@@ -24,7 +24,7 @@ export default function SubscribeForm() {
           name="email"
           required
           placeholder="Your email address"
-          className="flex-1 bg-transparent border-b border-medium-gray pb-2 pt-1 text-charcoal font-(family-name:--font-cormorant) text-base placeholder:text-text-muted/40 focus:outline-none focus:border-gold transition-colors duration-300 min-w-0"
+          className="flex-1 bg-transparent border-b border-medium-gray pb-2 pt-1 text-charcoal font-(family-name:--font-cormorant) text-sm placeholder:text-text-muted/40 focus:outline-none focus:border-gold transition-colors duration-300 min-w-0"
         />
         <button
           type="submit"
@@ -40,7 +40,7 @@ export default function SubscribeForm() {
       )}
 
       <p className="font-(family-name:--font-cormorant) text-sm leading-relaxed text-text-muted/60 text-center mt-4">
-        By subscribing you agree to receive occasional updates from Royal Chess Design.
+        By subscribing you agree to receive occasional updates from <span className="text-nowrap">Royal Chess Design</span>.
         You may unsubscribe at any time.
       </p>
     </div>

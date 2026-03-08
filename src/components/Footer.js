@@ -9,7 +9,7 @@ export default function Footer() {
       <div className="border-t border-medium-gray">
         <div className="max-w-350 mx-auto px-6 md:px-12 lg:px-20 py-16 text-center">
           <h4 className="font-(family-name:--font-playfair) text-[11px] tracking-[0.3em] text-gold mb-4">
-            STAY INFORMED
+            RECEIVE UPDATES
           </h4>
           <p className="font-(family-name:--font-cormorant) text-[15px] leading-relaxed text-text-muted mb-8 max-w-sm mx-auto">
             Receive updates on new collections and exclusive showcases.

@@ -40,7 +40,7 @@ export default function Navbar({showLinks = true}) {
   const navLinks = showLinks ? [
     { href: "/", label: "HOME" },
     { href: "/portfolio", label: "PORTFOLIO" },
-    { href: "/the-artist", label: "THE ARTIST" },
+    { href: "/the-artist", label: "ARTIST" },
     { href: "/contact", label: "CONTACT" },
   ] : [];
 
