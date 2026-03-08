@@ -15,7 +15,7 @@ jobs:
           node-version: 20
 
       - name: Deploy to client Vercel
-        run: npx vercel --prod --token=${{ secrets.CLIENT_VERCEL_TOKEN }} --yes
+        run: npx vercel --prod --token=${{ secrets.ROYALCHESSDESIGN_VERCEL_TOKEN }} --yes
         env:
-          VERCEL_ORG_ID: ${{ secrets.CLIENT_VERCEL_ORG_ID }}
-          VERCEL_PROJECT_ID: ${{ secrets.CLIENT_VERCEL_PROJECT_ID }}
+          VERCEL_ORG_ID: ${{ secrets.ROYALCHESSDESIGN_VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.ROYALCHESSDESIGN_VERCEL_PROJECT_ID }}
