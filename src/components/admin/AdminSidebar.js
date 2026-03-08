@@ -11,6 +11,7 @@ const NAV = [
   { href: "/admin/media",      label: "Media Library", icon: "🖼" },
   { href: "/admin/newsletter", label: "Newsletter",     icon: "✉" },
   { href: "/admin/users",      label: "Users",         icon: "👤" },
+  { href: "/admin/settings",   label: "Settings",      icon: "⚙️" },
 ];
 
 const MQ = "(min-width: 1024px)";

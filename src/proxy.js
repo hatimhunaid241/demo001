@@ -21,7 +21,7 @@ export default auth(async (req) => {
   }
 
   // All other routes: existing kill-switch + cookie-consent proxy
-  return proxy(req);
+  return proxy(req, req.auth);
 });
 
 export const config = {

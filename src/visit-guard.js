@@ -1,32 +1,25 @@
 import { NextResponse } from "next/server";
+import { createClient } from "@vercel/edge-config";
 
-// ─── Kill Switch ──────────────────────────────────────────────────────────────
-// Create a GitHub Gist with a single file named "flag.json" containing:
-//   { "enabled": true }
-// Paste the raw URL below. To disable the site, change "enabled" to false.
-const KILL_SWITCH_URL =
-  "https://gist.githubusercontent.com/hatimhunaid241/b2a46398611fcc2d4595d875dc274e23/raw/royalchessdesign.json";
-
-// In-memory cache so we only hit GitHub at most once per minute
-let _siteEnabled = true;
-let _lastChecked = 0;
-const CACHE_TTL = 60_000; // 1 minute
-
-async function isSiteEnabled() {
-  const now = Date.now();
-  if (now - _lastChecked < CACHE_TTL) return _siteEnabled;
-  try {
-    const res = await fetch(`${KILL_SWITCH_URL}?t=${Date.now()}`, { cache: "no-store" });
-    const json = await res.json();
-    _siteEnabled = json.enabled !== false;
-  } catch {
-  }
-  _lastChecked = Date.now();
-  return _siteEnabled;
-}
+// ─── Kill Switches ────────────────────────────────────────────────────────────
+// Two independent flags — both must be true for the site to be live.
+//   EDGE_CONFIG     → client's Edge Config (toggled from the admin panel)
+//   DEV_EDGE_CONFIG → developer's Edge Config (toggled from Vercel dashboard)
 // ─────────────────────────────────────────────────────────────────────────────
 
-export async function proxy(request) {
+async function isSiteEnabled() {
+  try {
+    const [clientEnabled, backupEnabled] = await Promise.all([
+      createClient(process.env.EDGE_CONFIG).get("siteEnabled").catch(() => true),
+      createClient(process.env.DEV_EDGE_CONFIG).get("siteEnabled").catch(() => true),
+    ]);
+    return clientEnabled !== false && backupEnabled !== false;
+  } catch {
+    return true; // fail open — never lock users out on SDK errors
+  }
+}
+
+export async function proxy(request, session = null) {
   const { pathname } = request.nextUrl;
 
   // Always allow static assets and internals through
@@ -44,15 +37,16 @@ export async function proxy(request) {
   // Kill switch check
   const enabled = await isSiteEnabled();
 
-  // Block access to /maintenance when site is live
   if (pathname.startsWith("/maintenance")) {
+    // Block direct access to /maintenance when site is live
     return enabled
       ? NextResponse.redirect(new URL("/", request.url))
       : NextResponse.next();
   }
 
   // Redirect all other pages to maintenance when site is disabled
-  if (!enabled) {
+  // Logged-in admins bypass maintenance and can always see the site
+  if (!enabled && !session) {
     const maintenanceUrl = new URL("/maintenance", request.url);
     maintenanceUrl.searchParams.set("next", pathname);
     return NextResponse.redirect(maintenanceUrl);
