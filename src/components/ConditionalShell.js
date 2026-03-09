@@ -14,7 +14,7 @@ export default function ConditionalShell({ children }) {
   const pathname = usePathname();
   const hasConsent = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
 
-  const alwaysHide = pathname.startsWith("/welcome") || pathname.startsWith("/admin");
+  const alwaysHide = pathname.startsWith("/welcome") || pathname.startsWith("/admin") || pathname.startsWith("/maintenance");
   const conditionalHide = pathname.startsWith("/cookie-policy") && !hasConsent;
   const hide = alwaysHide || conditionalHide;
 

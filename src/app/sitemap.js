@@ -31,10 +31,10 @@ export default async function sitemap() {
     },
   ];
 
-  const sets = await sql`SELECT slug FROM "ChessSet" WHERE published = true ORDER BY "order"`;
+  const sets = await sql`SELECT slug, "updatedAt" FROM "ChessSet" WHERE published = true ORDER BY "order"`;
   const dynamicRoutes = sets.map((set) => ({
     url: `${BASE_URL}/portfolio/${set.slug}`,
-    lastModified: now,
+    lastModified: set.updatedAt ? new Date(set.updatedAt) : now,
     changeFrequency: "monthly",
     priority: 0.85,
   }));

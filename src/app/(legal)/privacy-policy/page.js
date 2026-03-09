@@ -5,7 +5,6 @@ export const metadata = {
   description:
     "Royal Chess Design privacy policy - how we collect, use, and protect your personal information.",
   alternates: { canonical: `/privacy-policy` },
-  robots: { index: false, follow: false },
 };
 
 export default function PrivacyPolicyPage() {

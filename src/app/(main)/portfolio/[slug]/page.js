@@ -74,5 +74,38 @@ export default async function ChessSetPage({ params }) {
   const prevSet = currentIndex > 0 ? allSets[currentIndex - 1] : null;
   const nextSet = currentIndex < allSets.length - 1 ? allSets[currentIndex + 1] : null;
 
-  return <SlugContent set={set} pieces={pieces} prevSet={prevSet} nextSet={nextSet} />;
+  const jsonLdProduct = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: set.name,
+    description: set.shortDescription,
+    image: set.heroImage || set.image,
+    url: `${BASE_URL}/portfolio/${slug}`,
+    brand: { "@type": "Brand", name: "Royal Chess Design" },
+    manufacturer: { "@type": "Person", name: "David de Jong" },
+    ...(set.materials && { material: set.materials }),
+    offers: {
+      "@type": "Offer",
+      availability: "https://schema.org/InStoreOnly",
+      seller: { "@type": "Organization", name: "Royal Chess Design", url: BASE_URL },
+    },
+  };
+
+  const jsonLdBreadcrumb = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: BASE_URL },
+      { "@type": "ListItem", position: 2, name: "Portfolio", item: `${BASE_URL}/portfolio` },
+      { "@type": "ListItem", position: 3, name: set.name, item: `${BASE_URL}/portfolio/${slug}` },
+    ],
+  };
+
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdProduct) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }} />
+      <SlugContent set={set} pieces={pieces} prevSet={prevSet} nextSet={nextSet} />
+    </>
+  );
 }

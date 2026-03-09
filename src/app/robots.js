@@ -9,9 +9,8 @@ export default function robots() {
         disallow: [
           "/welcome",
           "/maintenance",
-          "/cookie-policy",
-          "/privacy-policy",
-          "/terms-of-use",
+          "/subscription",
+          "/admin",
           "/api/",
         ],
       },
