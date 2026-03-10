@@ -99,7 +99,7 @@ export default function ArtistContent({ content: c }) {
             {c["motto.text"] && (
               <FadeInUp delay={0.53} className="mt-14">
                 <span className="font-(family-name:--font-cormorant) text-[10px] tracking-[0.45em] text-text-muted uppercase block mb-5">
-                  MY MOTTO
+                  MY PHILOSOPY
                 </span>
                 <div className="pl-6 border-l border-gold">
                   <p className="font-(family-name:--font-cormorant) text-lg md:text-xl leading-relaxed text-charcoal italic font-light">
@@ -115,6 +115,9 @@ export default function ArtistContent({ content: c }) {
                 // eslint-disable-next-line @next/next/no-img-element
                 <img src={c["signature.image"]} alt="David de Jong" width={200} height={80} className="" />
               )}
+              <p className="font-(family-name:--font-cormorant) text-[11px] tracking-[0.4em] text-text-muted uppercase -mt-2.5">
+                Artist &amp; Goldsmith
+              </p>
             </FadeInUp>
 
             {/* Portrait */}

@@ -75,7 +75,7 @@ export default function HomeContent({ content: c, featuredSets }) {
               transition={{ duration: 0.8, delay: 2.8 }}>
               <button
                 onClick={() => setVideoOpen(true)}
-                className="nav-link relative font-(family-name:--font-cormorant) text-[12px] tracking-[0.2em] uppercase transition-colors duration-300 mx-auto group font-bold opacity-70 hover:opacity-100 hover:text-gold">
+                className="nav-link relative font-(family-name:--font-cormorant) text-[15px] hover:scale-125 tracking-[0.2em] uppercase transition-all duration-300 mx-auto group font-bold opacity-70 hover:opacity-100 hover:text-gold">
                 <span className="absolute top-1/2 -translate-y-1/2 right-[calc(100%+8px)] w-4 h-px bg-text-muted group-hover:bg-gold transition-colors duration-200" />
                 Watch Film
                 <span className="absolute top-1/2 -translate-y-1/2 left-[calc(100%+8px)] w-4 h-px bg-text-muted group-hover:bg-gold transition-colors duration-200" />

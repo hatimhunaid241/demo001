@@ -308,19 +308,19 @@ export default function SlugContent({ set, pieces, prevSet, nextSet }) {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.1 }}
-            className="flex flex-wrap justify-center gap-6 mb-4"
+            className="flex flex-wrap justify-center gap-6 mb-4 text-[14px]"
           >
-            <span className="font-(family-name:--font-cormorant) text-[11px] tracking-[0.35em] uppercase flex items-center">
+            <span className="font-(family-name:--font-cormorant) tracking-[0.35em] uppercase flex items-center">
               {set.category}
             </span>
             <span className="">·</span>
-            <span className="font-(family-name:--font-cormorant) text-[11px] tracking-[0.35em] uppercase flex items-center">
+            <span className="font-(family-name:--font-cormorant) tracking-[0.35em] uppercase flex items-center">
               {set.year}
             </span>
             {pieces.length > 0 && (
               <>
                 <span className="">·</span>
-                <span className="font-(family-name:--font-cormorant) text-[11px] tracking-[0.35em] uppercase flex items-center">
+                <span className="font-(family-name:--font-cormorant) tracking-[0.35em] uppercase flex items-center">
                   {["Zero","One","Two","Three","Four","Five","Six","Seven","Eight","Nine","Ten","Eleven","Twelve","Thirteen","Fourteen","Fifteen","Sixteen","Seventeen","Eighteen","Nineteen","Twenty"][pieces.length]} Pieces
                 </span>
               </>
@@ -335,7 +335,7 @@ export default function SlugContent({ set, pieces, prevSet, nextSet }) {
             >
               <button
                 onClick={() => setVideoOpen(true)}
-                className="nav-link relative font-(family-name:--font-cormorant) text-[12px] tracking-[0.2em] uppercase transition-colors duration-300 mx-auto group font-bold opacity-70 hover:opacity-100 hover:text-gold"
+                className="nav-link relative font-(family-name:--font-cormorant) text-[15px] hover:scale-125 tracking-[0.2em] uppercase transition-all duration-300 mx-auto group font-bold opacity-70 hover:opacity-100 hover:text-gold"
               >
                 <span className="absolute top-1/2 -translate-y-1/2 right-[calc(100%+8px)] w-4 h-px bg-text-muted group-hover:bg-gold transition-colors duration-200" />
                 Watch Film
