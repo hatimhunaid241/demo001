@@ -76,11 +76,11 @@ function UrlListField({ label, name, initialUrls = [], mediaItems, accept = "ima
   const dragIdx   = useRef(null);
   const [dragOver, setDragOver] = useState(null);
 
-  const urls = value.split("\n").map((u) => u.trim()).filter(Boolean);
+  const urls = value.split(/\r?\n/).map((u) => u.trim()).filter(Boolean);
 
   function addUrl(url) {
     setValue((prev) => {
-      const existing = prev.split("\n").map((u) => u.trim()).filter(Boolean);
+      const existing = prev.split(/\r?\n/).map((u) => u.trim()).filter(Boolean);
       if (existing.includes(url)) return prev;
       return [...existing, url].join("\n");
     });
@@ -88,7 +88,7 @@ function UrlListField({ label, name, initialUrls = [], mediaItems, accept = "ima
 
   function removeUrl(urlToRemove) {
     setValue((prev) =>
-      prev.split("\n").map((u) => u.trim()).filter((u) => u && u !== urlToRemove).join("\n")
+      prev.split(/\r?\n/).map((u) => u.trim()).filter((u) => u && u !== urlToRemove).join("\n")
     );
   }
 

@@ -21,8 +21,7 @@ function PieceSection({ piece, index, onOpen }) {
           <FadeIn className={`${index % 2 !== 0 ? "lg:order-2" : ""}`}>
             <div
               className="image-hover-zoom relative bg-medium-gray lg:aspect-4/5 cursor-zoom-in"
-              onClick={() => images.length > 0 && onOpen(images, 0)}
-            >
+              onClick={() => images.length > 0 && onOpen(images, 0)}>
               {images[0] && (
                 <Image
                   src={images[0]}
@@ -125,10 +124,12 @@ function TableSection({ table, onOpen, setName }) {
         <div className="grid grid-cols-1 lg:grid-cols-[5fr_3fr] gap-16 lg:gap-24 items-start">
           {/* Description */}
           <div>
-            {table.description.split("\n\n").map((para, i) => (
+            {table.description.split(/\r?\n\r?\n/).map((para, i) => (
               <FadeInUp key={i} delay={0.1 + i * 0.08}>
                 <p className="font-(family-name:--font-cormorant) text-base md:text-lg leading-relaxed text-text-secondary font-light mb-6">
-                  {para}
+                  {para.split(/\r?\n/).map((line, j, arr) => (
+                    <span key={j}>{line}{j < arr.length - 1 && <br />}</span>
+                  ))}
                 </p>
               </FadeInUp>
             ))}
@@ -151,8 +152,7 @@ function TableSection({ table, onOpen, setName }) {
               <FadeInUp delay={0.5} className="mt-12">
                 <div
                   className="image-hover-zoom relative aspect-6/4 overflow-hidden bg-medium-gray cursor-zoom-in"
-                  onClick={() => onOpen(table.image, 0)}
-                >
+                  onClick={() => onOpen(table.image, 0)}>
                   <Image
                     src={table.image[0]}
                     alt={`Chess table for ${setName} — Royal Chess Design`}
@@ -199,17 +199,28 @@ export default function SlugContent({ set, pieces, prevSet, nextSet }) {
   const [lightbox, setLightbox] = useState(null);
   const openLightbox = useCallback((images, index) => setLightbox({ images, index }), []);
   const closeLightbox = useCallback(() => setLightbox(null), []);
-  const prevImage = useCallback(() => setLightbox((lb) => ({ ...lb, index: (lb.index - 1 + lb.images.length) % lb.images.length })), []);
-  const nextImage = useCallback(() => setLightbox((lb) => ({ ...lb, index: (lb.index + 1) % lb.images.length })), []);
+  const prevImage = useCallback(
+    () =>
+      setLightbox((lb) => ({ ...lb, index: (lb.index - 1 + lb.images.length) % lb.images.length })),
+    [],
+  );
+  const nextImage = useCallback(
+    () => setLightbox((lb) => ({ ...lb, index: (lb.index + 1) % lb.images.length })),
+    [],
+  );
 
   const [videoOpen, setVideoOpen] = useState(false);
 
-  const table = set.tableDescription ? {
-    description: set.tableDescription,
-    quote: set.tableQuoteText ? { text: set.tableQuoteText, author: set.tableQuoteAuthor } : null,
-    specs: set.tableSpecs || [],
-    image: set.tableImageUrls || [],
-  } : null;
+  const table = set.tableDescription
+    ? {
+        description: set.tableDescription,
+        quote: set.tableQuoteText
+          ? { text: set.tableQuoteText, author: set.tableQuoteAuthor }
+          : null,
+        specs: set.tableSpecs || [],
+        image: set.tableImageUrls || [],
+      }
+    : null;
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -237,7 +248,12 @@ export default function SlugContent({ set, pieces, prevSet, nextSet }) {
         itemListElement: [
           { "@type": "ListItem", position: 1, name: "Home", item: BASE_URL },
           { "@type": "ListItem", position: 2, name: "Portfolio", item: `${BASE_URL}/portfolio` },
-          { "@type": "ListItem", position: 3, name: set.name, item: `${BASE_URL}/portfolio/${set.slug}` },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: set.name,
+            item: `${BASE_URL}/portfolio/${set.slug}`,
+          },
         ],
       },
     ],
@@ -245,7 +261,10 @@ export default function SlugContent({ set, pieces, prevSet, nextSet }) {
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
 
       {/* ═══════════════ HERO ═══════════════ */}
       <section className="relative h-[85vh] min-h-150 overflow-hidden">
@@ -263,8 +282,7 @@ export default function SlugContent({ set, pieces, prevSet, nextSet }) {
         {/* Roman numeral watermark */}
         <span
           aria-hidden
-          className="pointer-events-none select-none absolute inset-0 flex items-center justify-center font-(family-name:--font-playfair) text-[35vw] leading-none text-charcoal/20 overflow-hidden"
-        >
+          className="pointer-events-none select-none absolute inset-0 flex items-center justify-center font-(family-name:--font-playfair) text-[35vw] leading-none text-charcoal/20 overflow-hidden">
           {set.setNumber}
         </span>
 
@@ -274,8 +292,7 @@ export default function SlugContent({ set, pieces, prevSet, nextSet }) {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.2 }}
-            className="font-(family-name:--font-cormorant) text-[11px] md:text-[13px] tracking-[0.55em] text-gold uppercase block mb-5"
-          >
+            className="font-(family-name:--font-cormorant) text-[11px] md:text-[13px] tracking-[0.55em] text-gold uppercase block mb-5">
             CHESS SET DESIGN &nbsp;·&nbsp; {set.setNumber}
           </motion.span>
 
@@ -283,8 +300,7 @@ export default function SlugContent({ set, pieces, prevSet, nextSet }) {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 3, delay: 0.4, ease: [0.25, 0.46, 0.65, 0.94] }}
-            className="font-(family-name:--font-playfair) text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal tracking-[0.08em] text-charcoal mb-4 md:max-w-xl lg:max-w-2xl"
-          >
+            className="font-(family-name:--font-playfair) text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal tracking-[0.08em] text-charcoal mb-4 md:max-w-xl lg:max-w-2xl">
             {set.name}
           </motion.h1>
 
@@ -292,8 +308,7 @@ export default function SlugContent({ set, pieces, prevSet, nextSet }) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.75 }}
-            className="font-(family-name:--font-cormorant) text-base md:text-lg text-gold italic font-light tracking-wide mb-5"
-          >
+            className="font-(family-name:--font-cormorant) text-base md:text-lg text-gold italic font-light tracking-wide mb-5">
             {set.subtitle}
           </motion.p>
 
@@ -308,8 +323,7 @@ export default function SlugContent({ set, pieces, prevSet, nextSet }) {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.1 }}
-            className="flex flex-wrap justify-center gap-6 mb-4 text-[14px]"
-          >
+            className="flex flex-wrap justify-center gap-6 mb-4 text-[14px]">
             <span className="font-(family-name:--font-cormorant) tracking-[0.35em] uppercase flex items-center">
               {set.category}
             </span>
@@ -321,7 +335,32 @@ export default function SlugContent({ set, pieces, prevSet, nextSet }) {
               <>
                 <span className="">·</span>
                 <span className="font-(family-name:--font-cormorant) tracking-[0.35em] uppercase flex items-center">
-                  {["Zero","One","Two","Three","Four","Five","Six","Seven","Eight","Nine","Ten","Eleven","Twelve","Thirteen","Fourteen","Fifteen","Sixteen","Seventeen","Eighteen","Nineteen","Twenty"][pieces.length]} Pieces
+                  {
+                    [
+                      "Zero",
+                      "One",
+                      "Two",
+                      "Three",
+                      "Four",
+                      "Five",
+                      "Six",
+                      "Seven",
+                      "Eight",
+                      "Nine",
+                      "Ten",
+                      "Eleven",
+                      "Twelve",
+                      "Thirteen",
+                      "Fourteen",
+                      "Fifteen",
+                      "Sixteen",
+                      "Seventeen",
+                      "Eighteen",
+                      "Nineteen",
+                      "Twenty",
+                    ][pieces.length]
+                  }{" "}
+                  Pieces
                 </span>
               </>
             )}
@@ -331,12 +370,10 @@ export default function SlugContent({ set, pieces, prevSet, nextSet }) {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1.4 }}
-            >
+              transition={{ duration: 0.8, delay: 1.4 }}>
               <button
                 onClick={() => setVideoOpen(true)}
-                className="nav-link relative font-(family-name:--font-cormorant) text-[15px] hover:scale-125 tracking-[0.2em] uppercase transition-all duration-300 mx-auto group font-bold opacity-70 hover:opacity-100 hover:text-gold"
-              >
+                className="nav-link relative font-(family-name:--font-cormorant) text-[15px] hover:scale-125 tracking-[0.2em] uppercase transition-all duration-300 mx-auto group font-bold opacity-70 hover:opacity-100 hover:text-gold">
                 <span className="absolute top-1/2 -translate-y-1/2 right-[calc(100%+8px)] w-4 h-px bg-text-muted group-hover:bg-gold transition-colors duration-200" />
                 Watch Film
                 <span className="absolute top-1/2 -translate-y-1/2 left-[calc(100%+8px)] w-4 h-px bg-text-muted group-hover:bg-gold transition-colors duration-200" />
@@ -350,13 +387,11 @@ export default function SlugContent({ set, pieces, prevSet, nextSet }) {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.8, duration: 1 }}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2"
-        >
+          className="absolute bottom-10 left-1/2 -translate-x-1/2">
           <motion.div
             animate={{ y: [0, 8, 0] }}
             transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-            className="flex flex-col items-center gap-2"
-          >
+            className="flex flex-col items-center gap-2">
             <span className="font-(family-name:--font-cormorant) text-[10px] tracking-[0.3em] text-charcoal">
               SCROLL
             </span>
@@ -371,8 +406,7 @@ export default function SlugContent({ set, pieces, prevSet, nextSet }) {
           <div className="flex items-center justify-between h-14">
             <Link
               href="/portfolio"
-              className="font-(family-name:--font-cormorant) text-[11px] tracking-[0.35em] text-text-muted uppercase hover:text-gold transition-colors duration-300 flex items-center gap-3"
-            >
+              className="font-(family-name:--font-cormorant) text-[11px] tracking-[0.35em] text-text-muted uppercase hover:text-gold transition-colors duration-300 flex items-center gap-3">
               <span className="text-base leading-none">←</span>
               BACK TO COLLECTION
             </Link>
@@ -383,8 +417,7 @@ export default function SlugContent({ set, pieces, prevSet, nextSet }) {
 
             <Link
               href="/contact"
-              className="font-(family-name:--font-cormorant) text-[11px] tracking-[0.35em] text-gold uppercase hover:text-gold-dark transition-colors duration-300 flex items-center gap-3"
-            >
+              className="font-(family-name:--font-cormorant) text-[11px] tracking-[0.35em] text-gold uppercase hover:text-gold-dark transition-colors duration-300 flex items-center gap-3">
               ENQUIRE
               <span className="text-base leading-none">→</span>
             </Link>
@@ -410,10 +443,12 @@ export default function SlugContent({ set, pieces, prevSet, nextSet }) {
 
               <DividerReveal className="mb-10" />
 
-              {set.overview.split("\n\n").map((para, i) => (
+              {set.overview.split(/\r?\n\r?\n/).map((para, i) => (
                 <FadeInUp key={i} delay={0.15 + i * 0.07}>
                   <p className="font-(family-name:--font-cormorant) text-base md:text-lg leading-relaxed text-text-secondary font-light mb-6">
-                    {para}
+                    {para.split(/\r?\n/).map((line, j, arr) => (
+                      <span key={j}>{line}{j < arr.length - 1 && <br />}</span>
+                    ))}
                   </p>
                 </FadeInUp>
               ))}
@@ -460,9 +495,7 @@ export default function SlugContent({ set, pieces, prevSet, nextSet }) {
       ))}
 
       {/* ═══════════════ TABLE ═══════════════ */}
-      {table && (
-        <TableSection table={table} onOpen={openLightbox} setName={set.name} />
-      )}
+      {table && <TableSection table={table} onOpen={openLightbox} setName={set.name} />}
 
       {/* ═══════════════ MEDIA MODAL ═══════════════ */}
       {lightbox && (
@@ -535,9 +568,10 @@ export default function SlugContent({ set, pieces, prevSet, nextSet }) {
               {prevSet ? (
                 <Link
                   href={`/portfolio/${prevSet.slug}`}
-                  className="group flex items-center gap-6 px-8 md:px-12 lg:px-16 py-10 hover:bg-white transition-colors duration-400"
-                >
-                  <span className="text-2xl text-gold group-hover:-translate-x-1 transition-transform duration-300">←</span>
+                  className="group flex items-center gap-6 px-8 md:px-12 lg:px-16 py-10 hover:bg-white transition-colors duration-400">
+                  <span className="text-2xl text-gold group-hover:-translate-x-1 transition-transform duration-300">
+                    ←
+                  </span>
                   <div>
                     <p className="font-(family-name:--font-cormorant) text-[10px] tracking-[0.4em] text-text-muted uppercase mb-2">
                       PREVIOUS SET
@@ -554,8 +588,7 @@ export default function SlugContent({ set, pieces, prevSet, nextSet }) {
               {nextSet ? (
                 <Link
                   href={`/portfolio/${nextSet.slug}`}
-                  className="group flex items-center justify-end gap-6 px-8 md:px-12 lg:px-16 py-10 hover:bg-white transition-colors duration-400 text-right"
-                >
+                  className="group flex items-center justify-end gap-6 px-8 md:px-12 lg:px-16 py-10 hover:bg-white transition-colors duration-400 text-right">
                   <div>
                     <p className="font-(family-name:--font-cormorant) text-[10px] tracking-[0.4em] text-text-muted uppercase mb-2">
                       NEXT SET
@@ -564,7 +597,9 @@ export default function SlugContent({ set, pieces, prevSet, nextSet }) {
                       {nextSet.name}
                     </p>
                   </div>
-                  <span className="text-2xl text-gold group-hover:translate-x-1 transition-transform duration-300">→</span>
+                  <span className="text-2xl text-gold group-hover:translate-x-1 transition-transform duration-300">
+                    →
+                  </span>
                 </Link>
               ) : (
                 <div />

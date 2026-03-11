@@ -101,7 +101,7 @@ export async function updateMedia(prevState, formData) {
   const heroImage = formData.get("heroImage") || null;
 
   const videoUrlsRaw = formData.get("videoUrls") || "";
-  const videoUrls    = videoUrlsRaw.split("\n").map((s) => s.trim()).filter(Boolean);
+  const videoUrls    = videoUrlsRaw.split(/\r?\n/).map((s) => s.trim()).filter(Boolean);
 
   await sql`
     UPDATE "ChessSet" SET
@@ -130,7 +130,7 @@ export async function updateTable(prevState, formData) {
   const tableQuoteAuthor = formData.get("tableQuoteAuthor") || "";
 
   const tableImageUrlsRaw = formData.get("tableImageUrls") || "";
-  const tableImageUrls    = tableImageUrlsRaw.split("\n").map((s) => s.trim()).filter(Boolean);
+  const tableImageUrls    = tableImageUrlsRaw.split(/\r?\n/).map((s) => s.trim()).filter(Boolean);
 
   let tableSpecs = [];
   try {
@@ -172,7 +172,7 @@ export async function updatePiece(pieceId, prevState, formData) {
   const chessSetId  = formData.get("chessSetId");
 
   const imageUrlsRaw = formData.get("imageUrls") || "";
-  const imageUrls    = imageUrlsRaw.split("\n").map((s) => s.trim()).filter(Boolean);
+  const imageUrls    = imageUrlsRaw.split(/\r?\n/).map((s) => s.trim()).filter(Boolean);
 
   if (!name?.trim()) return { error: "Piece name is required." };
 

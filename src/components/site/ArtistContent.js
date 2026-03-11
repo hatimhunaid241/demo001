@@ -78,7 +78,7 @@ export default function ArtistContent({ content: c }) {
               {c["bio.quote2"] && (
                 <FadeInUp delay={0.36}>
                   <p className="font-(family-name:--font-cormorant) text-base md:text-lg leading-[1.6] text-gold/80 italic font-light">
-                    {c["bio.quote2"].split("\n").map((line, i, arr) => (
+                    {c["bio.quote2"].split(/\r?\n/).map((line, i, arr) => (
                       <span key={i}>{line}{i < arr.length - 1 && <br />}</span>
                     ))}
                   </p>

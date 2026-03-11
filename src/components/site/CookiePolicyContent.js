@@ -153,7 +153,7 @@ export default function CookiePolicyContent() {
 
                   {section.body && (
                     <div className="space-y-4">
-                      {section.body.split("\n\n").map((para, j) => (
+                      {section.body.split(/\r?\n\r?\n/).map((para, j) => (
                         <p
                           key={j}
                           className="font-(family-name:--font-cormorant) text-base md:text-[17px] leading-relaxed text-text-secondary font-light"
