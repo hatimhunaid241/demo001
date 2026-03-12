@@ -20,7 +20,7 @@ export default async function WelcomePage({ searchParams }) {
     const store = await cookies();
     store.set("cookie_consent", value, {
       path: "/",
-      maxAge: 60 * 60 * 24 * 3,
+      maxAge: 60 * 60 * 24 * 1,
       sameSite: "lax",
     });
     redirect(next);
