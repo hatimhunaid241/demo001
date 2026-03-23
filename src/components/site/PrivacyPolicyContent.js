@@ -8,7 +8,7 @@ const sections = [
   {
     title: "1. Introduction",
     content: [
-      "Welcome to David de Jong Royal Chess Design (\"we\", \"our\", or \"us\"). We respect your privacy and are committed to protecting your personal data. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website: royalchessdesign.com.",
+      "Welcome to David de Jong - Royal Chess Design (\"we\", \"our\", or \"us\"). We respect your privacy and are committed to protecting your personal data. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website: royalchessdesign.com.",
       "If you do not agree with the terms of this Privacy Policy, please do not access the site.",
     ],
   },
@@ -92,7 +92,7 @@ const sections = [
     title: "13. Contact Information",
     content: [
       "If you have questions about this Privacy Policy, you may contact us:",
-      "David de Jong<br/>Email: <a href=\"mailto:info@royalchessdesign.com\" class=\"text-gold underline\">info@royalchessdesign.com</a>",
+      "David de Jong<br/>The Netherlands<br/>Email: <a href=\"mailto:info@royalchessdesign.com\" class=\"text-gold underline\">info@royalchessdesign.com</a>",
     ],
   },
 ];

@@ -8,7 +8,7 @@ const sections = [
   {
     title: "1. Acceptance of Terms",
     content: [
-      "Welcome to David de Jong (Royal Chess Design). By accessing or using our website at royalchessdesign.com (the &ldquo;Site&rdquo;), you agree to be bound by these Terms of Use and all applicable laws and regulations.",
+      "Welcome to David de Jong - Royal Chess Design (&ldquo;we&rdquo;, &ldquo;our&rdquo;, or &ldquo;us&rdquo;). By accessing or using our website at royalchessdesign.com (the &ldquo;Site&rdquo;), you agree to be bound by these Terms of Use and all applicable laws and regulations.",
       "If you do not agree with these Terms, please do not use the Site.",
     ],
   },
@@ -108,7 +108,7 @@ const sections = [
     title: "15. Contact Information",
     content: [
       "For questions regarding these Terms, please contact us:",
-      "David de Jong<br/>Email: <a href=\"mailto:info@royalchessdesign.com\" class=\"text-gold underline\">info@royalchessdesign.com</a>",
+      "David de Jong<br/>The Netherlands<br/>Email: <a href=\"mailto:info@royalchessdesign.com\" class=\"text-gold underline\">info@royalchessdesign.com</a>",
     ],
   },
 ];

@@ -94,7 +94,7 @@ const sections = [
   },
   {
     title: "9. Contact",
-    body: 'If you have questions about our use of cookies, please contact:\n\nDavid de Jong<br/>Email: <a href="mailto:info@royalchessdesign.com" class="text-gold underline">info@royalchessdesign.com</a>',
+    body: 'If you have questions about our use of cookies, please contact:\n\nDavid de Jong<br/>The Netherlands<br/>Email: <a href="mailto:info@royalchessdesign.com" class="text-gold underline">info@royalchessdesign.com</a>',
   },
 ];
 
