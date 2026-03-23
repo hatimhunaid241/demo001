@@ -8,7 +8,7 @@ const sections = [
   {
     title: "1. Introduction",
     content: [
-      "Welcome to David de Jong - Royal Chess Design (\"we\", \"our\", or \"us\"). We respect your privacy and are committed to protecting your personal data. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website: <a class=\"text-gold underline\" href=\"https://royalchessdesign.com\" target=\"_blank\" rel=\"noopener noreferrer\">royalchessdesign.com</a>.",
+      "Welcome to David de Jong - Royal Chess Design (\"we\", \"our\", or \"us\"). We respect your privacy and are committed to protecting your personal data. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website: <a href=\"https://royalchessdesign.com\" target=\"_blank\" rel=\"noopener noreferrer\">royalchessdesign.com</a>.",
       "If you do not agree with the terms of this Privacy Policy, please do not access the site.",
     ],
   },
@@ -67,7 +67,7 @@ const sections = [
     title: "9. Your Privacy Rights",
     content: [
       "Depending on your location, you may have the right to:\n\n<ul><li class=\"list-disc ml-5\">Access your personal data</li>\n<li class=\"list-disc ml-5\">Correct inaccurate data</li>\n<li class=\"list-disc ml-5\">Request deletion of your data</li>\n<li class=\"list-disc ml-5\">Restrict or object to processing</li>\n<li class=\"list-disc ml-5\">Data portability</li>\n<li class=\"list-disc ml-5\">Withdraw consent</li></ul>",
-      "To exercise your rights, contact us at: <a href=\"mailto:info@royalchessdesign.com\" class=\"text-gold underline\">info@royalchessdesign.com</a>",
+      "To exercise your rights, contact us at: <a href=\"mailto:info@royalchessdesign.com\">info@royalchessdesign.com</a>",
     ],
   },
   {
@@ -92,7 +92,7 @@ const sections = [
     title: "13. Contact Information",
     content: [
       "If you have questions about this Privacy Policy, you may contact us:",
-      "David de Jong<br/>The Netherlands<br/>Email: <a href=\"mailto:info@royalchessdesign.com\" class=\"text-gold underline\">info@royalchessdesign.com</a>",
+      "David de Jong<br/>The Netherlands<br/>Email: <a href=\"mailto:info@royalchessdesign.com\">info@royalchessdesign.com</a>",
     ],
   },
 ];
