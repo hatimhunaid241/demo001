@@ -144,8 +144,7 @@ export default function CookiePolicyContent() {
             <div className="space-y-4 mb-16 pb-16 border-b border-medium-gray">
               <p className="font-(family-name:--font-cormorant) text-lg md:text-xl leading-relaxed text-text-secondary font-light">
                 This Cookie Policy explains how David de Jong (&ldquo;we&rdquo;, &ldquo;our&rdquo;,
-                or &ldquo;us&rdquo;) uses cookies and similar technologies on our website:
-                royalchessdesign.com.
+                or &ldquo;us&rdquo;) uses cookies and similar technologies on our website: <a className="text-gold underline" href="https://royalchessdesign.com" target="_blank" rel="noopener noreferrer">royalchessdesign.com</a>.
               </p>
               <p className="font-(family-name:--font-cormorant) text-lg md:text-xl leading-relaxed text-text-secondary font-light">
                 It explains what these technologies are, why we use them, and your rights to control

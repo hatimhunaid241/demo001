@@ -8,7 +8,7 @@ const sections = [
   {
     title: "1. Introduction",
     content: [
-      "Welcome to David de Jong - Royal Chess Design (\"we\", \"our\", or \"us\"). We respect your privacy and are committed to protecting your personal data. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website: royalchessdesign.com.",
+      "Welcome to David de Jong - Royal Chess Design (\"we\", \"our\", or \"us\"). We respect your privacy and are committed to protecting your personal data. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website: <a class=\"text-gold underline\" href=\"https://royalchessdesign.com\" target=\"_blank\" rel=\"noopener noreferrer\">royalchessdesign.com</a>.",
       "If you do not agree with the terms of this Privacy Policy, please do not access the site.",
     ],
   },
