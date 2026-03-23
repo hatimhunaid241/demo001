@@ -8,95 +8,91 @@ const sections = [
   {
     title: "1. Introduction",
     content: [
-      "David de Jong Chess Design ('we', 'us', or 'our') is committed to protecting the personal information of all who visit this website and engage with our services. This Privacy Policy explains what information we collect, how we use it, and the rights you hold in relation to it.",
-      "This Policy applies to all visitors, clients, and prospective clients of our website, regardless of the country from which they access it. By using this website, you acknowledge that you have read and understood the terms set out below.",
+      "Welcome to David de Jong Royal Chess Design (\"we\", \"our\", or \"us\"). We respect your privacy and are committed to protecting your personal data. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website: royalchessdesign.com.",
+      "If you do not agree with the terms of this Privacy Policy, please do not access the site.",
     ],
   },
   {
     title: "2. Information We Collect",
     content: [
-      "We collect personal information in the following circumstances:",
-      "Contact Enquiries: When you submit a message through our contact form, we collect your name, email address, and the content of your message. This information is provided voluntarily and is necessary to respond to your enquiry.",
-      "Correspondence: Should you communicate with us directly by email or telephone, we may retain records of that correspondence, including any personal information provided within.",
-      "Technical Data: Our website may automatically collect certain non-personal technical information, including your IP address, browser type, operating system, referring URLs, and pages visited. This data is collected in aggregate and is not linked to personally identifiable information.",
+      "We may collect the following types of information:",
+      "<span class=\"font-bold\">Personal Information</span>",
+      "Information that identifies you as an individual, such as:\n\n<ul><li class=\"list-disc ml-5\">Full name</li>\n<li class=\"list-disc ml-5\">Email address</li>\n<li class=\"list-disc ml-5\">Phone number</li>\n<li class=\"list-disc ml-5\">Billing and shipping address</li>\n<li class=\"list-disc ml-5\">Payment details (processed securely via third-party providers)</li>\n<li class=\"list-disc ml-5\">Any information you submit through contact forms</li></ul>",
+      "<span class=\"font-bold\">Non-Personal Information</span>",
+      "Information that does not directly identify you:\n\n<ul><li class=\"list-disc ml-5\">Browser type</li>\n<li class=\"list-disc ml-5\">Device type</li>\n<li class=\"list-disc ml-5\">IP address</li>\n<li class=\"list-disc ml-5\">Pages visited</li>\n<li class=\"list-disc ml-5\">Time and date of visits</li>\n<li class=\"list-disc ml-5\">Referring website</li></ul>",
     ],
   },
   {
     title: "3. How We Use Your Information",
     content: [
-      "The information we collect is used exclusively for the following purposes:",
-      "— To respond to your enquiries, requests, or correspondence in a timely and professional manner.",
-      "— To communicate information regarding our collections, private viewings, or bespoke commissions, where you have expressed interest.",
-      "— To improve the functionality and user experience of our website.",
-      "— To comply with applicable legal obligations.",
-      "We do not sell, rent, or share your personal information with third parties for marketing purposes.",
+      "We use collected information to:\n\n<ul><li class=\"list-disc ml-5\">Provide and maintain our website</li>\n<li class=\"list-disc ml-5\">Process orders and payments</li>\n<li class=\"list-disc ml-5\">Communicate with you</li>\n<li class=\"list-disc ml-5\">Respond to inquiries and customer service requests</li>\n<li class=\"list-disc ml-5\">Send updates, newsletters, or marketing (only if you opt-in)</li>\n<li class=\"list-disc ml-5\">Improve website functionality and user experience</li>\n<li class=\"list-disc ml-5\">Comply with legal obligations</li></ul>",
     ],
   },
   {
-    title: "4. Cookies & Tracking Technologies",
+    title: "4. Legal Basis for Processing (EU/EEA Users)",
     content: [
-      "Our website may use cookies — small text files placed on your device — to enhance your browsing experience. Cookies allow us to recognise returning visitors and understand how the website is used.",
-      "You may configure your browser to decline cookies at any time. Please note that disabling cookies may affect certain features of the website.",
-      "We do not use third-party advertising cookies or track your activity across external websites.",
+      "If you are located in the European Economic Area, we process your data under the following legal bases:\n\n<ul><li class=\"list-disc ml-5\">Your consent</li>\n<li class=\"list-disc ml-5\">Performance of a contract</li>\n<li class=\"list-disc ml-5\">Compliance with legal obligations</li>\n<li class=\"list-disc ml-5\">Legitimate business interests</li></ul>",
     ],
   },
   {
-    title: "5. Third-Party Services",
+    title: "5. Cookies and Tracking Technologies",
     content: [
-      "This website may contain links to external platforms and third-party services. We are not responsible for the privacy practices or content of such external sites. We encourage you to review the privacy policies of any third-party services you access.",
-      "Where we use third-party tools to support website functionality (such as hosting or analytics providers), those providers are engaged under strict confidentiality terms and are not permitted to use your data for any purpose beyond the provision of those services.",
+      "We use cookies and similar technologies to enhance your browsing experience.",
+      "You can choose to disable cookies through your browser settings. Note that some features of the site may not function properly without cookies.",
+      "Types of cookies we may use:\n\n<ul><li class=\"list-disc ml-5\">Essential cookies (site functionality)</li>\n<li class=\"list-disc ml-5\">Analytics cookies (site performance and usage)</li>\n<li class=\"list-disc ml-5\">Marketing cookies (advertising and promotions)</li></ul>",
     ],
   },
   {
-    title: "6. International Data Transfers",
+    title: "6. Sharing Your Information",
     content: [
-      "As a design atelier operating globally, your personal information may be processed in countries outside of your own. We take appropriate measures to ensure that such transfers comply with applicable data protection laws and that your information remains protected to the standard described in this Policy.",
-      "Where required by law — including compliance with the General Data Protection Regulation (EU/UK GDPR) — we implement appropriate safeguards, including standard contractual clauses, to govern international data transfers.",
+      "We do not sell your personal information.",
+      "We may share information with:\n\n<ul><li class=\"list-disc ml-5\">Payment processors</li>\n<li class=\"list-disc ml-5\">Shipping partners</li>\n<li class=\"list-disc ml-5\">Website hosting providers</li>\n<li class=\"list-disc ml-5\">Analytics services</li>\n<li class=\"list-disc ml-5\">Legal authorities when required by law</li></ul>",
+      "All third parties are required to protect your data.",
     ],
   },
   {
     title: "7. Data Retention",
     content: [
-      "We retain personal information only for as long as is necessary to fulfil the purpose for which it was collected, or as required by law. Enquiry data is generally retained for a period of two years unless a client relationship is established, in which case records may be retained for the duration of that relationship and thereafter as required by applicable legal or contractual obligations.",
+      "We retain your personal information only as long as necessary to:\n\n<ul><li class=\"list-disc ml-5\">Provide services</li>\n<li class=\"list-disc ml-5\">Comply with legal obligations</li>\n<li class=\"list-disc ml-5\">Resolve disputes</li>\n<li class=\"list-disc ml-5\">Enforce agreements</li></ul>",
     ],
   },
   {
-    title: "8. Your Rights",
+    title: "8. Data Security",
     content: [
-      "Depending on your country of residence, you may hold certain rights in relation to your personal information. These may include:",
-      "— The right to access the personal data we hold about you.",
-      "— The right to request correction of inaccurate data.",
-      "— The right to request the deletion of your personal data.",
-      "— The right to restrict or object to our processing of your data.",
-      "— The right to data portability.",
-      "— The right to withdraw consent where processing is based on consent.",
-      "To exercise any of these rights, please contact us at the address below. We will respond within the timeframes required by applicable law.",
+      "We implement appropriate technical and organizational measures to protect your personal data against unauthorized access, alteration, disclosure, or destruction.",
+      "However, no internet transmission is completely secure.",
     ],
   },
   {
-    title: "9. Security",
+    title: "9. Your Privacy Rights",
     content: [
-      "We implement industry-standard security measures to protect your personal information against unauthorised access, disclosure, alteration, or destruction. However, no method of transmission over the internet or electronic storage is entirely secure. While we endeavour to protect your information, we cannot guarantee its absolute security.",
+      "Depending on your location, you may have the right to:\n\n<ul><li class=\"list-disc ml-5\">Access your personal data</li>\n<li class=\"list-disc ml-5\">Correct inaccurate data</li>\n<li class=\"list-disc ml-5\">Request deletion of your data</li>\n<li class=\"list-disc ml-5\">Restrict or object to processing</li>\n<li class=\"list-disc ml-5\">Data portability</li>\n<li class=\"list-disc ml-5\">Withdraw consent</li></ul>",
+      "To exercise your rights, contact us at: <a href=\"mailto:info@royalchessdesign.com\" class=\"text-gold underline\">info@royalchessdesign.com</a>",
     ],
   },
   {
-    title: "10. Children's Privacy",
+    title: "10. Third-Party Links",
     content: [
-      "This website is not intended for use by individuals under the age of 16. We do not knowingly collect personal information from children. If you believe that we have inadvertently collected information from a person under the age of 16, please contact us immediately and we will take prompt steps to remove such information.",
+      "Our website may contain links to external websites. We are not responsible for the privacy practices of those sites.",
     ],
   },
   {
-    title: "11. Changes to This Policy",
+    title: "11. Children's Privacy",
     content: [
-      "We reserve the right to update this Privacy Policy at any time. Any changes will be reflected on this page with a revised effective date. We encourage you to review this Policy periodically to remain informed of how we protect your information.",
+      "Our website is not intended for individuals under the age of 16. We do not knowingly collect personal data from children.",
     ],
   },
   {
-    title: "12. Contact",
+    title: "12. Changes to This Privacy Policy",
     content: [
-      "For all enquiries relating to this Privacy Policy, your personal data, or to exercise your rights, please contact us at:",
-      "David de Jong Chess Design",
-      "Email: info@royalchessdesign.com",
+      "We may update this Privacy Policy from time to time. Changes will be posted on this page with an updated revision date.",
+    ],
+  },
+  {
+    title: "13. Contact Information",
+    content: [
+      "If you have questions about this Privacy Policy, you may contact us:",
+      "David de Jong<br/>Email: <a href=\"mailto:info@royalchessdesign.com\" class=\"text-gold underline\">info@royalchessdesign.com</a>",
     ],
   },
 ];
@@ -135,7 +131,7 @@ export default function PrivacyPolicyContent() {
             transition={{ duration: 1, delay: 1.0 }}
             className="font-(family-name:--font-cormorant) text-base tracking-[0.15em] text-text-muted"
           >
-            Last updated: February 2026
+            Last updated: March 23, 2026
           </motion.p>
         </div>
       </section>
@@ -163,12 +159,11 @@ export default function PrivacyPolicyContent() {
                     {section.content.map((para, j) => (
                       <p
                         key={j}
+                        dangerouslySetInnerHTML={{ __html: para }}
                         className={`font-(family-name:--font-cormorant) leading-relaxed text-text-secondary font-light ${
                           para.startsWith("—") ? "pl-4 text-base" : "text-base md:text-[17px]"
                         }`}
-                      >
-                        {para}
-                      </p>
+                      />
                     ))}
                   </div>
                 </div>

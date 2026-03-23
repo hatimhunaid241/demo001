@@ -8,97 +8,107 @@ const sections = [
   {
     title: "1. Acceptance of Terms",
     content: [
-      "By accessing or using this website (the 'Site'), you agree to be bound by these Terms of Use ('Terms'). If you do not agree to these Terms, you must discontinue use of the Site immediately.",
-      "These Terms apply to all visitors, prospective clients, and any other person who accesses or uses the Site, regardless of their country of residence. David de Jong Chess Design reserves the right to modify these Terms at any time. Continued use of the Site following the publication of revised Terms constitutes acceptance of those changes.",
+      "Welcome to David de Jong (Royal Chess Design). By accessing or using our website at royalchessdesign.com (the &ldquo;Site&rdquo;), you agree to be bound by these Terms of Use and all applicable laws and regulations.",
+      "If you do not agree with these Terms, please do not use the Site.",
     ],
   },
   {
-    title: "2. Intellectual Property",
+    title: "2. Use of the Website",
     content: [
-      "All content on this Site — including but not limited to text, images, photographs, graphics, design layouts, logotypes, and the David de Jong Chess Design brand identity — is the exclusive intellectual property of David de Jong Chess Design and is protected by applicable copyright, trademark, and intellectual property laws worldwide.",
-      "No content may be reproduced, distributed, transmitted, published, modified, or otherwise exploited, in whole or in part, without the prior written consent of David de Jong Chess Design. Unauthorised use of any content may constitute infringement and may give rise to civil and/or criminal liability.",
-      "The names 'David de Jong', 'David de Jong Chess Design', and associated marks are unregistered designations of origin. Any use of these names or marks without authorisation is strictly prohibited.",
+      "You agree to use this Site only for lawful purposes and in a manner that does not infringe the rights of others or restrict their use of the Site.",
+      "You must not:\n\n<ul><li class=\"list-disc ml-5\">Use the Site in any way that violates applicable laws or regulations</li>\n<li class=\"list-disc ml-5\">Attempt to gain unauthorized access to systems or networks</li>\n<li class=\"list-disc ml-5\">Distribute malicious software or harmful code</li>\n<li class=\"list-disc ml-5\">Copy, reproduce, or exploit content without permission</li></ul>",
     ],
   },
   {
-    title: "3. Permitted Use of the Website",
+    title: "3. Intellectual Property",
     content: [
-      "This Site is made available for informational and commercial enquiry purposes only. You agree to use the Site solely for lawful purposes and in a manner that does not infringe the rights of others or restrict their use and enjoyment of the Site.",
-      "You must not:",
-      "— Attempt to gain unauthorised access to any part of the Site or its underlying systems.",
-      "— Introduce viruses, malware, or any other harmful material to the Site.",
-      "— Use the Site to transmit unsolicited communications.",
-      "— Impersonate any person or entity, or misrepresent your affiliation with any person or entity.",
-      "— Engage in data scraping, harvesting, or any automated extraction of content from the Site.",
+      "All content on this Site, including but not limited to:\n\n<ul></ul><li class=\"list-disc ml-5\">Original chess set designs</li>\n<li class=\"list-disc ml-5\">Sculptural chess pieces</li>\n<li class=\"list-disc ml-5\">Goldsmith artworks</li>\n<li class=\"list-disc ml-5\">Bespoke and commissioned designs</li>\n<li class=\"list-disc ml-5\">Limited editions and collectible pieces</li>\n<li class=\"list-disc ml-5\">Product concepts and prototypes</li>\n<li class=\"list-disc ml-5\">Text, images, photography, and graphics</li>\n<li class=\"list-disc ml-5\">Logos, branding, and visual identity</li></ul>\n\nis the exclusive intellectual property of David de Jong unless otherwise stated.",
+      "These materials are protected by copyright, design rights, trademark law, and other intellectual property regulations. You may not copy, reproduce, distribute, modify, display, or create derivative works without prior written permission.",
+      "We reserve all rights to artistic methods, design processes, and signature stylistic elements."
     ],
   },
   {
-    title: "4. Accuracy of Information",
+    title: "4. Products and Services",
     content: [
-      "While we endeavour to ensure that the content of this Site is accurate and current, we make no representations or warranties — express or implied — regarding the completeness, accuracy, reliability, or suitability of the information presented. All content is provided for general informational purposes and is subject to change without notice.",
-      "Photographs and renderings of our chess sets are intended to represent the works faithfully; however, slight variations in colour, material, and finish may exist between digital representation and the finished object. Each piece is individually crafted, and such variations are inherent to the nature of handmade artisanal work.",
+      "David de Jong creates high-end artistic works that unite goldsmith craftsmanship with sculptural chess design.",
+      "Offerings may include:\n\n<ul><li class=\"list-disc ml-5\">One-of-a-kind chess sets</li>\n<li class=\"list-disc ml-5\">Limited-edition collectible sets</li>\n<li class=\"list-disc ml-5\">Custom-made and bespoke commissions</li>\n<li class=\"list-disc ml-5\">Exhibition pieces</li>\n<li class=\"list-disc ml-5\">Artistic gold objects</li></ul>",
+      "Because many works are handmade and artistic in nature:\n\n<ul><li class=\"list-disc ml-5\">Natural variations and handcrafted irregularities are part of the artistic character</li>\n<li class=\"list-disc ml-5\">Dimensions, materials, and finishes may vary slightly</li>\n<li class=\"list-disc ml-5\">Availability is limited and subject to material sourcing</li></ul>",
+      "All product descriptions, images, and pricing are subject to change without notice. We reserve the right to modify or discontinue works at any time.",
+      "We make every effort to display works accurately, but we cannot guarantee that your device's display reflects exact colors, textures, or details.",
     ],
   },
   {
-    title: "5. Commissions & Commercial Engagements",
+    title: "5. Orders, Commissions, and Payments",
     content: [
-      "Enquiries submitted through the Site do not constitute a binding contract or offer of purchase. All commercial engagements — including bespoke commissions, private viewings, and acquisitions — are governed by separate written agreements entered into between David de Jong Chess Design and the client.",
-      "Prices, availability, and production timelines discussed in any correspondence are indicative only and are subject to formal confirmation. A commission is considered accepted only upon the execution of a written commission agreement and receipt of any agreed deposit.",
-      "As each chess set is designed and crafted to individual specification, all sales are final. Refunds are not offered except in circumstances of a material defect confirmed in writing by David de Jong Chess Design.",
+      "By placing an order or commissioning a custom piece, you agree that:\n\n<ul><li class=\"list-disc ml-5\">All information provided is accurate and complete</li>\n<li class=\"list-disc ml-5\">You are authorized to use the selected payment method</li>\n<li class=\"list-disc ml-5\">Commission requests may require a signed agreement</li>\n<li class=\"list-disc ml-5\">Custom and bespoke works may require a non-refundable deposit before production begins</li>\n<li class=\"list-disc ml-5\">Production timelines are estimates due to the handcrafted nature of the work</li></ul>",
+      "We reserve the right to refuse or cancel orders or commissions at our discretion.",
+      "Payments are processed securely via third-party providers.",
     ],
   },
   {
-    title: "6. International Transactions",
+    title: "6. Shipping, Insurance, and Delivery",
     content: [
-      "David de Jong Chess Design operates globally and welcomes clients from all countries. All pricing quoted in correspondence is exclusive of applicable taxes, import duties, customs levies, and shipping costs unless expressly stated otherwise. It is the responsibility of the client to ensure compliance with all applicable import regulations in their country of receipt.",
-      "Export of certain materials — including precious metals and gemstones — may be subject to regulatory requirements. David de Jong Chess Design will cooperate fully with lawful customs and export formalities but bears no liability for delays or costs arising from regulatory processes in the client's jurisdiction.",
+      "Delivery times are estimates and not guaranteed. We are not responsible for delays caused by carriers, customs procedures, material shortages, or events beyond our control.",
+      "High-value works may require:\n\n<ul><li class=\"list-disc ml-5\">Insured shipping</li>\n<li class=\"list-disc ml-5\">Signature upon delivery</li>\n<li class=\"list-disc ml-5\">Specialized art or valuables transport services</li></ul>",
+      "Risk of loss transfers to you upon confirmed delivery.",
     ],
   },
   {
-    title: "7. Limitation of Liability",
+    title: "7. Returns, Refunds, and Custom Work Policy",
     content: [
-      "To the fullest extent permitted by applicable law, David de Jong Chess Design shall not be liable for any direct, indirect, incidental, consequential, or special damages arising out of or in connection with your use of, or inability to use, this Site or its content.",
-      "David de Jong Chess Design provides this Site and its content 'as is', without warranties of any kind, whether express or implied. We do not warrant that the Site will be available at all times, uninterrupted, or free of error.",
+      "Due to the artistic and handcrafted nature of our works:\n\n<ul><li class=\"list-disc ml-5\">Custom-made and bespoke commissions are non-refundable</li>\n<li class=\"list-disc ml-5\">Limited editions may be eligible for return only if unused and in original condition</li>\n<li class=\"list-disc ml-5\">Return requests must be made within the stated return period</li></ul>",
+      "We reserve the right to refuse returns that do not meet stated conditions.",
     ],
   },
   {
-    title: "8. External Links",
+    title: "8. Disclaimer of Warranties",
     content: [
-      "This Site may contain links to external websites operated by third parties. These links are provided for convenience only. David de Jong Chess Design does not endorse, control, or assume responsibility for the content, privacy practices, or availability of any third-party website. Access to external links is entirely at your own risk.",
+      "The Site and its content are provided \"as is\" and \"as available\" without warranties of any kind, express or implied.",
+      "We do not guarantee that:\n\n<ul><li class=\"list-disc ml-5\">The Site will be uninterrupted or error-free</li>\n<li class=\"list-disc ml-5\">Defects will be corrected</li>\n<li class=\"list-disc ml-5\">The Site is free of viruses or harmful components</li></ul>",
     ],
   },
   {
-    title: "9. Indemnification",
+    title: "9. Limitation of Liability",
     content: [
-      "You agree to indemnify and hold harmless David de Jong Chess Design, its principals, collaborators, and representatives from and against any claims, liabilities, damages, losses, and expenses — including legal fees — arising out of or in any way connected with your access to or use of the Site, your violation of these Terms, or your infringement of any intellectual property or other rights of any person or entity.",
+      "To the fullest extent permitted by law, David de Jong shall not be liable for any indirect, incidental, consequential, or reputational damages arising from:\n\n<ul><li class=\"list-disc ml-5\">Use of the Site</li>\n<li class=\"list-disc ml-5\">Purchase or use of artworks or chess sets</li>\n<li class=\"list-disc ml-5\">Delays in production or delivery</li>\n<li class=\"list-disc ml-5\">Collector valuation changes or market fluctuations</li></ul>",
     ],
   },
   {
-    title: "10. Governing Law & Jurisdiction",
+    title: "10. User Submissions",
     content: [
-      "These Terms shall be governed by and construed in accordance with the laws of the Kingdom of the Netherlands, without regard to conflict of law principles. Any dispute arising out of or in connection with these Terms that cannot be resolved amicably shall be subject to the exclusive jurisdiction of the competent courts of the Netherlands.",
-      "Where mandatory consumer protection laws of a client's country of residence confer rights that cannot be excluded by contract, those rights shall remain unaffected by this clause.",
+      "If you submit feedback, messages, or other content to us, you grant us the right to use, reproduce, and display such content for business purposes.",
+      "You must not submit unlawful, offensive, or infringing material.",
     ],
   },
   {
-    title: "11. Dispute Resolution",
+    title: "11. Third-Party Links",
     content: [
-      "In the event of any dispute, both parties agree to first seek resolution through good-faith negotiation. Should the matter remain unresolved after thirty (30) days of written notice, either party may pursue formal legal remedy in accordance with the governing law provisions above.",
-      "For clients based in the European Union, the European Commission's Online Dispute Resolution platform is available at: https://ec.europa.eu/consumers/odr.",
+      "Our Site may contain links to third-party websites. We are not responsible for their content or practices.",
     ],
   },
   {
-    title: "12. Changes to These Terms",
+    title: "12. Privacy",
     content: [
-      "David de Jong Chess Design reserves the right to revise these Terms at any time. The current version will always be available on this page, and we encourage you to review it periodically. Your continued use of the Site after any modification constitutes your acceptance of the revised Terms.",
+      "Your use of the Site is also governed by our Privacy Policy.",
     ],
   },
   {
-    title: "13. Contact",
+    title: "13. Governing Law",
     content: [
-      "For any enquiries relating to these Terms, please contact:",
-      "David de Jong Chess Design",
-      "Email: info@royalchessdesign.com",
+      "These Terms shall be governed by and construed in accordance with the laws of [Country], without regard to conflict of law principles.",
+    ],
+  },
+  {
+    title: "14. Changes to Terms",
+    content: [
+      "We reserve the right to modify these Terms at any time. Updated versions will be posted on this page with a revised date.",
+    ],
+  },
+  {
+    title: "15. Contact Information",
+    content: [
+      "For questions regarding these Terms, please contact us:",
+      "David de Jong<br/>Email: <a href=\"mailto:info@royalchessdesign.com\" class=\"text-gold underline\">info@royalchessdesign.com</a>",
     ],
   },
 ];
@@ -113,16 +123,14 @@ export default function TermsOfUseContent() {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.2 }}
-            className="font-(family-name:--font-cormorant) text-[11px] tracking-[0.5em] text-gold uppercase block mb-8"
-          >
+            className="font-(family-name:--font-cormorant) text-[11px] tracking-[0.5em] text-gold uppercase block mb-8">
             LEGAL
           </motion.span>
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
-            className="font-(family-name:--font-playfair) text-4xl md:text-5xl lg:text-6xl font-normal tracking-[0.12em] text-charcoal mb-8"
-          >
+            className="font-(family-name:--font-playfair) text-4xl md:text-5xl lg:text-6xl font-normal tracking-[0.12em] text-charcoal mb-8">
             Terms of Use
           </motion.h1>
           <motion.div
@@ -135,9 +143,8 @@ export default function TermsOfUseContent() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 1.0 }}
-            className="font-(family-name:--font-cormorant) text-base tracking-[0.15em] text-text-muted"
-          >
-            Last updated: February 2026
+            className="font-(family-name:--font-cormorant) text-base tracking-[0.15em] text-text-muted">
+            Last updated: March 23, 2026
           </motion.p>
         </div>
       </section>
@@ -145,12 +152,13 @@ export default function TermsOfUseContent() {
       {/* ═══════════════ CONTENT ═══════════════ */}
       <section className="py-24 md:py-32 bg-white">
         <div className="max-w-3xl mx-auto px-6 md:px-8">
-
           {/* Preamble */}
           <FadeInUp>
-            <p className="font-(family-name:--font-cormorant) text-lg md:text-xl leading-relaxed text-text-secondary font-light mb-16 pb-16 border-b border-medium-gray">
-              These Terms of Use govern the relationship between David de Jong Chess Design and all persons who engage with this website. They are written plainly and with integrity — the same values that inform every commission we undertake.
-            </p>
+            <div className="space-y-4 mb-16 pb-16 border-b border-medium-gray">
+              <p className="font-(family-name:--font-cormorant) text-lg md:text-xl leading-relaxed text-text-secondary font-light">
+                These Terms of Use govern the relationship between David de Jong Chess Design and all persons who engage with this website. They are written plainly and with integrity — the same values that inform every commission we undertake.
+              </p>
+            </div>
           </FadeInUp>
 
           {/* Sections */}
@@ -165,11 +173,10 @@ export default function TermsOfUseContent() {
                     {section.content.map((para, j) => (
                       <p
                         key={j}
+                        dangerouslySetInnerHTML={{__html: para}}
                         className={`font-(family-name:--font-cormorant) leading-relaxed text-text-secondary font-light ${
                           para.startsWith("—") ? "pl-4 text-base" : "text-base md:text-[17px]"
-                        }`}
-                      >
-                        {para}
+                        }`}>
                       </p>
                     ))}
                   </div>
@@ -184,7 +191,6 @@ export default function TermsOfUseContent() {
               RETURN TO ATELIER
             </Link>
           </FadeInUp>
-
         </div>
       </section>
     </>
