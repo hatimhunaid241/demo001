@@ -8,7 +8,7 @@ function requireAuth(session) {
   if (!session) throw new Error("Unauthorized");
 }
 
-const VALID_PAGES = ["home", "artist", "portfolio", "contact"];
+const VALID_PAGES = ["home", "artist", "portfolio", "contact", "welcome"];
 
 export async function updatePageContent(page, prevState, formData) {
   const session = await auth();
