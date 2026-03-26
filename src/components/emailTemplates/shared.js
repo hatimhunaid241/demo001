@@ -1,7 +1,8 @@
 // Royal Chess Design — Shared Email Template Primitives
 // Inline styles required for broad email client compatibility
 
-export const LOGO_URL = "https://exyrxjlxax0fnljb.public.blob.vercel-storage.com/email_logo.png";
+// export const LOGO_URL = "https://exyrxjlxax0fnljb.public.blob.vercel-storage.com/email_logo.png";
+export const LOGO_URL = "https://raw.githubusercontent.com/hatimhunaid241/demo001/refs/heads/main/public/email_logo.png";
 
 export const brand = {
   bg: "#FAFAF8",
