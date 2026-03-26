@@ -11,7 +11,8 @@
     "db:create": "node --env-file=.env.local scripts/db-create.js",
     "db:seed": "node --env-file=.env.local scripts/db-seed.js",
     "db:upload-media": "node --env-file=.env.local scripts/db-upload-media.js",
-    "db:admin": "node --env-file=.env.local scripts/db-admin.js"
+    "db:admin": "node --env-file=.env.local scripts/db-admin.js",
+    "blob:download-images": "node --env-file=.env.local scripts/blob-download-images.mjs"
   },
   "dependencies": {
     "@neondatabase/serverless": "^1.0.2",
