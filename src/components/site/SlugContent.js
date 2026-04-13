@@ -86,6 +86,14 @@ function PieceSection({ piece, index, onOpen }) {
                 )}
               </div>
             </FadeInUp>
+
+            {images.length > 0 && (
+              <FadeInUp delay={0.45} className="mt-8">
+                <button type="button" onClick={() => onOpen(images, 0)} className="btn-luxury">
+                  VIEW PHOTOS
+                </button>
+              </FadeInUp>
+            )}
           </div>
         </div>
       </div>
@@ -159,6 +167,16 @@ function TableSection({ table, onOpen, setName }) {
                     fill
                     className="object-contain"
                   />
+                </div>
+
+                <div className="mt-8 flex justify-center lg:justify-start">
+                  <button
+                    type="button"
+                    onClick={() => onOpen(table.image, 0)}
+                    className="btn-luxury"
+                  >
+                    VIEW PHOTOS
+                  </button>
                 </div>
               </FadeInUp>
             )}
