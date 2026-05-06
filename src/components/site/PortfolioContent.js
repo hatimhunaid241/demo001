@@ -139,10 +139,13 @@ export default function PortfolioContent({ content: c, chessSets }) {
                     </div>
                   </FadeInUp>
 
-                  <FadeInUp delay={0.45} className="mt-10">
+                  <FadeInUp delay={0.45} className="mt-10 flex gap-4 flex-wrap">
                     <Link href={`/portfolio/${set.slug}`} className="btn-luxury">
                       VIEW SET
                     </Link>
+                    {/* <Link href={`/wood-care`} className="btn-luxury">
+                      Wood Care & maintenance
+                    </Link> */}
                   </FadeInUp>
                 </div>
               </div>

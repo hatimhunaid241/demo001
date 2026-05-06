@@ -169,7 +169,7 @@ function TableSection({ table, onOpen, setName }) {
                   />
                 </div>
 
-                <div className="mt-8 flex justify-center lg:justify-start">
+                <div className="mt-8 flex justify-center lg:justify-start flex-wrap gap-4">
                   <button
                     type="button"
                     onClick={() => onOpen(table.image, 0)}
@@ -177,6 +177,11 @@ function TableSection({ table, onOpen, setName }) {
                   >
                     VIEW PHOTOS
                   </button>
+                  {/* {set.setNumber != "I" && (
+                    <Link href={`/wood-care`} className="btn-luxury">
+                      Wood Care & maintenance
+                    </Link>
+                  )} */}
                 </div>
               </FadeInUp>
             )}

@@ -189,9 +189,10 @@ export default function RootLayout({ children }) {
   };
 
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
-        className={`${playfair.variable} ${cormorant.variable} ${arsenal.variable} ${greatVibes.variable}`}>
+        className={`${playfair.variable} ${cormorant.variable} ${arsenal.variable} ${greatVibes.variable}`}
+        suppressHydrationWarning>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
