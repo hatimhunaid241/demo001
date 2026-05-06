@@ -347,6 +347,119 @@ function WelcomeFields({ c, mediaVideos }) {
   );
 }
 
+function getInitialWoodCareSections(content) {
+  const sections = [];
+  const seenNumbers = new Set();
+
+  Object.keys(content || {}).forEach((key) => {
+    const match = key.match(/(?:content\.)?title(\d+)$/i) || key.match(/^title(\d+)$/i);
+    if (match) seenNumbers.add(Number(match[1]));
+  });
+
+  const orderedNumbers = [...seenNumbers].sort((a, b) => a - b);
+  orderedNumbers.forEach((n) => {
+    sections.push({
+      id: `section-${n}`,
+      title: content[`content.title${n}`] || content[`title${n}`] || "",
+      text: content[`content.p${n}`] || content[`p${n}`] || "",
+    });
+  });
+
+  if (sections.length === 0) {
+    sections.push({ id: "section-1", title: "", text: "" });
+  }
+
+  return sections;
+}
+
+function WoodCareFields({ c, mediaImages }) {
+  const [sections, setSections] = useState(() => getInitialWoodCareSections(c));
+
+  function addSection() {
+    setSections((prev) => [
+      ...prev,
+      { id: `section-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`, title: "", text: "" },
+    ]);
+  }
+
+  function removeSection(id) {
+    setSections((prev) => prev.filter((section) => section.id !== id));
+  }
+
+  function updateSection(id, field, value) {
+    setSections((prev) =>
+      prev.map((section) => (section.id === id ? { ...section, [field]: value } : section))
+    );
+  }
+
+  return (
+    <>
+      <SectionHeading>Hero</SectionHeading>
+      <ImageField label="Hero Image" name="hero.image" initialUrl={c["hero.image"]} mediaImages={mediaImages} />
+      <Field label="Hero Title" name="hero.name" defaultValue={c["hero.name"]} placeholder="Wood Care & Maintenance" />
+      <Field label="Hero Subtitle" name="hero.subtitle" defaultValue={c["hero.subtitle"]} />
+
+      <SectionHeading>Content Sections</SectionHeading>
+      <div className="rounded-lg border border-indigo-100 bg-indigo-50/50 p-3 text-xs text-indigo-900 space-y-1.5">
+        <p className="font-semibold uppercase tracking-wider text-[10px] text-indigo-700">Formatting Tips</p>
+        <p>Use an empty line between paragraphs.</p>
+        <p>Use **bold** for emphasis.</p>
+        <p>Use unordered lists with lines starting with - .</p>
+        <p>Use ordered lists with lines starting with 1. 2. 3.</p>
+      </div>
+
+      <div className="space-y-6">
+        {sections.map((section, idx) => (
+          <div key={section.id} className="rounded-xl border border-gray-200 bg-white p-4 space-y-3">
+            <div className="flex items-center justify-between gap-3">
+              <h4 className="text-sm font-semibold text-gray-700">Section {idx + 1}</h4>
+              <button
+                type="button"
+                onClick={() => removeSection(section.id)}
+                disabled={sections.length === 1}
+                className="text-xs px-2.5 py-1 rounded-md border border-red-200 text-red-600 hover:bg-red-50 disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                Remove
+              </button>
+            </div>
+
+            <div>
+              <label className="block text-xs font-medium text-gray-600 mb-1 uppercase tracking-wider">Title</label>
+              <input
+                type="text"
+                value={section.title}
+                onChange={(e) => updateSection(section.id, "title", e.target.value)}
+                className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm text-gray-900 focus:outline-none focus:border-indigo-400 transition-colors bg-white"
+              />
+            </div>
+
+            <div>
+              <label className="block text-xs font-medium text-gray-600 mb-1 uppercase tracking-wider">Text</label>
+              <textarea
+                value={section.text}
+                onChange={(e) => updateSection(section.id, "text", e.target.value)}
+                rows={6}
+                className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm text-gray-900 focus:outline-none focus:border-indigo-400 transition-colors bg-white resize-y"
+              />
+            </div>
+
+            <input type="hidden" name={`content.title${idx + 1}`} value={section.title} />
+            <input type="hidden" name={`content.p${idx + 1}`} value={section.text} />
+          </div>
+        ))}
+      </div>
+
+      <button
+        type="button"
+        onClick={addSection}
+        className="inline-flex items-center gap-2 text-sm px-3 py-2 rounded-lg border border-indigo-200 text-indigo-700 hover:bg-indigo-50"
+      >
+        + Add Section
+      </button>
+    </>
+  );
+}
+
 // ── Main form component ─────────────────────────────────────────────────────
 
 const PAGE_LABELS = {
@@ -354,6 +467,7 @@ const PAGE_LABELS = {
   artist: "The Artist",
   portfolio: "Portfolio",
   contact: "Contact",
+  "wood-care": "Wood Care",
   welcome: "Welcome / Cookie",
 };
 
@@ -367,6 +481,7 @@ export default function EditPageForm({ page, content: c, mediaImages, mediaVideo
       {page === "artist"    && <ArtistFields    c={c} mediaImages={mediaImages} />}
       {page === "portfolio" && <PortfolioFields c={c} mediaImages={mediaImages} />}
       {page === "contact"   && <ContactFields   c={c} mediaImages={mediaImages} />}
+      {page === "wood-care" && <WoodCareFields c={c} mediaImages={mediaImages} />}
       {page === "welcome"   && <WelcomeFields   c={c} mediaVideos={mediaVideos} />}
 
       <div className="flex items-center justify-between pt-4 border-t border-gray-100">

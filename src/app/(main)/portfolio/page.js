@@ -55,7 +55,7 @@ export default async function Portfolio() {
   const [content, chessSets] = await Promise.all([
     getSiteContent("portfolio"),
     sql`
-      SELECT id, slug, name, subtitle, description, category, materials, year, image, "heroImage"
+      SELECT id, slug, name, subtitle, description, category, materials, year, image, "heroImage", "hasWoodCare"
       FROM "ChessSet"
       WHERE published = true
       ORDER BY "order", "createdAt"

@@ -34,8 +34,9 @@ function parseBold(text) {
 
 // Helper: Detect and render lists or paragraphs
 function renderContent(text) {
+  console.log(text)
   const paragraphs = text.split(/\r?\n\r?\n/);
-
+  console.log(paragraphs)
   return paragraphs.map((para, pIdx) => {
     const lines = para.split(/\r?\n/).filter(Boolean);
 

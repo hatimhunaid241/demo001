@@ -104,7 +104,7 @@ function PieceSection({ piece, index, onOpen }) {
 /* ─────────────────────────────────────────────────────────
    TABLE SECTION
 ───────────────────────────────────────────────────────── */
-function TableSection({ table, onOpen, setName }) {
+function TableSection({ table, onOpen, setName, hasWoodCare }) {
   return (
     <section className="relative bg-white overflow-hidden">
       <div className="absolute inset-0 pointer-events-none">
@@ -177,11 +177,11 @@ function TableSection({ table, onOpen, setName }) {
                   >
                     VIEW PHOTOS
                   </button>
-                  {/* {set.setNumber != "I" && (
+                  {hasWoodCare && (
                     <Link href={`/wood-care`} className="btn-luxury">
                       Wood Care & maintenance
                     </Link>
-                  )} */}
+                  )}
                 </div>
               </FadeInUp>
             )}
@@ -518,7 +518,7 @@ export default function SlugContent({ set, pieces, prevSet, nextSet }) {
       ))}
 
       {/* ═══════════════ TABLE ═══════════════ */}
-      {table && <TableSection table={table} onOpen={openLightbox} setName={set.name} />}
+      {table && <TableSection table={table} onOpen={openLightbox} setName={set.name} hasWoodCare={set.hasWoodCare} />}
 
       {/* ═══════════════ MEDIA MODAL ═══════════════ */}
       {lightbox && (

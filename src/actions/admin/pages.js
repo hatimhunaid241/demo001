@@ -8,13 +8,26 @@ function requireAuth(session) {
   if (!session) throw new Error("Unauthorized");
 }
 
-const VALID_PAGES = ["home", "artist", "portfolio", "contact", "welcome"];
+const VALID_PAGES = ["home", "artist", "portfolio", "contact", "wood-care", "welcome"];
 
 export async function updatePageContent(page, prevState, formData) {
   const session = await auth();
   requireAuth(session);
 
   if (!VALID_PAGES.includes(page)) return { error: "Invalid page." };
+
+  if (page === "wood-care") {
+    await sql`
+      DELETE FROM "SiteContent"
+      WHERE page = ${page}
+      AND (
+        key LIKE 'content.title%'
+        OR key LIKE 'content.p%'
+        OR key LIKE 'title%'
+        OR key LIKE 'p%'
+      )
+    `;
+  }
 
   const entries = [...formData.entries()].filter(([k]) => k !== "_page");
 

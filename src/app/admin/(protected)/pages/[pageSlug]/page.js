@@ -4,13 +4,14 @@ import sql from "@/lib/db";
 import EditPageForm from "@/components/admin/pages/EditPageForm";
 import Link from "next/link";
 
-const VALID_PAGES = ["home", "artist", "portfolio", "contact", "welcome"];
+const VALID_PAGES = ["home", "artist", "portfolio", "contact", "wood-care", "welcome"];
 
 const PAGE_LABELS = {
   home: "Home Page",
   artist: "The Artist",
   portfolio: "Portfolio",
   contact: "Contact",
+  "wood-care": "Wood Care",
   welcome: "Welcome / Cookie",
 };
 

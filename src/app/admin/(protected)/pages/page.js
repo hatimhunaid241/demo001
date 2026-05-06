@@ -26,6 +26,12 @@ const PAGES = [
     icon: "✉️",
   },
   {
+    slug: "wood-care",
+    label: "Wood Care",
+    description: "Maintenance guide for wooden chess sets",
+    icon: "🪵",
+  },
+  {
     slug: "welcome",
     label: "Welcome / Cookie",
     description: "Background video and cookie-consent banner text",

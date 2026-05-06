@@ -61,6 +61,8 @@ export async function updateGeneral(prevState, formData) {
   const overviewQuoteAuthor = formData.get("overviewQuoteAuthor");
   const orderRaw            = formData.get("order");
   const order               = orderRaw !== null && orderRaw !== "" ? parseInt(orderRaw, 10) : 0;
+  const hasWoodCareRaw      = formData.get("hasWoodCare");
+  const hasWoodCare         = hasWoodCareRaw === "on" || hasWoodCareRaw === "true" || hasWoodCareRaw === "1";
 
   if (!name?.trim()) return { error: "Name is required." };
 
@@ -79,6 +81,7 @@ export async function updateGeneral(prevState, formData) {
       "overviewQuoteText"   = ${overviewQuoteText || ""},
       "overviewQuoteAuthor" = ${overviewQuoteAuthor || ""},
       "order"             = ${isNaN(order) ? 0 : order},
+      "hasWoodCare"       = ${hasWoodCare},
       "updatedAt"         = now()
     WHERE id = ${id}
   `;
