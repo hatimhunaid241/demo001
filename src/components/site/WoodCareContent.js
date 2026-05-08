@@ -171,7 +171,7 @@ export default function WoodCareContent({ content: c }) {
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 1.2, delay: 1.0 }}
+            transition={{ duration: 1.7, delay: 1.0 }}
             className="font-(family-name:--font-cormorant) text-lg md:text-xl font-light tracking-[0.08em] text-text-secondary max-w-lg mx-auto">
             {c["hero.subtitle"]}
           </motion.p>
