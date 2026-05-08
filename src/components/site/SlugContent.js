@@ -591,15 +591,15 @@ export default function SlugContent({ set, pieces, prevSet, nextSet }) {
               {prevSet ? (
                 <Link
                   href={`/portfolio/${prevSet.slug}`}
-                  className="group flex items-center gap-6 px-8 md:px-12 lg:px-16 py-10 hover:bg-white transition-colors duration-400">
+                  className="group flex items-center gap-6 px-8 md:px-12 lg:px-16 py-10 duration-400">
                   <span className="text-2xl text-gold group-hover:-translate-x-1 transition-transform duration-300">
                     ←
                   </span>
                   <div>
-                    <p className="font-(family-name:--font-cormorant) text-[10px] tracking-[0.4em] text-text-muted uppercase mb-2">
+                    <p className="font-(family-name:--font-cormorant) text-[10px] tracking-[0.4em] text-text-muted uppercase mb-2 transition duration-300 group-hover:scale-110 origin-left">
                       PREVIOUS SET
                     </p>
-                    <p className="font-(family-name:--font-playfair) text-lg md:text-xl text-charcoal group-hover:text-gold transition-colors duration-300">
+                    <p className="font-(family-name:--font-playfair) text-lg md:text-xl text-charcoal transition duration-300 inline-block group-hover:scale-110 origin-left group-hover:text-gold">
                       {prevSet.name}
                     </p>
                   </div>
@@ -611,12 +611,12 @@ export default function SlugContent({ set, pieces, prevSet, nextSet }) {
               {nextSet ? (
                 <Link
                   href={`/portfolio/${nextSet.slug}`}
-                  className="group flex items-center justify-end gap-6 px-8 md:px-12 lg:px-16 py-10 hover:bg-white transition-colors duration-400 text-right">
+                  className="group flex items-center justify-end gap-6 px-8 md:px-12 lg:px-16 py-10 transition-colors duration-400 text-right">
                   <div>
-                    <p className="font-(family-name:--font-cormorant) text-[10px] tracking-[0.4em] text-text-muted uppercase mb-2">
+                    <p className="font-(family-name:--font-cormorant) text-[10px] tracking-[0.4em] text-text-muted uppercase mb-2 transition duration-300 group-hover:scale-110 origin-right">
                       NEXT SET
                     </p>
-                    <p className="font-(family-name:--font-playfair) text-lg md:text-xl text-charcoal group-hover:text-gold transition-colors duration-300">
+                    <p className="font-(family-name:--font-playfair) text-lg md:text-xl text-charcoal transition duration-300 inline-block group-hover:scale-110 origin-right group-hover:text-gold">
                       {nextSet.name}
                     </p>
                   </div>

@@ -20,7 +20,7 @@ function parseBold(text) {
     parts.push(
       <strong key={`bold-${match.index}`} className="font-semibold not-italic">
         {match[1]}
-      </strong>
+      </strong>,
     );
     lastIndex = regex.lastIndex;
   }
@@ -34,9 +34,9 @@ function parseBold(text) {
 
 // Helper: Detect and render lists or paragraphs
 function renderContent(text) {
-  console.log(text)
+  console.log(text);
   const paragraphs = text.split(/\r?\n\r?\n/);
-  console.log(paragraphs)
+  console.log(paragraphs);
   return paragraphs.map((para, pIdx) => {
     const lines = para.split(/\r?\n/).filter(Boolean);
 
@@ -147,28 +147,34 @@ export default function WoodCareContent({ content: c }) {
         overlayClass="bg-gradient-to-b from-white/60 via-white/90 to-white/60"
         height="h-[70vh] md:h-[75vh]"
         showScrollIndicator>
-        <div className="text-center px-6 max-w-4xl mx-auto">
-          <FadeInUp>
-            <span className="font-(family-name:--font-cormorant) text-[13px] md:text-[15px] tracking-[0.5em] text-gold uppercase block mb-6">
-              Maintenance Guide
-            </span>
-          </FadeInUp>
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
+        <div className="text-center px-6 max-w-8xl mx-auto">
+          <motion.span
+            initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 3, delay: 0.4, ease: [0.25, 0.46, 0.65, 0.94] }}>
-            <h1 className="font-(family-name:--font-playfair) text-4xl md:text-5xl lg:text-6xl font-normal tracking-[0.08em] text-charcoal mb-6">
-              {c["hero.name"]}
-            </h1>
-          </motion.div>
-          <FadeInUp delay={2}>
-            <div className="h-px w-20 bg-linear-to-r from-transparent via-gold to-transparent mx-auto mb-6" />
-          </FadeInUp>
-          <FadeInUp delay={2.2}>
-            <p className="font-(family-name:--font-cormorant) text-lg md:text-xl font-light tracking-wide text-text-primary max-w-xl mx-auto">
-              {c["hero.subtitle"]}
-            </p>
-          </FadeInUp>
+            transition={{ duration: 1, delay: 0.2 }}
+            className="font-(family-name:--font-cormorant) text-[11px] md:text-[13px] tracking-[0.5em] text-gold uppercase block mb-6">
+            Maintenance Guide
+          </motion.span>
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 3, delay: 0.4, ease: [0.25, 0.46, 0.65, 0.94] }}
+            className="font-(family-name:--font-playfair) text-4xl md:text-6xl lg:text-7xl font-normal tracking-[0.15em] text-charcoal mb-6">
+            {c["hero.name"]}
+          </motion.h1>
+          <motion.div
+            initial={{ width: 0 }}
+            animate={{ width: 80 }}
+            transition={{ duration: 1, delay: 0.7 }}
+            className="h-px bg-linear-to-r from-transparent via-gold to-transparent mx-auto mb-6"
+          />
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1.2, delay: 1.0 }}
+            className="font-(family-name:--font-cormorant) text-lg md:text-xl font-light tracking-[0.08em] text-text-secondary max-w-lg mx-auto">
+            {c["hero.subtitle"]}
+          </motion.p>
         </div>
       </HeroSection>
 

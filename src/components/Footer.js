@@ -42,8 +42,8 @@ export default function Footer() {
               {[
                 { href: "/", label: "HOME" },
                 { href: "/portfolio", label: "PORTFOLIO" },
-                { href: "/contact", label: "CONTACT" },
                 { href: "/wood-care", label: "WOOD CARE" },
+                { href: "/contact", label: "CONTACT" },
               ].map((link) => (
                 <Link
                   key={link.href}

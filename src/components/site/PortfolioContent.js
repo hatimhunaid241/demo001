@@ -143,11 +143,11 @@ export default function PortfolioContent({ content: c, chessSets }) {
                     <Link href={`/portfolio/${set.slug}`} className="btn-luxury">
                       VIEW SET
                     </Link>
-                    {set.hasWoodCare && (
+                    {/* {set.hasWoodCare && (
                       <Link href={`/wood-care`} className="btn-luxury">
                         Wood Care & maintenance
                       </Link>
-                    )}
+                    )} */}
                   </FadeInUp>
                 </div>
               </div>
